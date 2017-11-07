@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<opciones ruta="videos_ofertantes/">
+	<opcion tit="Registrarse" swf="ofer_01_registrarse.swf">
+		<texts>
+			<txt>Un ofertante será una persona que se ofrezca para tener citas. Podrá especificar que días y a qué horas está disponible, que tipo de citas estará dispuesto a tener, etc.</txt>
+			<txt>Pulse en el enlace para registrarse como ofertante en la página inicial de Amandris.</txt>
+			<txt>Introduzca los datos personales de su cuenta. Nombre de usuario, dirección de email, fecha de nacimiento, si es chico, chica, pareja o grupo y donde reside.</txt>
+			<txt>Pulse el botón continuar para seguir adelante</txt>
+			<txt>Introduzca la información que aparecerá en su perfil como descripción física, nivel de estudios, idiomas hablados, etc.</txt>
+			<txt>Por último, indique si desea recibir el boletín de noticias, la moneda que va a usar y acepte los términos y condiciones de usuario.</txt>
+			<txt>Pulse el botón guardar para terminar el proceso de registro</txt>
+		</texts>
+	</opcion>
+	<opcion tit="Añadir objetivos de cita" swf="ofer_02_objetivos.swf">
+		<texts>
+			<txt>Una vez registrado como ofertante, lo primero que deberá hacer es añadir los objetivos de sus citas, es decir, qué tipos de citas desea tener, con qué tipo de usuarios, etc.</txt>
+			<txt>Para ello deberá pulsar en la opción "Gestión" del menú principal y a continuación en la opción "Objetivos" del menú secundario.</txt>
+			<txt>La página mostrará la lista de objetivos que ya tenga añadidos. Esta lista aparecerá vacía si todavía no ha añadido ninguno.</txt>
+			<txt>Para añadir objetivos pulse en el botón "Añadir nuevo objetivo"</txt>
+			<txt>Elija un tipo de objetivo de entre los cuatro disponibles (Compañía sin sexo, compañía con sexo, sexo y espectáculo erótico)</txt>
+			<txt>Elija uno o más de los tipos de usuarios con los que está dispuesto a tener ese tipo de cita.</txt>
+			<txt>Especifique si va a cobrar al usuario y cuál va a ser la cantidad.</txt>
+			<txt>Por último pulse en "Añadir objetivo".</txt>
+			<txt>Repita esta operación para cada uno de los hasta 4 tipos de citas que desee tener. Recuerde que puede añadir, eliminar o cambiar sus objetivos en cualquier momento.</txt>
+		</texts>
+	</opcion>
+	<opcion tit="Crear calendario de disponibilidad" swf="ofer_03_calendario.swf">
+		<texts>
+			<txt>Para especificar qué días y a qué horas puede tener una cita ha de crear su calendario de disponibilidad.</txt>
+			<txt>Para ello, una vez registrado como ofertante, deberá pulsar en "Gestión" en el menú principal y "Calendario" en el menú secundario.</txt>
+			<txt>Si es la primera vez que crea su calendario de disponibilidad, deberá elegir un patrón predefinido de entre los disponibles y pulsar en "Generar nuevo calendario".</txt>
+			<txt>Esta opción crea un calendario base para los próximos 60 días. Una vez creado ese calendario usted podrá modificar los días y las horas en las que está disponible.</txt>
+			<txt>Desde ahora podrá modificar su calendario pulsando el botón "Editar calendario actual"</txt>
+			<txt>Una vez que ya tenga un calendario creado podrá cambiar la disponibilidad de cualquiera de las horas de los próximos 60 días simplemente pulsando con el ratón encima de ellas.</txt>
+			<txt>Las horas en las que no esté disponible aparecerán en rojo y en verde en las que sí esté disponible.</txt>
+			<txt>Para aceptarlos cambios, pulsa el botón "Terminar"</txt>
+		</texts>
+	</opcion>
+	<opcion tit="Especificar parámetros de las citas" swf="ofer_04_parametros.swf">
+		<texts>
+			<txt>Puede especificar ciertos parámetros relcionados con sus citas, como el lugar de encuentro, el tipo de pago, el coste de desplazamiento, etc.</txt>
+			<txt>Para ello, deberá pulsar en "Gestión" en el menú principal y "Parámetros" en el menú secundario.</txt>
+			<txt>Desde aquí podrá decir el lugar donde quiere quedar con sus citas, que tipo de sexo está dispuesto a tener, que medios de contacto y de pago acepta, etc.</txt>
+			<txt>Cuando haya acabado, haga clic en el botón "Guardar cambios"</txt>
+		</texts>
+	</opcion>
+	<opcion tit="Gestionar citas" swf="ofer_05_citas.swf">
+		<texts>
+			<txt>Una vez establecidos los objetivos, el calendario de disponibilidad y los parámetros ya puede comenzar a recibir peticiones de cita.</txt>
+			<txt>Cuando un demandante le pida una cita recibirá un E-mail y aparecerá una nueva entrada en la lista de citas que puede ver en su página principal una vez que se haya logado.</txt>
+			<txt>Una petición de cita puede estar en 4 estados diferentes: A la espera de la aceptación, a la espera del pago, a la espera de la cita y a la espera del voto.</txt>
+			<txt>El resumen de los datos de la cita lo puede ver en el listado de su página inicial, pero para ver dichos datos más en detalle puede pulsar el botón señalado.</txt>
+			<txt>Una vez recibida la petición de cita, ésta se encontrará a la espera de que usted la acepte o la rechace.</txt>
+			<txt>Para ello deberá pulsar en el botón "Aceptar o rechazar cita" de la página de detalle de cita.</txt>
+			<txt>A continuación, deberá confirmar su selección.</txt>
+			<txt>Si ha decidido aceptar la cita, ésta pasará a estado de esperando por el pago (si éste era obligatorio), o a estado esperando por la cita si no se obliga al pago por adelantado.</txt>
+			<txt>La petición de cita permanecerá en ese estado hasta que llegue el día y la hora de la misma. Mientras tanto puede cancelar la cita pulsando en el botón señalado.</txt>
+			<txt>Cuando la cita se haya producido sólo queda que usted vote al demandante con el que ha quedado y éste le vote a usted.</txt>
+			<txt>Para votar y dejar un comentario sólo ha de pulsar en el botón "Votar..."</txt>
+			<txt>Estos votos ayudarán a otras personas a saber como se comporta el usuario en las citas y si es una persona en la que se puede confiar.</txt>
+		</texts>
+	</opcion>
+	<opcion tit="Otras acciones" swf="ofer_06_otras.swf">
+		<texts>
+			<txt>Desde su sección privada puede además llevar a cabo otras muchas acciones a las que podrá acceder desde el menú principal.</txt>
+			<txt>Podrá buscar demandantes a los que enviar una invitación para que contacte con usted. Esta invitación le ayudará a darse a conocer.</txt>
+			<txt>Son gratuitas pero hay un tipo especial de invitación que deberá pagar mediante su saldo de créditos pero que permitirá a un demandante contactar con usted de forma gratuita.</txt>
+			<txt>También podrá promocionar su perfil para mostrarse más visible a demandantes potenciales.</txt>
+			<txt>Ejemplos de promociones son: mostrarse en los primeros resultados de las búsquedas, aparecer en la página inicial de Amandris, tener un álbum multimedia con más fotos...</txt>
+			<txt>...permitir el contacto gratuito a todos los demandantes, etc… Todas ellas tienen un coste en créditos.</txt>
+			<txt>Podrá recargar su saldo de créditos con los que, si lo desea podrá promocionar su perfil o permitir que los demandantes contacten de forma gratuita con usted.</txt>
+			<txt>Se permiten varias formas de pago. Usted elige la que más le convenga.</txt>
+			<txt>Podrá modificar o completar los datos de su perfil, añadir hasta 5 fotografías suyas y especificar cuales son sus preferencias.</txt>
+			<txt>Esto hará que su perfil sea más atractivo, visible y ayudará a los demandantes que quieran contactar con usted.</txt>
+		</texts>
+	</opcion>
+</opciones>

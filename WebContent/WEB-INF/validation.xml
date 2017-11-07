@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+                                 "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+<form-validation>
+ <global>
+  <constant>
+   <constant-name>phone</constant-name>
+   <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+  </constant>
+  <constant>
+   <constant-name>zip</constant-name>
+   <constant-value>^\d{5}\d*$</constant-value>
+  </constant>
+ </global>
+ <formset>
+  <constant>
+   <constant-name>zip</constant-name>
+   <constant-value>^\d{5}(-\d{4})?$</constant-value>
+  </constant>
+  <constant>
+   <constant-name>phone</constant-name>
+   <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+  </constant>
+  <form name="startContactForm">
+   <field depends="required,date" property="date">
+    <arg0 key="showBuyerStartContact.day"/>
+   </field>
+   <field depends="required,hour" property="hour">
+    <arg0 key="showBuyerStartContact.hour"/>
+   </field>
+   <field depends="minlength,maxlength" property="text">
+    <arg0 key="showBuyerStartContact.optionalText"/>
+    <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+    <var>
+     <var-name>maxlength</var-name>
+     <var-value>1024</var-value>
+    </var>
+    <var>
+     <var-name>minlength</var-name>
+     <var-value>1</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="address1" >
+	<arg0 key="showBuyerStartContact.address1"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>meetingPlaceType</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>2</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>256</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>4</var-value>
+    </var>
+   </field>
+   <field depends="maxlength" property="address2" >
+	<arg0 key="showBuyerStartContact.address2"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>256</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="city" >
+	<arg0 key="showBuyerStartContact.city"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>meetingPlaceType</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>2</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>256</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>4</var-value>
+    </var>
+   </field>
+  </form>
+  
+  
+  
+  <form name="recommendForm">
+   <field depends="required,email" property="email">
+    <arg0 key="showBuyerRecommend.email"/>
+   </field>
+   <field depends="required,maxlength" property="name">
+    <arg0 key="showBuyerRecommend.name"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+    <var>
+     <var-name>maxlength</var-name>
+     <var-value>2048</var-value>
+    </var>
+   </field>
+   <field depends="maxlength" property="message">
+    <arg0 key="showBuyerRecommend.message"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+    <var>
+     <var-name>maxlength</var-name>
+     <var-value>2048</var-value>
+    </var>
+   </field>
+  </form>
+  
+    <form name="passwordResetForm">
+   <field depends="required,email" property="email">
+    <arg0 key="showBuyerPasswordReset.email"/>
+   </field>
+  </form>
+    
+  <form name="buyerSellerAvailabilitySearchForm">
+   <field depends="required,date" property="date">
+    <arg0 key="showBuyerSellerAvailabilitySearch.date"/>
+   </field>
+  </form>
+    
+  <form name="contactMessageForm">
+   <field depends="required,maxlength" property="text">
+    <arg0 key="showBuyerSendContactMessage.text"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+    <var>
+		<var-name>maxlength</var-name>
+     	<var-value>2048</var-value>
+    </var>
+   </field>
+  </form>
+  
+  <form name="voteForm">
+   <field depends="required,maxlength" property="text">
+    <arg0 key="showBuyerVoteSeller.comment"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+    <var>
+		<var-name>maxlength</var-name>
+     	<var-value>130</var-value>
+    </var>
+   </field>
+  </form>
+  
+	<form name="replyVoteForm">
+		<field depends="required,maxlength" property="text">
+			<arg0 key="showBuyerReplyVote.text"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>130</var-value>
+			</var>
+		</field>
+	</form>
+  
+	<form name="cancelDateForm">
+		<field depends="required,maxlength" property="text">
+			<arg0 key="showBuyerCancelDate.text"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>512</var-value>
+			</var>
+		</field>
+	</form>
+  
+	<form name="newBuyerForm">
+		<field depends="required,minlength,maxlength,username" property="login" page="1">
+			<arg0 key="showNewBuyerOne.login"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>100</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>2</var-value>
+			</var>
+		</field>
+		<field property="password" depends="required,minlength,maxlength,twofields" page="1">
+			<arg0 key="showNewBuyerOne.password"/>                    	   
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<arg1 key="showNewBuyerOne.repeatPassword"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>6</var-value>
+			</var>
+			<var>
+				<var-name>secondProperty</var-name>
+    			<var-value>repeatPassword</var-value>
+			</var>
+		</field>    
+		<field depends="required,email,maxlength,twofields" property="email" page="1">
+			<arg0 key="showNewBuyerOne.email"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<arg1 key="showNewBuyerOne.repeatEmail"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>256</var-value>
+			</var>
+			<var>
+				<var-name>secondProperty</var-name>
+    			<var-value>repeatEmail</var-value>
+			</var>
+		</field>
+		<field depends="required,date" property="birthDate" page="1">
+			<arg0 key="showNewBuyerOne.birthDate"/>
+		</field>
+		<field depends="required,maxlength" property="city" page="1">
+			<arg0 key="showNewBuyerOne.city"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>
+		<field property="address1" depends="maxlength" page="1">
+			<arg0 key="showNewBuyerOne.address1"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>
+		<field property="address2" depends="maxlength" page="1">
+			<arg0 key="showNewBuyerOne.address2"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>    
+		<field property="postalCode" depends="maxlength" page="1">
+			<arg0 key="showNewBuyerOne.postalCode"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>11</var-value>
+			</var>
+		</field> 
+		<field property="name" depends="maxlength" page="1">
+			<arg0 key="showNewBuyerOne.name"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+		</field>
+		<field property="surname" depends="maxlength" page="1">
+			<arg0 key="showNewBuyerOne.surname"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+		</field>   	
+		<field depends="required,minlength,maxlength" property="intro" page="2">
+			<arg0 key="showNewBuyerTwo.intro"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>80</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>3</var-value>
+			</var>
+		</field>
+		<field depends="required,minlength,maxlength" property="text" page="2">
+			<arg0 key="showNewBuyerTwo.text"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>1024</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>16</var-value>
+			</var>
+		</field>  				     
+	</form>
+	
+	<form name="newSellerForm">
+		<field depends="required,minlength,maxlength,username" property="login" page="1">
+			<arg0 key="showNewSellerOne.login"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>100</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>2</var-value>
+			</var>
+		</field>
+		<field property="password" depends="required,minlength,maxlength,twofields" page="1">
+			<arg0 key="showNewSellerOne.password"/>                    	   
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<arg1 key="showNewSellerOne.repeatPassword"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>6</var-value>
+			</var>
+			<var>
+				<var-name>secondProperty</var-name>
+    			<var-value>repeatPassword</var-value>
+			</var>
+		</field>    
+		<field depends="required,email,maxlength,twofields" property="email" page="1">
+			<arg0 key="showNewSellerOne.email"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<arg1 key="showNewSellerOne.repeatEmail"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>256</var-value>
+			</var>
+			<var>
+				<var-name>secondProperty</var-name>
+    			<var-value>repeatEmail</var-value>
+			</var>
+		</field>
+		<field depends="required,date" property="birthDate" page="1">
+			<arg0 key="showNewSellerOne.birthDate"/>
+		</field>
+		
+		<field depends="required,maxlength" property="city" page="1">
+			<arg0 key="showNewSellerOne.city"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>
+		<field property="address1" depends="maxlength" page="1">
+			<arg0 key="showNewSellerOne.address1"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>
+		<field property="address2" depends="maxlength" page="1">
+			<arg0 key="showNewSellerOne.address2"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>    
+		<field property="postalCode" depends="maxlength" page="1">
+			<arg0 key="showNewSellerOne.postalCode"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>11</var-value>
+			</var>
+		</field> 
+		<field property="name" depends="maxlength" page="1">
+			<arg0 key="showNewSellerOne.name"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+		</field>
+		<field property="surname" depends="maxlength" page="1">
+			<arg0 key="showNewSellerOne.surname"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+		</field>   	
+		<field depends="required,minlength,maxlength" property="intro" page="2">
+			<arg0 key="showNewSellerTwo.intro"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>80</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>3</var-value>
+			</var>
+		</field>
+		<field depends="required,minlength,maxlength" property="text" page="2">
+			<arg0 key="showNewSellerTwo.text"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>1024</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>16</var-value>
+			</var>
+		</field>  				     
+	</form>
+  
+	<form name="buyerAccountForm">
+		<field depends="required,date" property="birthDate">
+			<arg0 key="showBuyerAccount.birthDate"/>
+		</field>
+		<field depends="required,intRange" property="state">
+			<arg0 key="showBuyerAccount.state"/>
+			<arg1 name="intRange" key="${var:min}" resource="false"/>
+		    <arg2 name="intRange" key="${var:max}" resource="false"/>
+		    <var>
+        		<var-name>min</var-name>
+		        <var-value>0</var-value>
+		    </var>
+		    <var>
+		        <var-name>max</var-name>
+        		<var-value>10000</var-value>
+		    </var>
+		</field>
+		<field depends="required,maxlength" property="city">
+			<arg0 key="showBuyerAccount.city"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>
+		<field property="address1" depends="maxlength">
+			<arg0 key="showBuyerAccount.address1"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>
+		<field property="address2" depends="maxlength">
+			<arg0 key="showBuyerAccount.address2"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>    
+		<field property="postalCode" depends="maxlength">
+			<arg0 key="showBuyerAccount.postalCode"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>11</var-value>
+			</var>
+		</field> 
+		<field property="name" depends="maxlength">
+			<arg0 key="showBuyerAccount.name"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+		</field>
+		<field property="surname" depends="maxlength">
+			<arg0 key="showBuyerAccount.surname"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+		</field>   	
+	</form>
+	
+	<form name="sellerAccountForm">
+		<field depends="required,date" property="birthDate">
+			<arg0 key="showSellerAccount.birthDate"/>
+		</field>
+		<field depends="required,intRange" property="state">
+			<arg0 key="showSellerAccount.state"/>
+			<arg1 name="intRange" key="${var:min}" resource="false"/>
+		    <arg2 name="intRange" key="${var:max}" resource="false"/>
+		    <var>
+        		<var-name>min</var-name>
+		        <var-value>0</var-value>
+		    </var>
+		    <var>
+		        <var-name>max</var-name>
+        		<var-value>10000</var-value>
+		    </var>
+		</field>
+		<field depends="required,maxlength" property="city">
+			<arg0 key="showSellerAccount.city"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>
+		<field property="address1" depends="maxlength">
+			<arg0 key="showSellerAccount.address1"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>
+		<field property="address2" depends="maxlength">
+			<arg0 key="showSellerAccount.address2"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>255</var-value>
+			</var>
+		</field>    
+		<field property="postalCode" depends="maxlength">
+			<arg0 key="showSellerAccount.postalCode"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>11</var-value>
+			</var>
+		</field> 
+		<field property="name" depends="maxlength">
+			<arg0 key="showSellerAccount.name"/>                    	   
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+		</field>
+		<field property="surname" depends="maxlength">
+			<arg0 key="showSellerAccount.surname"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+		</field>   	
+	</form>
+
+	<form name="buyerPasswordForm">
+  		<field depends="required" property="presentPassword">
+			<arg0 key="showBuyerPassword.presentPassword"/>
+		</field>
+		<field property="password" depends="required,minlength,maxlength,twofields">
+			<arg0 key="showBuyerPassword.password"/>                    	   
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<arg1 key="showBuyerPassword.repeatPassword"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>6</var-value>
+			</var>
+			<var>
+				<var-name>secondProperty</var-name>
+    			<var-value>repeatPassword</var-value>
+			</var>
+		</field>    
+	</form>
+	
+	<form name="sellerPasswordForm">
+  		<field depends="required" property="presentPassword">
+			<arg0 key="showSellerPassword.presentPassword"/>
+		</field>
+		<field property="password" depends="required,minlength,maxlength,twofields">
+			<arg0 key="showSellerPassword.password"/>                    	   
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false" />
+			<arg1 key="showSellerPassword.repeatPassword"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>64</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>6</var-value>
+			</var>
+			<var>
+				<var-name>secondProperty</var-name>
+    			<var-value>repeatPassword</var-value>
+			</var>
+		</field>    
+	</form>
+	
+	<form name="buyerProfileForm">
+		<field depends="required,minlength,maxlength" property="intro">
+			<arg0 key="showBuyerProfile.intro"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>80</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>3</var-value>
+			</var>
+		</field>
+		<field depends="required,minlength,maxlength" property="text">
+			<arg0 key="showBuyerProfile.text"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>1024</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>16</var-value>
+			</var>
+		</field>  				     
+	</form>  
+	<form name="sellerProfileForm">
+		<field depends="required,minlength,maxlength" property="intro">
+			<arg0 key="showSellerProfile.intro"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>80</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>3</var-value>
+			</var>
+		</field>
+		<field depends="required,minlength,maxlength" property="text">
+			<arg0 key="showSellerProfile.text"/>
+			<arg1 key="${var:minlength}" name="minlength" resource="false" />
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>1024</var-value>
+			</var>
+			<var>
+				<var-name>minlength</var-name>
+				<var-value>16</var-value>
+			</var>
+		</field>  				     
+	</form>  
+	
+	<form name="buyerPreferencesForm">
+		<field depends="maxlength" property="text">
+			<arg0 key="showBuyerPreferences.text"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>1024</var-value>
+			</var>
+		</field>  				     
+	</form>  
+	
+	<form name="sellerPreferencesForm">
+		<field depends="maxlength" property="text">
+			<arg0 key="showSellerPreferences.text"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>1024</var-value>
+			</var>
+		</field>  				     
+	</form> 
+	
+	<form name="buyCreditsForm">
+		<field depends="required,integer,intRange" property="credits">
+			<arg0 key="buyerMenu.credits"/>
+			<arg1 name="intRange" key="${var:min}" resource="false"/>
+		    <arg2 name="intRange" key="${var:max}" resource="false"/>
+		    <var>
+        		<var-name>min</var-name>
+		        <var-value>1</var-value>
+		    </var>
+		    <var>
+		        <var-name>max</var-name>
+        		<var-value>100</var-value>
+		    </var>			
+		</field>  				     
+	</form>    	  
+
+
+	<form name="pictureForm">
+		<field property="pictureFile" depends="imagefiletype,imagefilesize"/> 
+	</form>  
+	
+	<form name="payForm">
+		<field depends="maxlength" property="text">
+			<arg0 key="showBuyerPay.optionalText"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>2048</var-value>
+			</var>
+		</field>
+	</form>	  	
+
+  <form name="sellerReplyContactForm">
+   <field depends="requiredif,minlength,maxlength" property="text" >
+	<arg0 key="showSellerReplyContact.comment"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>reply</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>2</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>180</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>6</var-value>
+    </var>
+   </field>
+  </form>	
+  
+  
+  <form name="addServiceForm">
+   <field depends="requiredif,double" property="firstHourPrice" >
+	<arg0 key="showSellerAddService.firstHourPrice"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>isFree</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>false</var-value>
+  	</var>
+   </field>
+   <field depends="requiredif,double" property="additionalHoursPrice" >
+	<arg0 key="showSellerAddService.additionalHoursPrice"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>isFree</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>false</var-value>
+  	</var>
+   </field>
+  </form>
+  
+  <form name="editServiceForm">
+   <field depends="requiredif,double" property="firstHourPrice" >
+	<arg0 key="showSellerEditService.firstHourPrice"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>isFree</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>false</var-value>
+  	</var>
+   </field>
+   <field depends="requiredif,double" property="additionalHoursPrice" >
+	<arg0 key="showSellerEditService.additionalHoursPrice"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>isFree</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>false</var-value>
+  	</var>
+   </field>
+  </form>
+  
+  
+  
+  <form name="sellerParameterForm">
+   <field depends="requiredif,minlength,maxlength" property="meetingAddress1" >
+	<arg0 key="showSellerParameter.meetingAddress1"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>hasMeetingPlace</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>255</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>6</var-value>
+    </var>
+   </field>
+   <field depends="maxlength" property="meetingAddress2" >
+	<arg0 key="showSellerParameter.meetingAddress2"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>255</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="meetingCountry" >
+	<arg0 key="showSellerParameter.meetingCountry"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>hasMeetingPlace</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>128</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>2</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="meetingState" >
+	<arg0 key="showSellerParameter.meetingState"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>hasMeetingPlace</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>128</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>2</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="meetingCity" >
+	<arg0 key="showSellerParameter.meetingCity"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>hasMeetingPlace</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>128</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>2</var-value>
+    </var>
+   </field>
+   <field depends="minlength,maxlength" property="meetingPostalCode" >
+	<arg0 key="showSellerParameter.meetingPostalCode"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>11</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>2</var-value>
+    </var>
+   </field>
+   <field depends="minlength,maxlength" property="googleMapsUrl" >
+	<arg0 key="showSellerParameter.googleMapsUrl"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>255</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>16</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="phoneNumberSMS" >
+	<arg0 key="showSellerParameter.phoneNumberSms"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>allowSms</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>32</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>8</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="phoneNumberCall" >
+	<arg0 key="showSellerParameter.phoneNumberCall"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>allowPhoneCall</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>32</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>8</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="url" >
+	<arg0 key="showSellerParameter.url"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>allowUrl</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>1024</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>8</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="skypeAccount" >
+	<arg0 key="showSellerParameter.skypeAccount"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>allowSkype</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>255</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>1</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength,email" property="messengerAccount" >
+	<arg0 key="showSellerParameter.messengerAccount"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>allowMessenger</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>255</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>2</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength,email" property="paypalAccount" >
+	<arg0 key="showSellerParameter.paypalAccount"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>allowPaypalPayment</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>255</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>4</var-value>
+    </var>
+   </field>
+   <field depends="requiredif,minlength,maxlength" property="bankAccount" >
+	<arg0 key="showSellerParameter.bankAccount"/>
+	<arg1 key="${var:minlength}" name="minlength" resource="false"/>
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>allowBankPayment</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+  	<var>
+		<var-name>maxlength</var-name>
+     	<var-value>255</var-value>
+    </var>
+    <var>
+     	<var-name>minlength</var-name>
+     	<var-value>16</var-value>
+    </var>
+   </field>
+   
+   <field depends="requiredif,double" property="displacementPrize" >
+	<arg0 key="showSellerParameter.displacementPrize"/>
+	<var>
+    	<var-name>field[0]</var-name>
+    	<var-value>buyerPaysDisplacement</var-value>
+	</var>
+  	<var>
+    	<var-name>fieldTest[0]</var-name>
+    	<var-value>EQUAL</var-value>
+  	</var>
+  	<var>
+    	<var-name>fieldValue[0]</var-name>
+    	<var-value>true</var-value>
+  	</var>
+   </field>
+  </form>
+  
+	<form name="amandrisMessageForm">
+		<field depends="required,email,maxlength" property="email">
+			<arg0 key="showAmandrisMessage.email"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>256</var-value>
+			</var>
+		</field>
+		
+		<field depends="required,maxlength" property="subject">
+			<arg0 key="showAmandrisMessage.subject"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>256</var-value>
+			</var>
+		</field>
+		
+		<field depends="required,maxlength" property="text">
+			<arg0 key="showAmandrisMessage.text"/>
+			<arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+			<var>
+				<var-name>maxlength</var-name>
+				<var-value>5000</var-value>
+			</var>
+		</field>
+	</form>
+  
+ </formset>
+</form-validation>

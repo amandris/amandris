@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FILESYSTEMS APPLICATION_NAME="Amandris" ENTITY="FileSystems"
+ VERSION="7.0.5" WORKSPACE_HOME="./WebContent/WEB-INF">
+ <FILESYSTEM ENTITY="FileSystemFolder" LOCATION="%exadel.workspace%" NAME="WEB-INF"/>
+ <FILESYSTEM ENTITY="FileSystemFolder" INFO="Content-Type=Web"
+  LOCATION="%exadel.workspace%/.." NAME="WEB-ROOT"/>
+ <FILESYSTEM ENTITY="FileSystemFolder"
+  LOCATION="%exadel.workspace%/../../JavaSource" NAME="src"/>
+ <FILESYSTEM ENTITY="FileSystemFolder"
+  LOCATION="%exadel.workspace%/classes" NAME="classes"/>
+ <FILESYSTEM ENTITY="FileSystemFolder"
+  LOCATION="%exadel.workspace%/../../ant" NAME="build"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-beanutils.jar" NAME="lib-commons-beanutils.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-collections.jar" NAME="lib-commons-collections.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-digester.jar" NAME="lib-commons-digester.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-fileupload.jar" NAME="lib-commons-fileupload.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-logging.jar" NAME="lib-commons-logging.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-validator.jar" NAME="lib-commons-validator.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/jakarta-oro.jar" NAME="lib-jakarta-oro.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/jstl.jar" NAME="lib-jstl.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/standard.jar" NAME="lib-standard.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/struts-legacy.jar" NAME="lib-struts-legacy.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/struts.jar" NAME="lib-struts.jar"/>
+ <FILESYSTEM ENTITY="FileSystemFolder"
+  LOCATION="%exadel.eclipse.project%" NAME="Amandris"/>
+ <WEB ENTITY="ExadelWeb" MODEL_PATH="/web.xml" SERVLET_VERSION="2.3">
+  <MODULE ENTITY="ExadelWebModule" MODEL_PATH="/struts-config.xml"
+   ROOT="WEB-ROOT" SRC="src" URI="/WEB-INF/struts-config.xml"/>
+ </WEB>
+</FILESYSTEMS>

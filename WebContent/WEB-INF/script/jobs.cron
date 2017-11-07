@@ -1,0 +1,4 @@
+cd /home/gustavo/Amandris/apache-tomcat-5.5.23/webapps/ROOT/WEB-INF/classes
+java com.amandris.clients.job.DeleteOldCalendar
+java com.amandris.clients.job.DeleteOldRecomendation
+java com.amandris.clients.job.GenerateCalendar

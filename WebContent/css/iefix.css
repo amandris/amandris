@@ -1,0 +1,12 @@
+body { _overflow: hidden; _background: #FFF url(../img/bg_body_bottom.gif) repeat-x fixed bottom left; }
+div#bodyheader { _position: absolute;}
+p#lit_panelizda { _margin: 30px 7px 0 0; }
+p#lit_paneldcha01 { _margin: 30px 5px 0 7px; }
+p#lit_paneldcha02 { _margin: 30px 7px 0 0; }
+p#lit_paneldcha03 { _margin: 10px 7px 0 0; }
+form#search { _margin: 30px 12px 0 0; }
+form#search button { _margin-top: 10px; }
+a.verdemo_pink { _margin: 0 7px 0 5px; }
+a#btn_verofertantes { _margin: -2px 12px 0 0; }
+div#container div#bottom ul#helpmenu { _margin-left: 30px; }
+div#container div#bottom ul#legalmenu { _margin-left: 45px; }

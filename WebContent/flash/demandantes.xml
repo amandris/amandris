@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<opciones ruta="videos_demandantes/">
+	<opcion tit="Registrarse" swf="deman_01_registrarse.swf">
+		<texts>
+			<txt>Un demandante es una persona que buscará un ofertante que encaje con sus gustos y le hará una petición de cita para quedar ese mismo día o en cualquier otro momento.</txt>
+			<txt>Pulse en el enlace para registrarse como demandante en la página inicial de Amandris.</txt>
+			<txt>Introduzca los datos personales de su cuenta. Nombre de usuario, dirección de email, fecha de nacimiento, si es chico, chica, pareja o grupo y donde reside.</txt>
+			<txt>Pulse el botón continuar para seguir adelante</txt>
+			<txt>Introduzca la información que aparecerá en su perfil como descripción física, nivel de estudios, idiomas hablados, etc.</txt>
+			<txt>Indique si desea recibir el boletín de ofertantes, el boletín de noticias, si su perfil será visible por todos los ofertantes y acepte los términos y condiciones de usuario.</txt>
+			<txt>Por último, pulse el botón guardar para terminar el proceso de registro</txt>
+		</texts>
+	</opcion>
+	<opcion tit="Pedir una cita" swf="deman_02_pedircita.swf">
+		<texts>
+			<txt>El primer paso para tener una cita es buscar a alguien que le guste.</txt>
+			<txt>Para ello, una vez haya hecho login, pulse en la opción del menú principal buscar.</txt>
+			<txt>Entre los parámetros que podrá especificar están el sexo de la persona que busca, la edad, el lugar, que tipo de citas acepta, si le va a cobrar por tener una cita con usted, etc.</txt>
+			<txt>Una vez especificados los parámetros de la búsqueda pulse en "Buscar" para mostrar la lista de ofertantes que cumplen dichos parámetros.</txt>
+			<txt>Aparecerá la lista de ofertantes que cumplen con los parámetros de la búsqueda.</txt>
+			<txt>Para cada ofertante se mostrará un resumen de su perfil con datos como su edad, su lugar de residencia, sus votos positivos y negativos, sus estadísticas de citas, etc.</txt>
+			<txt>Para ver el perfil completo de un ofertante basta pulsar en el enlace con su nombre de usuario.</txt>
+			<txt>En el perfil del ofertante puede encontrar información de su aspecto físico, sus preferencias, los votos datos por otros demandantes tras tener una cita con él...</txt>
+			<txt>...sus estadísticas, que tipo de citas está dispuesto a tener, si va a cobrar por ellas y cuanto, con que tipos de usuarios las va a tener, etc.</txt>
+			<txt>Además, podrá ver sus fotos si las tiene. Pulse en "Pedir cita" si desea enviarle una petición de cita a este ofertante.</txt>
+			<txt>A continuación deberá elegir el día y la hora a la cual quiere tener la cita y que el ofertante haya marcado como disponible, la duración de la cita, el objetivo y el lugar de encuentro.</txt>
+			<txt>También puede escribir un texto opcional que el ofertante podrá leer. Para pasar al último paso deberá pulsar en continuar.</txt>
+			<txt>En la página de confirmación podrá ver un resumen con los datos de la cita.</txt>
+			<txt>Además, aparecerá el precio que deberá pagar al ofertante (si éste decide cobrar por tener citas) y la cantidad de créditos que se le restarán de su saldo de créditos.</txt>
+			<txt>Para realizar la petición de cita al ofertante pulse en "Establecer contacto"</txt>
+		</texts>
+	</opcion>
+	<opcion tit="Gestionar citas" swf="deman_03_citas.swf">
+		<texts>
+			<txt>Una vez realizada la petición de cita aparecerá en la página de inicio o en la página de citas una nueva entrada con un resumen de los datos de la misma.</txt>
+			<txt>Para ver más en detalle los datos de la cita pulse en el icono situado a la derecha del bloque.</txt>
+			<txt>Ahora ya sólo le queda esperar a que el ofertante acepte o rechace la cita.</txt>
+			<txt>Tenga en cuenta que el ofertante usará los datos que haya puesto usted en su perfil y los votos que haya recibido de otros ofertantes para decidir si aceptar o rechazar la cita.</txt>
+			<txt>Una vez que el ofertante haya aceptado la petición, ésta pasará al estado de esperando por el pago o esperando por la cita dependiendo de las condiciones de pago de la misma.</txt>
+			<txt>En el estado de esperando por la cita, ésta puede ser anulada en cualquier momento. Tenga en cuenta que este hecho aparecerá reflejado en sus estadísticas.</txt>
+			<txt>Cuando la fecha y hora de la cita se hayan alcanzado, esta aparecerá como a la espera del voto. Será entonces cuando tanto usted como el ofertante se vote mutuamente.</txt>
+			<txt>Dichos votos serán visibles por el resto de los usuarios.</txt>
+		</texts>
+	</opcion>
+	<opcion tit="Otras acciones" swf="deman_04_otras.swf">
+		<texts>
+			<txt>Desde su sección privada puede además llevar a cabo otras muchas acciones a las que podrá acceder desde el menú principal.</txt>
+			<txt>Podrá ver las invitaciones que los ofertantes le hayan enviado.</txt>
+			<txt>Dichas invitaciones podrán ser además con contacto gratuito, es decir, no se le restarán créditos a su saldo por enviarle una petición de cita al ofertante que le envió la invitación.</txt>
+			<txt>Podrá recargar su saldo de créditos. Los créditos son necesarios para poder enviar peticiones de cita. Hay varios métodos de pago disponibles.</txt>
+			<txt>Podrá modificar o completar los datos de su perfil, añadir hasta 5 fotografías suyas y especificar cuales son sus preferencias.</txt>
+			<txt>Esto hará que su perfil sea más atractivo y le proporcionará muchas más peticiones de citas aceptadas.</txt>
+		</texts>
+	</opcion>
+</opciones>

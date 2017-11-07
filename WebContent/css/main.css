@@ -1,0 +1,343 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* layout & struct */
+html {
+	height: 100%;
+}
+body {
+	/*background: #FFF url(../img/bg_body_bottom.gif) repeat-x fixed bottom left;*/
+	background: #FFF url(../img/bg_pie.png) repeat-x fixed bottom left;
+	padding: 0 0 10px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+}
+div#bodyheader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 250px;
+	/*float: left;*/
+	background: #FFF url(../img/bg_body_top.gif) repeat-x top left;
+}
+div#wrapper {
+	margin: 0 auto 0 auto;
+	overflow: hidden;
+	background: transparent;
+	position: relative;
+	width: 920px;
+}
+
+	div#container {
+		width: 754px;
+		margin: 0 auto;
+		overflow: hidden;
+		background: none;
+	}
+	
+		div#container div#header {
+			width: 754px;
+			height: 106px;
+			background: transparent url(../img/header.png) no-repeat top left;
+			overflow: hidden;
+		}
+	
+		div#container div#body {
+			width: 754px;
+			height: 106px;
+			background: transparent url(../img/header.png) no-repeat top left;
+			overflow: hidden;
+		}
+	
+		div#logo_amandris {
+			width: 385px;
+			height: 85px;
+			margin: 17px 0 0 45px;
+		}
+		
+		div#logo_amandris img {
+			width: 385px;
+			height: 85px;
+		}
+	
+		div#container div#content {
+			width: 722px; /* Original width: 754px; */
+			padding: 0 16px;
+			/*height: 620px;*/
+			overflow: hidden;
+			background: transparent url(../img/bg_content.png) repeat-y top left; 
+		}
+		
+			div#container div#content div.col_izda, div#container div#content div.col_dcha {  float: left; width: 360px; }
+			div#container div#content div.col_izda {}
+			div#container div#content div.col_dcha {}
+			
+				a#banner_demandantes, a#banner_ofertantes {
+					display: block;
+					width: 349px;
+					height: 82px;
+				}
+				
+				a#banner_demandantes {
+					background: transparent url(../img/banners/acceso_demandantes.jpg) no-repeat top left;
+					margin-left: 8px;
+				}
+				
+				a#banner_ofertantes {
+					background: transparent url(../img/banners/acceso_ofertantes.jpg) no-repeat top left;
+					margin-left: 2px;
+				}
+				
+				div.panel_izda, div.panel_dcha {
+					width: 360px;
+					height: 527px;
+					overflow: hidden;
+					position: relative;
+				}
+				
+				div.panel_izda { background: transparent url(../img/bg_panelizda.jpg) no-repeat top left; }
+				
+					p#lit_panelizda {
+						font-size: 1.2em;
+						width: 210px;
+						text-align: right;
+						float: right;
+						margin: 30px 15px 0 0;
+					}
+				
+				div.panel_dcha { background: transparent url(../img/bg_paneldcha.jpg) no-repeat top left; }
+				
+					p#lit_paneldcha01 {
+						font-size: 1.2em;
+						width: 340px;
+						float: left;
+						text-align: left;
+						margin: 30px 5px 0 15px;
+					}
+					
+					p#lit_paneldcha02 {
+						font-size: 1.8em;
+						width: 220px;
+						float: right;
+						text-align: center;
+						margin: 30px 15px 0 0;
+					}
+					
+					p#lit_paneldcha03 {
+						font-size: 1.2em;
+						width: 220px;
+						float: right;
+						text-align: center;
+						margin: 10px 15px 0 0;
+					}
+					
+			div#botonera_registro {
+				overflow: hidden;
+				width: 722px;
+				margin: 10px 0 0 0;
+				float: left;
+			}
+			
+				a.verdemo_blue, a.verdemo_pink, a.registratedemandante, a.registrateofertante  { float: left; display: block; }
+				a.verdemo_blue, a.verdemo_pink { width: 168px; height: 36px; }
+				a.registratedemandante, a.registrateofertante { width: 169px; height: 47px; }
+				a.verdemo_blue { background: transparent url(../img/botones/btn_verdemo_blue.png) no-repeat top left; margin: 0 7px 0 0; }
+				a.verdemo_pink { background: transparent url(../img/botones/btn_verdemo_pink.png) no-repeat top left; margin: 0 7px 0 10px; }
+				a.registratedemandante { background: transparent url(../img/botones/btn_registro_demandante.gif) no-repeat top left; }
+				a.registrateofertante { background: transparent url(../img/botones/btn_registro_ofertante.gif) no-repeat top left; }
+			
+			div#destacados {
+				overflow: hidden;
+				width: 720px;
+				height: 147px;
+				background: transparent url(../img/bg_destacados.gif) no-repeat top left;
+				margin: 10px 0 0 0;
+				float: left;
+			}
+			
+				div#destacados div.row {
+					float: left;
+					overflow: hidden;
+					padding: 5px 0 5px 20px;
+					width: 100%;
+				}
+				
+					div.destacado, div.destacado_last {
+						float: left;
+						width: 125px;
+						height: 75px;
+					}
+					
+					div.destacado { margin: 0 15px 0 0; }
+					div.destacado_last { margin: 0; }
+					
+						div.destacado a img, div.destacado_last a img { float: left; margin: 0 2px 0 0; border: 0; }
+						div.destacado p, div.destacado_last p { float: left; }
+						div.destacado p a, div.destacado_last p a { font-size: 1.2em; color: #1662A1; text-decoration: underline; }
+						
+				a#btn_verofertantes {
+					width: 232px;
+					height: 23px;
+					margin: 3px 25px 0 0;
+					display: block;
+					float: right;
+					background: transparent url(../img/botones/btn_verofertantes.gif)
+				}
+			
+		div#container div#bottom {
+			width: 754px;
+			height: 70px;
+			text-align: center;
+			overflow: hidden;
+			background: transparent url(../img/bg_bottom.png) no-repeat top left;
+			margin-left: -1px;
+		}
+		
+			div#container div#bottom ul { width: 100%; float: left; padding: 0; display: block; }
+			div#container div#bottom ul li { float: left; display: inline; list-style: none; margin: 0 25px 0 0; }
+			
+			div#container div#bottom ul#helpmenu { font-size: 1.2em; margin: 5px 0 0 60px; }
+			div#container div#bottom ul#helpmenu a { color: #3C88C6; text-decoration: underline; }
+			div#container div#bottom ul#legalmenu { font-size: 1.1em; margin: 10px 0 0 90px; }
+			div#container div#bottom ul#legalmenu a { color: #555; text-decoration: underline; }
+			
+	div#reflection { width: 833px; height: 81px; background: transparent url(../img/bg_reflection.png) no-repeat top left; margin: 0 auto; }
+
+div#girl_left {
+	position: absolute;
+	bottom: 0;
+	left: 2px;
+	background: transparent url(../img/silhouette_left.png) no-repeat top left;
+	width: 99px;
+	height: 385px;
+}
+
+div#girl_right {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: transparent url(../img/silhouette_right.png) no-repeat top left;
+	width: 99px;
+	height: 385px;
+}
+
+/* headings */
+
+h3#tit_sistemadecitas, h3#tit_hazloquemastegusta {
+	height: 17px;
+	margin: 20px 0 0 20px;
+}
+
+h3#tit_sistemadecitas {
+	width: 313px;
+	background: transparent url(../img/titulos/tit_sistemadecitas.png) no-repeat top left;
+}
+h3#tit_hazloquemastegusta {
+	width: 312px;
+	background: transparent url(../img/titulos/tit_hazloquemastegusta.png) no-repeat top left;
+}
+
+h3#tit_ofertantesdestacados {
+	width: 179px;
+	height: 27px;
+	background: transparent url(../img/titulos/tit_ofertantesdestacados.png) no-repeat top left;
+	display: block;
+	float: left;
+	margin: -3px 0 0 10px;
+}
+
+/* colors */
+
+.white { color: #FFF; }
+.blue { color: #1662A1; }
+.lightblue { color: #3C88C6; }
+.orange { color: #FF8A00; }
+.pink { color: #D5499A; }
+
+/* forms */
+
+form#search {
+	float: right;
+	width: 185px;
+	height: 235px;
+	margin: 30px 25px 0 0;
+	font-size: 1em;
+}
+
+form#search p {
+	width: 155px;
+	font-size: 1.8em;
+	margin: 0 15px 10px 15px;
+	text-align: center;
+	font-weight: bold;
+	color: #D5499A;
+	display: block;
+}
+
+form#search label {
+	clear: both;
+	display: block;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	overflow: hidden;
+}
+
+form#search select, form#search input {
+	margin: 0 4px;
+	float: left;
+	font-size: 1.1em;
+}
+
+form#search button {
+	margin: 0 0 0 50px;
+	width: 82px;
+	height: 28px;
+	background: transparent url(../img/botones/btn_buscar.gif) no-repeat top left;
+	border: 0;
+	cursor: pointer;
+}
+
+span.labelwidth {
+	width: 60px;
+	text-align: right;
+	display: block;
+	float: left;
+	font-size: 1.1em;
+	margin: 2px 0 0 0;
+}
+
+form#search input {
+	width: 20px;
+}
+
+/* lists */
+
+ul.steps {
+	position: absolute;
+	color: #FFF;
+	font-size: 1.2em;
+}
+
+div.panel_izda ul.steps { bottom: 30px; left: 16px; }
+div.panel_dcha ul.steps { bottom: 30px; left: 13px; }
+
+ul.steps li {
+	display: inline;
+	float: left;
+	width: 100px;
+	text-align: center;
+}
+
+div.panel_izda ul.steps li { margin: 0 14px 0 0; }
+div.panel_dcha ul.steps li { margin: 0 12px 0 0; }
+
+/* misc */
+
+.hide { display: none; }
+.cleared { clear: both; }
+.padleft30 { padding-left: 30px; }
+strong { font-weight: bold; }
+.labelfont { font-size: 1.1em; margin: 2px 0 0 0; }
+.floatleft { float: left; }
+.floatright { float: right; }

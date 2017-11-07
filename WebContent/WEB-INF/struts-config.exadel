@@ -1,0 +1,2112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showIndex" NAME="action1"
+  PATH="/showIndex" SHAPE="32,129,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showIndex.jsp"
+   TARGET="page49" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#buyerLogin"
+  NAME="action2" PATH="/buyerLogin" SHAPE="32,241,0,0"
+  TITLE="buyerLoginForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showBuyerStart.do" TARGET="action0"
+   TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/buyer/showBuyerLoginFail.jsp"
+   TARGET="page43" TITLE="fail" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="admin"
+   NAME="forward2" PATH="/WEB-INF/jsp/admin/showAdminEnterPassword.jsp"
+   TARGET="page105" TITLE="admin" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerStart"
+  NAME="action0" PATH="/showBuyerStart" SHAPE="32,609,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerStart.jsp"
+   TARGET="page30" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="com.amandris.clients.util.exception.DataAccessErrorException"
+  NAME="exception0" PATH="/WEB-INF/jsp/common/showError.jsp"
+  SHAPE="32,721,0,0" TARGET="page2" TITLE="DataAccessErrorException" TYPE="exception"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="com.amandris.clients.util.exception.TranslateValueErrorException"
+  NAME="exception1" PATH="/WEB-INF/jsp/common/showError.jsp"
+  SHAPE="32,833,0,0" TARGET="page2" TITLE="TranslateValueErrorException" TYPE="exception"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerSellerSearch"
+  NAME="action3" PATH="/showBuyerSellerSearch" SHAPE="32,945,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerSellerSearch.jsp"
+   TARGET="page12" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showBuyerSellerCollection" NAME="action4"
+  PATH="/showBuyerSellerCollection" SHAPE="32,1169,0,0"
+  TITLE="buyerSellerSearchForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerSellerCollection.jsp"
+   TARGET="page4" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#buyerSellerSearchByLogin"
+  NAME="action5" PATH="/buyerSellerSearchByLogin" SHAPE="448,1057,0,0"
+  TITLE="searchByLoginForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showBuyerSellerCollection.do" TARGET="action4"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteSavedSearch"
+  NAME="action6" PATH="/deleteSavedSearch" SHAPE="48,1057,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerSellerSearch.jsp"
+   TARGET="page12" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#loadSavedSearch"
+  NAME="action7" PATH="/loadSavedSearch" SHAPE="48,1345,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerSellerSearch.jsp"
+   TARGET="page12" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="com.amandris.clients.util.exception.DataUpdateErrorException"
+  NAME="exception2" PATH="/WEB-INF/jsp/common/showError.jsp"
+  SHAPE="48,1345,0,0" TARGET="page2" TITLE="DataUpdateErrorException" TYPE="exception"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="com.amandris.clients.util.exception.DataDeleteErrorException"
+  NAME="exception3" PATH="/WEB-INF/jsp/common/showError.jsp"
+  SHAPE="48,1345,0,0" TARGET="page2" TITLE="DataDeleteErrorException" TYPE="exception"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSeller"
+  NAME="action8" PATH="/showSeller" SHAPE="32,1601,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showSeller.jsp"
+   TARGET="page3" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerContact"
+  NAME="action9" PATH="/showBuyerContact" SHAPE="32,497,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerContact.jsp"
+   TARGET="page0" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#buyerLogoff"
+  NAME="action10" PATH="/buyerLogoff" SHAPE="32,17,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showIndex.do" TARGET="action1" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerVote"
+  NAME="action11" PATH="/showBuyerVote" SHAPE="32,1889,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerVote.jsp"
+   TARGET="page16" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerGivenVote"
+  NAME="action12" PATH="/showBuyerGivenVote" SHAPE="32,2225,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerGivenVote.jsp"
+   TARGET="page9" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerMessage"
+  NAME="action13" PATH="/showBuyerMessage" SHAPE="32,385,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerMessage.jsp"
+   TARGET="page24" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerInvitation"
+  NAME="action14" PATH="/showBuyerInvitation" SHAPE="32,1441,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerInvitation.jsp"
+   TARGET="page11" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerMessageDetail"
+  NAME="action15" PATH="/showBuyerMessageDetail" SHAPE="32,1441,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerMessageDetail.jsp"
+   TARGET="page46" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="session" NAME="forward0"
+  PATH="/WEB-INF/jsp/common/showSessionFail.jsp" SHAPE="32,1441,0,0"
+  TARGET="page31" TITLE="session" TYPE="forward"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="fail" NAME="forward1"
+  PATH="/WEB-INF/jsp/common/showError.jsp" SHAPE="32,1649,0,0"
+  TARGET="page2" TITLE="fail" TYPE="forward"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteBuyerMessage"
+  NAME="action16" PATH="/deleteBuyerMessage" SHAPE="32,2433,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerMessage.jsp"
+   TARGET="page24" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#markBuyerMessageAsNew"
+  NAME="action17" PATH="/markBuyerMessageAsNew" SHAPE="32,241,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerMessage.jsp"
+   TARGET="page24" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteBuyerInvitation"
+  NAME="action18" PATH="/deleteBuyerInvitation" SHAPE="32,2545,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerInvitation.jsp"
+   TARGET="page11" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerCompatibility"
+  NAME="action19" PATH="/showBuyerCompatibility" SHAPE="32,1761,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerCompatibility.jsp"
+   TARGET="page13" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerContactDetail"
+  NAME="action20" PATH="/showBuyerContactDetail" SHAPE="32,1873,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerContactDetail.jsp"
+   TARGET="page8" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showBuyerSellerContactWays" NAME="action21"
+  PATH="/showBuyerSellerContactWays" SHAPE="32,1985,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerSellerContactWays.jsp"
+   TARGET="page15" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerStartContact"
+  NAME="action22" PATH="/showBuyerStartContact" SHAPE="32,2209,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerStartContact.jsp"
+   TARGET="page6" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerConfirmContact"
+  NAME="action23" PATH="/showBuyerConfirmContact" SHAPE="32,2321,0,0"
+  TITLE="startContactForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerConfirmContact.jsp"
+   TARGET="page17" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerContact"
+  NAME="action25" PATH="/setBuyerContact" SHAPE="32,2545,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showBuyerContact.do" TARGET="action9"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showBuyerSendContactMessage" NAME="action24"
+  PATH="/showBuyerSendContactMessage" SHAPE="32,2545,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerSendContactMessage.jsp"
+   TARGET="page18" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setBuyerSendContactMessage" NAME="action26"
+  PATH="/setBuyerSendContactMessage" SHAPE="48,1313,0,0"
+  TITLE="contactMessageForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerContactMessageSent.jsp"
+   TARGET="page19" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerVoteSeller"
+  NAME="action27" PATH="/showBuyerVoteSeller" SHAPE="32,2657,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerVoteSeller.jsp"
+   TARGET="page22" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerVoteSeller"
+  NAME="action29" PATH="/setBuyerVoteSeller" SHAPE="32,2097,0,0"
+  TITLE="voteForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerVoteSellerDone.jsp"
+   TARGET="page10" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteBuyerContact"
+  NAME="action28" PATH="/deleteBuyerContact" SHAPE="32,2769,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showBuyerContact.do" TARGET="action9"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerReplyVote"
+  NAME="action30" PATH="/showBuyerReplyVote" SHAPE="32,2769,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerReplyVote.jsp"
+   TARGET="page21" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerReplyVote"
+  NAME="action31" PATH="/setBuyerReplyVote" SHAPE="448,2786,0,0"
+  TITLE="replyVoteForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerReplyVoteDone.jsp"
+   TARGET="page45" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showOtherSellerVote"
+  NAME="action32" PATH="/showOtherSellerVote" SHAPE="32,2881,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showOtherSellerVote.jsp"
+   TARGET="page42" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showOtherSellerGivenVote"
+  NAME="action33" PATH="/showOtherSellerGivenVote" SHAPE="32,2993,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showOtherSellerGivenVote.jsp"
+   TARGET="page23" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showNewBuyerOne"
+  NAME="action34" PATH="/showNewBuyerOne" SHAPE="32,3105,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showNewBuyerOne.jsp"
+   TARGET="page1" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showNewBuyerTwo"
+  NAME="action35" PATH="/showNewBuyerTwo" SHAPE="32,3217,0,0"
+  TITLE="newBuyerForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showNewBuyerTwo.jsp"
+   TARGET="page14" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/buyer/showNewBuyerOne.jsp"
+   TARGET="page1" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showNewBuyerThree"
+  NAME="action36" PATH="/showNewBuyerThree" SHAPE="48,3361,0,0"
+  TITLE="newBuyerForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showNewBuyerThree.jsp"
+   TARGET="page27" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/buyer/showNewBuyerTwo.jsp"
+   TARGET="page14" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setNewBuyer"
+  NAME="action37" PATH="/setNewBuyer" SHAPE="32,3617,0,0"
+  TITLE="newBuyerForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showNewBuyerSaved.jsp"
+   TARGET="page28" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/buyer/showNewBuyerThree.jsp"
+   TARGET="page27" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setActivateBuyer"
+  NAME="action38" PATH="/setActivateBuyer" SHAPE="32,3873,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showNewBuyerActivated.jsp"
+   TARGET="page29" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerAccount"
+  NAME="action39" PATH="/showBuyerAccount" SHAPE="32,4097,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerAccount.jsp"
+   TARGET="page47" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerAccount"
+  NAME="action40" PATH="/setBuyerAccount" SHAPE="32,4321,0,0"
+  TITLE="buyerAccountForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp"
+   TARGET="page34" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/buyer/showBuyerAccount.jsp"
+   TARGET="page47" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerPassword"
+  NAME="action41" PATH="/showBuyerPassword" SHAPE="32,4657,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerPassword.jsp"
+   TARGET="page48" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerPassword"
+  NAME="action42" PATH="/setBuyerPassword" SHAPE="32,4545,0,0"
+  TITLE="buyerPasswordForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp"
+   TARGET="page34" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="presentPassword" NAME="forward1"
+   PATH="/WEB-INF/jsp/buyer/showBuyerPassword.jsp" TARGET="page48"
+   TITLE="presentPassword" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerProfile"
+  NAME="action43" PATH="/showBuyerProfile" SHAPE="48,4545,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerProfile.jsp"
+   TARGET="page32" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerProfile"
+  NAME="action44" PATH="/setBuyerProfile" SHAPE="512,4433,0,0"
+  TITLE="buyerProfileForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp"
+   TARGET="page34" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerPreferences"
+  NAME="action45" PATH="/showBuyerPreferences" SHAPE="48,4545,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerPreferences.jsp"
+   TARGET="page35" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerPreferences"
+  NAME="action46" PATH="/setBuyerPreferences" SHAPE="528,4433,0,0"
+  TITLE="buyerPreferencesForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp"
+   TARGET="page34" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerPictures"
+  NAME="action47" PATH="/showBuyerPictures" SHAPE="240,4113,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerPictures.jsp"
+   TARGET="page33" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerPicture"
+  NAME="action48" PATH="/setBuyerPicture" SHAPE="32,4097,0,0"
+  TITLE="pictureForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showBuyerPictures.do" TARGET="action47"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteBuyerPicture"
+  NAME="action49" PATH="/deleteBuyerPicture" SHAPE="240,4113,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showBuyerPictures.do" TARGET="action47"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setBuyerMarkAsMainPicture" NAME="action50"
+  PATH="/setBuyerMarkAsMainPicture" SHAPE="32,4321,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showBuyerPictures.do" TARGET="action47"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerSeePicture"
+  NAME="action51" PATH="/showBuyerSeePicture" SHAPE="32,4545,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerSeePicture.jsp"
+   TARGET="page36" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerCancelDate"
+  NAME="action52" PATH="/showBuyerCancelDate" SHAPE="32,5057,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerCancelDate.jsp"
+   TARGET="page20" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerCancelDate"
+  NAME="action53" PATH="/setBuyerCancelDate" SHAPE="448,5074,0,0"
+  TITLE="cancelDateForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerCancelDateCancelled.jsp"
+   TARGET="page39" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerBuyCredits"
+  NAME="action54" PATH="/showBuyerBuyCredits" SHAPE="32,5393,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerBuyCredits.jsp"
+   TARGET="page37" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerPayment"
+  NAME="action55" PATH="/showBuyerPayment" SHAPE="32,5729,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="paypal"
+   NAME="forward1" PATH="/WEB-INF/jsp/buyer/showBuyerPaymentPaypal.jsp"
+   TARGET="page142" TITLE="paypal" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="sms"
+   NAME="forward2" PATH="/WEB-INF/jsp/buyer/showBuyerPaymentSms.jsp"
+   TARGET="page147" TITLE="sms" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="creditCard"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerPaymentCreditCard.jsp"
+   TARGET="page150" TITLE="creditCard" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerPaymentDebug"
+  NAME="action56" PATH="/setBuyerPaymentDebug" SHAPE="32,6065,0,0"
+  TITLE="buyCreditsForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerPaymentDone.jsp"
+   TARGET="page41" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyer"
+  NAME="action57" PATH="/showBuyer" SHAPE="32,6513,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showBuyer.jsp"
+   TARGET="page5" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showOtherBuyerVote"
+  NAME="action58" PATH="/showOtherBuyerVote" SHAPE="32,6849,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showOtherBuyerVote.jsp"
+   TARGET="page25" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showOtherBuyerGivenVote"
+  NAME="action59" PATH="/showOtherBuyerGivenVote" SHAPE="32,6961,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showOtherBuyerGivenVote.jsp"
+   TARGET="page26" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerPay"
+  NAME="action60" PATH="/showBuyerPay" SHAPE="32,7297,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerPay.jsp"
+   TARGET="page40" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerPay"
+  NAME="action61" PATH="/setBuyerPay" SHAPE="32,6401,0,0"
+  TITLE="payForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerPayDone.jsp"
+   TARGET="page44" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showSellerProfilePictures" NAME="action62"
+  PATH="/showSellerProfilePictures" SHAPE="32,7633,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showSellerProfilePictures.jsp"
+   TARGET="page7" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  PATH="/WEB-INF/jsp/buyer/showNewBuyerOne.jsp" SHAPE="448,3105,0,0"
+  SUBTYPE="jsp" TITLE="showNewBuyerOne.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/showNewBuyerTwo.do" SUBTYPE="confirmed" TARGET="action35"
+   TITLE="/showNewBuyerTwo.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page14"
+  PATH="/WEB-INF/jsp/buyer/showNewBuyerTwo.jsp" SHAPE="240,3441,0,0"
+  SUBTYPE="jsp" TITLE="showNewBuyerTwo.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/showNewBuyerThree.do" SUBTYPE="confirmed" TARGET="action36"
+   TITLE="/showNewBuyerThree.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page27"
+  PATH="/WEB-INF/jsp/buyer/showNewBuyerThree.jsp" SHAPE="464,3361,0,0"
+  SUBTYPE="jsp" TITLE="showNewBuyerThree.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setNewBuyer.do" SUBTYPE="confirmed" TARGET="action37"
+   TITLE="/setNewBuyer.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page28"
+  PATH="/WEB-INF/jsp/buyer/showNewBuyerSaved.jsp" SHAPE="240,3729,0,0"
+  SUBTYPE="jsp" TITLE="showNewBuyerSaved.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page29"
+  PATH="/WEB-INF/jsp/buyer/showNewBuyerActivated.jsp"
+  SHAPE="240,3985,0,0" SUBTYPE="jsp" TITLE="showNewBuyerActivated.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page30"
+  PATH="/WEB-INF/jsp/buyer/showBuyerStart.jsp" SHAPE="240,721,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerStart.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0"
+  PATH="/WEB-INF/jsp/buyer/showBuyerContact.jsp" SHAPE="240,609,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerContact.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page8"
+  PATH="/WEB-INF/jsp/buyer/showBuyerContactDetail.jsp"
+  SHAPE="240,1985,0,0" SUBTYPE="jsp" TITLE="showBuyerContactDetail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page15"
+  PATH="/WEB-INF/jsp/buyer/showBuyerSellerContactWays.jsp"
+  SHAPE="448,1985,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerSellerContactWays.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page16"
+  PATH="/WEB-INF/jsp/buyer/showBuyerVote.jsp" SHAPE="240,2113,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerVote.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page9"
+  PATH="/WEB-INF/jsp/buyer/showBuyerGivenVote.jsp" SHAPE="240,2337,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerGivenVote.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page10"
+  PATH="/WEB-INF/jsp/buyer/showBuyerVoteSellerDone.jsp"
+  SHAPE="448,2209,0,0" SUBTYPE="jsp" TITLE="showBuyerVoteSellerDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page22"
+  PATH="/WEB-INF/jsp/buyer/showBuyerVoteSeller.jsp" SHAPE="448,2657,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerVoteSeller.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerVoteSeller.do" SUBTYPE="confirmed" TARGET="action29"
+   TITLE="/setBuyerVoteSeller.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page21"
+  PATH="/WEB-INF/jsp/buyer/showBuyerReplyVote.jsp" SHAPE="448,2881,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerReplyVote.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerReplyVote.do" SUBTYPE="confirmed" TARGET="action31"
+   TITLE="/setBuyerReplyVote.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page45"
+  PATH="/WEB-INF/jsp/buyer/showBuyerReplyVoteDone.jsp"
+  SHAPE="656,2898,0,0" SUBTYPE="jsp" TITLE="showBuyerReplyVoteDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page24"
+  PATH="/WEB-INF/jsp/buyer/showBuyerMessage.jsp" SHAPE="240,497,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerMessage.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page46"
+  PATH="/WEB-INF/jsp/buyer/showBuyerMessageDetail.jsp"
+  SHAPE="448,1441,0,0" SUBTYPE="jsp" TITLE="showBuyerMessageDetail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page11"
+  PATH="/WEB-INF/jsp/buyer/showBuyerInvitation.jsp" SHAPE="448,1553,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerInvitation.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page12"
+  PATH="/WEB-INF/jsp/buyer/showBuyerSellerSearch.jsp"
+  SHAPE="448,945,0,0" SUBTYPE="jsp" TITLE="showBuyerSellerSearch.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/showBuyerSellerCollection.do" SUBTYPE="confirmed"
+   TARGET="action4" TITLE="/showBuyerSellerCollection.do" TYPE="link"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link1"
+   PATH="/buyerSellerSearchByLogin.do" SUBTYPE="confirmed"
+   TARGET="action5" TITLE="/buyerSellerSearchByLogin.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page13"
+  PATH="/WEB-INF/jsp/buyer/showBuyerCompatibility.jsp"
+  SHAPE="240,1873,0,0" SUBTYPE="jsp" TITLE="showBuyerCompatibility.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  PATH="/WEB-INF/jsp/buyer/showBuyerSellerCollection.jsp"
+  SHAPE="240,1169,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerSellerCollection.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page6"
+  PATH="/WEB-INF/jsp/buyer/showBuyerStartContact.jsp"
+  SHAPE="448,2321,0,0" SUBTYPE="jsp" TITLE="showBuyerStartContact.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/showBuyerConfirmContact.do" SUBTYPE="confirmed"
+   TARGET="action23" TITLE="/showBuyerConfirmContact.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page17"
+  PATH="/WEB-INF/jsp/buyer/showBuyerConfirmContact.jsp"
+  SHAPE="448,2433,0,0" SUBTYPE="jsp" TITLE="showBuyerConfirmContact.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page18"
+  PATH="/WEB-INF/jsp/buyer/showBuyerSendContactMessage.jsp"
+  SHAPE="240,2657,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerSendContactMessage.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerSendContactMessage.do" SUBTYPE="confirmed"
+   TARGET="action26" TITLE="/setBuyerSendContactMessage.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page19"
+  PATH="/WEB-INF/jsp/buyer/showBuyerContactMessageSent.jsp"
+  SHAPE="256,1425,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerContactMessageSent.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page20"
+  PATH="/WEB-INF/jsp/buyer/showBuyerCancelDate.jsp" SHAPE="240,5169,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerCancelDate.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerCancelDate.do" SUBTYPE="confirmed" TARGET="action53"
+   TITLE="/setBuyerCancelDate.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page39"
+  PATH="/WEB-INF/jsp/buyer/showBuyerCancelDateCancelled.jsp"
+  SHAPE="656,5186,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerCancelDateCancelled.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page40"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPay.jsp" SHAPE="240,7409,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerPay.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerPay.do" SUBTYPE="confirmed" TARGET="action61"
+   TITLE="/setBuyerPay.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page44"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPayDone.jsp" SHAPE="240,6513,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerPayDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page47"
+  PATH="/WEB-INF/jsp/buyer/showBuyerAccount.jsp" SHAPE="448,4209,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerAccount.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerAccount.do" SUBTYPE="confirmed" TARGET="action40"
+   TITLE="/setBuyerAccount.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page34"
+  PATH="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp" SHAPE="240,4433,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerDataSaved.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page48"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPassword.jsp" SHAPE="448,4657,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerPassword.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerPassword.do" SUBTYPE="confirmed" TARGET="action42"
+   TITLE="/setBuyerPassword.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page32"
+  PATH="/WEB-INF/jsp/buyer/showBuyerProfile.jsp" SHAPE="256,4657,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerProfile.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerProfile.do" SUBTYPE="confirmed" TARGET="action44"
+   TITLE="/setBuyerProfile.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page35"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPreferences.jsp"
+  SHAPE="672,4545,0,0" SUBTYPE="jsp" TITLE="showBuyerPreferences.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerPreferences.do" SUBTYPE="confirmed" TARGET="action46"
+   TITLE="/setBuyerPreferences.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page33"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPictures.jsp" SHAPE="656,4113,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerPictures.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerPicture.do" SUBTYPE="confirmed" TARGET="action48"
+   TITLE="/setBuyerPicture.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page36"
+  PATH="/WEB-INF/jsp/buyer/showBuyerSeePicture.jsp" SHAPE="240,4881,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerSeePicture.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page37"
+  PATH="/WEB-INF/jsp/buyer/showBuyerBuyCredits.jsp" SHAPE="240,5505,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerBuyCredits.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page38"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPaymentDebug.jsp"
+  SHAPE="240,5841,0,0" SUBTYPE="jsp" TITLE="showBuyerPaymentDebug.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerPaymentDebug.do" SUBTYPE="confirmed" TARGET="action56"
+   TITLE="/setBuyerPaymentDebug.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page41"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPaymentDone.jsp"
+  SHAPE="240,6065,0,0" SUBTYPE="jsp" TITLE="showBuyerPaymentDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page43"
+  PATH="/WEB-INF/jsp/buyer/showBuyerLoginFail.jsp" SHAPE="240,241,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerLoginFail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  PATH="/WEB-INF/jsp/common/showError.jsp" SHAPE="448,721,0,0"
+  SUBTYPE="jsp" TITLE="showError.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page49"
+  PATH="/WEB-INF/jsp/common/showIndex.jsp" SHAPE="240,129,0,0"
+  SUBTYPE="jsp" TITLE="showIndex.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3"
+  PATH="/WEB-INF/jsp/common/showSeller.jsp" SHAPE="448,1713,0,0"
+  SUBTYPE="jsp" TITLE="showSeller.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page5"
+  PATH="/WEB-INF/jsp/common/showBuyer.jsp" SHAPE="448,6513,0,0"
+  SUBTYPE="jsp" TITLE="showBuyer.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page7"
+  PATH="/WEB-INF/jsp/common/showSellerProfilePictures.jsp"
+  SHAPE="240,7633,0,0" SUBTYPE="jsp"
+  TITLE="showSellerProfilePictures.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page42"
+  PATH="/WEB-INF/jsp/common/showOtherSellerVote.jsp"
+  SHAPE="240,2881,0,0" SUBTYPE="jsp" TITLE="showOtherSellerVote.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page23"
+  PATH="/WEB-INF/jsp/common/showOtherSellerGivenVote.jsp"
+  SHAPE="240,3105,0,0" SUBTYPE="jsp"
+  TITLE="showOtherSellerGivenVote.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page25"
+  PATH="/WEB-INF/jsp/common/showOtherBuyerVote.jsp" SHAPE="240,6849,0,0"
+  SUBTYPE="jsp" TITLE="showOtherBuyerVote.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page26"
+  PATH="/WEB-INF/jsp/common/showOtherBuyerGivenVote.jsp"
+  SHAPE="448,6961,0,0" SUBTYPE="jsp" TITLE="showOtherBuyerGivenVote.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page31"
+  PATH="/WEB-INF/jsp/common/showSessionFail.jsp" SHAPE="240,1665,0,0"
+  SUBTYPE="jsp" TITLE="showSessionFail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerProfilePictures"
+  NAME="action63" PATH="/showBuyerProfilePictures" SHAPE="32,7937,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showBuyerProfilePictures.jsp"
+   TARGET="page50" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page50"
+  PATH="/WEB-INF/jsp/common/showBuyerProfilePictures.jsp"
+  SHAPE="240,7954,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerProfilePictures.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#sellerLogin"
+  NAME="action64" PATH="/sellerLogin" SHAPE="32,8273,0,0"
+  TITLE="sellerLoginForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerStart.do" TARGET="action65"
+   TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/seller/showSellerLoginFail.jsp"
+   TARGET="page52" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerStart"
+  NAME="action65" PATH="/showSellerStart" SHAPE="256,8289,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerStart.jsp"
+   TARGET="page53" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page52"
+  PATH="/WEB-INF/jsp/seller/showSellerLoginFail.jsp"
+  SHAPE="448,8273,0,0" SUBTYPE="jsp" TITLE="showSellerLoginFail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page53"
+  PATH="/WEB-INF/jsp/seller/showSellerStart.jsp" SHAPE="672,8289,0,0"
+  SUBTYPE="jsp" TITLE="showSellerStart.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#sellerLogoff"
+  NAME="action66" PATH="/sellerLogoff" SHAPE="48,1537,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showIndex.do" TARGET="action1" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerMessage"
+  NAME="action67" PATH="/showSellerMessage" SHAPE="32,8641,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerMessage.jsp"
+   TARGET="page51" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page51"
+  PATH="/WEB-INF/jsp/seller/showSellerMessage.jsp" SHAPE="240,8658,0,0"
+  SUBTYPE="jsp" TITLE="showSellerMessage.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerMessageDetail"
+  NAME="action68" PATH="/showSellerMessageDetail" SHAPE="32,9089,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerMessageDetail.jsp"
+   TARGET="page54" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page54"
+  PATH="/WEB-INF/jsp/seller/showSellerMessageDetail.jsp"
+  SHAPE="240,9106,0,0" SUBTYPE="jsp" TITLE="showSellerMessageDetail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteSellerMessage"
+  NAME="action69" PATH="/deleteSellerMessage" SHAPE="32,8977,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerMessage.jsp"
+   TARGET="page51" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#markSellerMessageAsNew"
+  NAME="action70" PATH="/markSellerMessageAsNew" SHAPE="32,8753,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerMessage.jsp"
+   TARGET="page51" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerInvitation"
+  NAME="action71" PATH="/showSellerInvitation" SHAPE="32,9425,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerInvitation.jsp"
+   TARGET="page56" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page56"
+  PATH="/WEB-INF/jsp/seller/showSellerInvitation.jsp"
+  SHAPE="240,9537,0,0" SUBTYPE="jsp" TITLE="showSellerInvitation.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteSellerInvitation"
+  NAME="action72" PATH="/deleteSellerInvitation" SHAPE="32,9873,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerInvitation.jsp"
+   TARGET="page56" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerVote"
+  NAME="action73" PATH="/showSellerVote" SHAPE="32,10209,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerVote.jsp"
+   TARGET="page55" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page55"
+  PATH="/WEB-INF/jsp/seller/showSellerVote.jsp" SHAPE="240,10226,0,0"
+  SUBTYPE="jsp" TITLE="showSellerVote.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerGivenVote"
+  NAME="action74" PATH="/showSellerGivenVote" SHAPE="32,10321,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerGivenVote.jsp"
+   TARGET="page57" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page57"
+  PATH="/WEB-INF/jsp/seller/showSellerGivenVote.jsp"
+  SHAPE="240,10338,0,0" SUBTYPE="jsp" TITLE="showSellerGivenVote.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerReplyVote"
+  NAME="action75" PATH="/showSellerReplyVote" SHAPE="32,10657,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerReplyVote.jsp"
+   TARGET="page58" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page58"
+  PATH="/WEB-INF/jsp/seller/showSellerReplyVote.jsp"
+  SHAPE="240,10674,0,0" SUBTYPE="jsp" TITLE="showSellerReplyVote.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerReplyVote.do" SUBTYPE="confirmed" TARGET="action76"
+   TITLE="/setSellerReplyVote.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerReplyVote"
+  NAME="action76" PATH="/setSellerReplyVote" SHAPE="448,10674,0,0"
+  TITLE="replyVoteForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerReplyVoteDone.jsp"
+   TARGET="page59" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page59"
+  PATH="/WEB-INF/jsp/seller/showSellerReplyVoteDone.jsp"
+  SHAPE="656,10674,0,0" SUBTYPE="jsp"
+  TITLE="showSellerReplyVoteDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerBuyCredits"
+  NAME="action77" PATH="/showSellerBuyCredits" SHAPE="32,10993,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerBuyCredits.jsp"
+   TARGET="page60" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page60"
+  PATH="/WEB-INF/jsp/seller/showSellerBuyCredits.jsp"
+  SHAPE="240,11010,0,0" SUBTYPE="jsp" TITLE="showSellerBuyCredits.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerPayment"
+  NAME="action78" PATH="/showSellerPayment" SHAPE="32,11105,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="paypal"
+   NAME="forward1"
+   PATH="/WEB-INF/jsp/seller/showSellerPaymentPaypal.jsp"
+   TARGET="page143" TITLE="paypal" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="sms"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerPaymentSms.jsp"
+   TARGET="page153" TITLE="sms" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="creditCard"
+   NAME="forward2"
+   PATH="/WEB-INF/jsp/seller/showSellerPaymentCreditCard.jsp"
+   TARGET="page154" TITLE="creditCard" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page61"
+  PATH="/WEB-INF/jsp/seller/showSellerPaymentDebug.jsp"
+  SHAPE="240,11122,0,0" SUBTYPE="jsp" TITLE="showSellerPaymentDebug.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerPaymentDebug.do" SUBTYPE="confirmed"
+   TARGET="action79" TITLE="/setSellerPaymentDebug.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerPaymentDebug"
+  NAME="action79" PATH="/setSellerPaymentDebug" SHAPE="32,11217,0,0"
+  TITLE="buyCreditsForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerPaymentDone.jsp"
+   TARGET="page62" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page62"
+  PATH="/WEB-INF/jsp/seller/showSellerPaymentDone.jsp"
+  SHAPE="240,11234,0,0" SUBTYPE="jsp" TITLE="showSellerPaymentDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerContactDetail"
+  NAME="action80" PATH="/showSellerContactDetail" SHAPE="32,11553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerContactDetail.jsp"
+   TARGET="page63" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page63"
+  PATH="/WEB-INF/jsp/seller/showSellerContactDetail.jsp"
+  SHAPE="240,11570,0,0" SUBTYPE="jsp"
+  TITLE="showSellerContactDetail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerBuyerSearch"
+  NAME="action81" PATH="/showSellerBuyerSearch" SHAPE="32,11889,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerBuyerSearch.jsp"
+   TARGET="page65" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page65"
+  PATH="/WEB-INF/jsp/seller/showSellerBuyerSearch.jsp"
+  SHAPE="240,12001,0,0" SUBTYPE="jsp" TITLE="showSellerBuyerSearch.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/sellerBuyerSearchByLogin.do" SUBTYPE="confirmed"
+   TARGET="action82" TITLE="/sellerBuyerSearchByLogin.do" TYPE="link"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link1"
+   PATH="/showSellerBuyerCollection.do" SUBTYPE="confirmed"
+   TARGET="action83" TITLE="/showSellerBuyerCollection.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#sellerBuyerSearchByLogin"
+  NAME="action82" PATH="/sellerBuyerSearchByLogin" SHAPE="448,12001,0,0"
+  TITLE="searchByLoginForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerBuyerCollection.do"
+   TARGET="action83" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showSellerBuyerCollection" NAME="action83"
+  PATH="/showSellerBuyerCollection" SHAPE="448,12113,0,0"
+  TITLE="sellerBuyerSearchForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerBuyerCollection.jsp"
+   TARGET="page64" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page64"
+  PATH="/WEB-INF/jsp/seller/showSellerBuyerCollection.jsp"
+  SHAPE="656,12113,0,0" SUBTYPE="jsp"
+  TITLE="showSellerBuyerCollection.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showSellerSendContactMessage" NAME="action84"
+  PATH="/showSellerSendContactMessage" SHAPE="32,12481,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerSendContactMessage.jsp"
+   TARGET="page66" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page66"
+  PATH="/WEB-INF/jsp/seller/showSellerSendContactMessage.jsp"
+  SHAPE="240,12498,0,0" SUBTYPE="jsp"
+  TITLE="showSellerSendContactMessage.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerSendContactMessage.do" SUBTYPE="confirmed"
+   TARGET="action85" TITLE="/setSellerSendContactMessage.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setSellerSendContactMessage" NAME="action85"
+  PATH="/setSellerSendContactMessage" SHAPE="32,12593,0,0"
+  TITLE="contactMessageForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerContactMessageSent.jsp"
+   TARGET="page67" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page67"
+  PATH="/WEB-INF/jsp/seller/showSellerContactMessageSent.jsp"
+  SHAPE="240,12610,0,0" SUBTYPE="jsp"
+  TITLE="showSellerContactMessageSent.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showNewSellerOne"
+  NAME="action86" PATH="/showNewSellerOne" SHAPE="32,12929,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showNewSellerOne.jsp"
+   TARGET="page68" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page68"
+  PATH="/WEB-INF/jsp/seller/showNewSellerOne.jsp" SHAPE="256,12946,0,0"
+  SUBTYPE="jsp" TITLE="showNewSellerOne.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/showNewSellerTwo.do" SUBTYPE="confirmed" TARGET="action87"
+   TITLE="/showNewSellerTwo.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showNewSellerTwo"
+  NAME="action87" PATH="/showNewSellerTwo" SHAPE="32,13041,0,0"
+  TITLE="newSellerForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showNewSellerTwo.jsp"
+   TARGET="page69" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/seller/showNewSellerOne.jsp"
+   TARGET="page68" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page69"
+  PATH="/WEB-INF/jsp/seller/showNewSellerTwo.jsp" SHAPE="256,13058,0,0"
+  SUBTYPE="jsp" TITLE="showNewSellerTwo.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/showNewSellerThree.do" SUBTYPE="confirmed" TARGET="action88"
+   TITLE="/showNewSellerThree.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showNewSellerThree"
+  NAME="action88" PATH="/showNewSellerThree" SHAPE="464,13058,0,0"
+  TITLE="newSellerForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showNewSellerThree.jsp"
+   TARGET="page70" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/seller/showNewSellerTwo.jsp"
+   TARGET="page69" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page70"
+  PATH="/WEB-INF/jsp/seller/showNewSellerThree.jsp"
+  SHAPE="672,13058,0,0" SUBTYPE="jsp" TITLE="showNewSellerThree.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setNewSeller.do" SUBTYPE="confirmed" TARGET="action89"
+   TITLE="/setNewSeller.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setNewSeller"
+  NAME="action89" PATH="/setNewSeller" SHAPE="464,13409,0,0"
+  TITLE="newSellerForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showNewSellerSaved.jsp"
+   TARGET="page71" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/seller/showNewSellerThree.jsp"
+   TARGET="page70" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page71"
+  PATH="/WEB-INF/jsp/seller/showNewSellerSaved.jsp"
+  SHAPE="688,13426,0,0" SUBTYPE="jsp" TITLE="showNewSellerSaved.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setActivateSeller"
+  NAME="action90" PATH="/setActivateSeller" SHAPE="32,13521,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showNewSellerActivated.jsp"
+   TARGET="page72" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page72"
+  PATH="/WEB-INF/jsp/seller/showNewSellerActivated.jsp"
+  SHAPE="240,13538,0,0" SUBTYPE="jsp" TITLE="showNewSellerActivated.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerAccount"
+  NAME="action91" PATH="/showSellerAccount" SHAPE="32,13521,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerAccount.jsp"
+   TARGET="page73" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page73"
+  PATH="/WEB-INF/jsp/seller/showSellerAccount.jsp" SHAPE="240,13538,0,0"
+  SUBTYPE="jsp" TITLE="showSellerAccount.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerAccount.do" SUBTYPE="confirmed" TARGET="action108"
+   TITLE="/setSellerAccount.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerCalendar"
+  NAME="action92" PATH="/setSellerCalendar" SHAPE="32,13521,0,0"
+  TITLE="calendarForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerCalendarCreated.jsp"
+   TARGET="page83" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page74"
+  PATH="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"
+  SHAPE="240,13538,0,0" SUBTYPE="jsp" TITLE="showSellerDataSaved.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerPassword"
+  NAME="action93" PATH="/showSellerPassword" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerPassword.jsp"
+   TARGET="page75" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page75"
+  PATH="/WEB-INF/jsp/seller/showSellerPassword.jsp"
+  SHAPE="256,13570,0,0" SUBTYPE="jsp" TITLE="showSellerPassword.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerPassword.do" SUBTYPE="confirmed" TARGET="action94"
+   TITLE="/setSellerPassword.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerPassword"
+  NAME="action94" PATH="/setSellerPassword" SHAPE="32,13553,0,0"
+  TITLE="sellerPasswordForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput"
+   ID="presentPassword" NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerPassword.jsp" TARGET="page75"
+   TITLE="presentPassword" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward1" PATH="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"
+   TARGET="page74" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerProfile"
+  NAME="action95" PATH="/showSellerProfile" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerProfile.jsp"
+   TARGET="page77" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerProfile"
+  NAME="action96" PATH="/setSellerProfile" SHAPE="32,13553,0,0"
+  TITLE="sellerProfileForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"
+   TARGET="page74" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page77"
+  PATH="/WEB-INF/jsp/seller/showSellerProfile.jsp" SHAPE="240,13665,0,0"
+  SUBTYPE="jsp" TITLE="showSellerProfile.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerProfile.do" SUBTYPE="confirmed" TARGET="action96"
+   TITLE="/setSellerProfile.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerPreferences"
+  NAME="action97" PATH="/showSellerPreferences" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerPreferences.jsp"
+   TARGET="page76" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page76"
+  PATH="/WEB-INF/jsp/seller/showSellerPreferences.jsp"
+  SHAPE="240,13570,0,0" SUBTYPE="jsp" TITLE="showSellerPreferences.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerPreferences.do" SUBTYPE="confirmed" TARGET="action98"
+   TITLE="/setSellerPreferences.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerPreferences"
+  NAME="action98" PATH="/setSellerPreferences" SHAPE="32,13553,0,0"
+  TITLE="sellerPreferencesForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"
+   TARGET="page74" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerPictures"
+  NAME="action99" PATH="/showSellerPictures" SHAPE="240,13569,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerPictures.jsp"
+   TARGET="page78" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page78"
+  PATH="/WEB-INF/jsp/seller/showSellerPictures.jsp"
+  SHAPE="448,13554,0,0" SUBTYPE="jsp" TITLE="showSellerPictures.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link1"
+   PATH="/setSellerPicture.do" SUBTYPE="confirmed" TARGET="action100"
+   TITLE="/setSellerPicture.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerPicture"
+  NAME="action100" PATH="/setSellerPicture" SHAPE="32,13553,0,0"
+  TITLE="pictureForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerPictures.do" TARGET="action99"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteSellerPicture"
+  NAME="action101" PATH="/deleteSellerPicture" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerPictures.do" TARGET="action99"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setSellerMarkAsMainPicture" NAME="action102"
+  PATH="/setSellerMarkAsMainPicture" SHAPE="32,13665,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerPictures.do" TARGET="action99"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerSeePicture"
+  NAME="action103" PATH="/showSellerSeePicture" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerSeePicture.jsp"
+   TARGET="page79" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page79"
+  PATH="/WEB-INF/jsp/seller/showSellerSeePicture.jsp"
+  SHAPE="240,13570,0,0" SUBTYPE="jsp" TITLE="showSellerSeePicture.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerContact"
+  NAME="action104" PATH="/showSellerContact" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerContact.jsp"
+   TARGET="page80" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page80"
+  PATH="/WEB-INF/jsp/seller/showSellerContact.jsp" SHAPE="240,13570,0,0"
+  SUBTYPE="jsp" TITLE="showSellerContact.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showSellerStartInvitation" NAME="action105"
+  PATH="/showSellerStartInvitation" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerStartInvitation.jsp"
+   TARGET="page81" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page81"
+  PATH="/WEB-INF/jsp/seller/showSellerStartInvitation.jsp"
+  SHAPE="240,13570,0,0" SUBTYPE="jsp"
+  TITLE="showSellerStartInvitation.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerInvitation"
+  NAME="action106" PATH="/setSellerInvitation" SHAPE="32,9793,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerInvitation.do" TARGET="action71"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerCalendar"
+  NAME="action107" PATH="/showSellerCalendar" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerCalendar.jsp"
+   TARGET="page82" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page82"
+  PATH="/WEB-INF/jsp/seller/showSellerCalendar.jsp"
+  SHAPE="240,13570,0,0" SUBTYPE="jsp" TITLE="showSellerCalendar.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerCalendar.do" SUBTYPE="confirmed" TARGET="action92"
+   TITLE="/setSellerCalendar.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page83"
+  PATH="/WEB-INF/jsp/seller/showSellerCalendarCreated.jsp"
+  SHAPE="240,13745,0,0" SUBTYPE="jsp"
+  TITLE="showSellerCalendarCreated.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerAccount"
+  NAME="action108" PATH="/setSellerAccount" SHAPE="448,13650,0,0"
+  TITLE="sellerAccountForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"
+   TARGET="page74" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/seller/showSellerAccount.jsp"
+   TARGET="page73" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerEditCalendar"
+  NAME="action109" PATH="/showSellerEditCalendar" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerEditCalendar.jsp"
+   TARGET="page84" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page84"
+  PATH="/WEB-INF/jsp/seller/showSellerEditCalendar.jsp"
+  SHAPE="240,13570,0,0" SUBTYPE="jsp" TITLE="showSellerEditCalendar.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerEditCalendar"
+  NAME="action110" PATH="/setSellerEditCalendar" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerEditCalendar.jsp"
+   TARGET="page84" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerPromotion"
+  NAME="action111" PATH="/showSellerPromotion" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerPromotion.jsp"
+   TARGET="page85" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page85"
+  PATH="/WEB-INF/jsp/seller/showSellerPromotion.jsp"
+  SHAPE="240,13570,0,0" SUBTYPE="jsp" TITLE="showSellerPromotion.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerAddPromotion"
+  NAME="action112" PATH="/showSellerAddPromotion" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerAddPromotion.jsp"
+   TARGET="page86" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page86"
+  PATH="/WEB-INF/jsp/seller/showSellerAddPromotion.jsp"
+  SHAPE="240,13570,0,0" SUBTYPE="jsp" TITLE="showSellerAddPromotion.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showSellerAddPromotionConfirm" NAME="action113"
+  PATH="/showSellerAddPromotionConfirm" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerAddPromotionConfirm.jsp"
+   TARGET="page87" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page87"
+  PATH="/WEB-INF/jsp/seller/showSellerAddPromotionConfirm.jsp"
+  SHAPE="240,13570,0,0" SUBTYPE="jsp"
+  TITLE="showSellerAddPromotionConfirm.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerPromotion"
+  NAME="action114" PATH="/setSellerPromotion" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerPromotionSet.jsp"
+   TARGET="page88" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page88"
+  PATH="/WEB-INF/jsp/seller/showSellerPromotionSet.jsp"
+  SHAPE="240,13889,0,0" SUBTYPE="jsp" TITLE="showSellerPromotionSet.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerReplyContact"
+  NAME="action115" PATH="/showSellerReplyContact" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerReplyContact.jsp"
+   TARGET="page89" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page89"
+  PATH="/WEB-INF/jsp/seller/showSellerReplyContact.jsp"
+  SHAPE="656,13665,0,0" SUBTYPE="jsp" TITLE="showSellerReplyContact.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerReplyContact.do" SUBTYPE="confirmed"
+   TARGET="action116" TITLE="/setSellerReplyContact.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerReplyContact"
+  NAME="action116" PATH="/setSellerReplyContact" SHAPE="864,13665,0,0"
+  TITLE="sellerReplyContactForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerReplyContactDone.jsp"
+   TARGET="page91" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page91"
+  PATH="/WEB-INF/jsp/seller/showSellerReplyContactDone.jsp"
+  SHAPE="1072,13777,0,0" SUBTYPE="jsp"
+  TITLE="showSellerReplyContactDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteSellerContact"
+  NAME="action117" PATH="/deleteSellerContact" SHAPE="32,13553,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerContact.do" TARGET="action104"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerVoteBuyer"
+  NAME="action118" PATH="/showSellerVoteBuyer" SHAPE="240,2785,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerVoteBuyer.jsp"
+   TARGET="page90" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page90"
+  PATH="/WEB-INF/jsp/seller/showSellerVoteBuyer.jsp"
+  SHAPE="656,2785,0,0" SUBTYPE="jsp" TITLE="showSellerVoteBuyer.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerVoteBuyer.do" SUBTYPE="confirmed" TARGET="action119"
+   TITLE="/setSellerVoteBuyer.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerVoteBuyer"
+  NAME="action119" PATH="/setSellerVoteBuyer" SHAPE="32,2881,0,0"
+  TITLE="voteForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerVoteBuyerDone.jsp"
+   TARGET="page92" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page92"
+  PATH="/WEB-INF/jsp/seller/showSellerVoteBuyerDone.jsp"
+  SHAPE="240,3010,0,0" SUBTYPE="jsp" TITLE="showSellerVoteBuyerDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerMarkAsPay"
+  NAME="action120" PATH="/showSellerMarkAsPay" SHAPE="32,7633,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerMarkAsPay.jsp"
+   TARGET="page93" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page93"
+  PATH="/WEB-INF/jsp/seller/showSellerMarkAsPay.jsp"
+  SHAPE="240,7745,0,0" SUBTYPE="jsp" TITLE="showSellerMarkAsPay.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerMarkAsPay.do" SUBTYPE="confirmed" TARGET="action121"
+   TITLE="/setSellerMarkAsPay.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerMarkAsPay"
+  NAME="action121" PATH="/setSellerMarkAsPay" SHAPE="32,3105,0,0"
+  TITLE="payForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerMarkAsPayDone.jsp"
+   TARGET="page94" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page94"
+  PATH="/WEB-INF/jsp/seller/showSellerMarkAsPayDone.jsp"
+  SHAPE="240,3234,0,0" SUBTYPE="jsp" TITLE="showSellerMarkAsPayDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerCancelDate"
+  NAME="action122" PATH="/showSellerCancelDate" SHAPE="32,8081,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerCancelDate.jsp"
+   TARGET="page95" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page95"
+  PATH="/WEB-INF/jsp/seller/showSellerCancelDate.jsp"
+  SHAPE="240,8098,0,0" SUBTYPE="jsp" TITLE="showSellerCancelDate.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerCancelDate.do" SUBTYPE="confirmed" TARGET="action123"
+   TITLE="/setSellerCancelDate.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerCancelDate"
+  NAME="action123" PATH="/setSellerCancelDate" SHAPE="32,8193,0,0"
+  TITLE="cancelDateForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerCancelDateCancelled.jsp"
+   TARGET="page96" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page96"
+  PATH="/WEB-INF/jsp/seller/showSellerCancelDateCancelled.jsp"
+  SHAPE="240,8322,0,0" SUBTYPE="jsp"
+  TITLE="showSellerCancelDateCancelled.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerCompatibility"
+  NAME="action124" PATH="/showSellerCompatibility" SHAPE="32,8673,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerCompatibility.jsp"
+   TARGET="page98" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page98"
+  PATH="/WEB-INF/jsp/seller/showSellerCompatibility.jsp"
+  SHAPE="240,8785,0,0" SUBTYPE="jsp" TITLE="showSellerCompatibility.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerService"
+  NAME="action125" PATH="/showSellerService" SHAPE="32,9121,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerService.jsp"
+   TARGET="page97" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page97"
+  PATH="/WEB-INF/jsp/seller/showSellerService.jsp" SHAPE="240,9138,0,0"
+  SUBTYPE="jsp" TITLE="showSellerService.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerAddService"
+  NAME="action126" PATH="/showSellerAddService" SHAPE="32,9233,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerAddService.jsp"
+   TARGET="page99" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page99"
+  PATH="/WEB-INF/jsp/seller/showSellerAddService.jsp"
+  SHAPE="240,9250,0,0" SUBTYPE="jsp" TITLE="showSellerAddService.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerService.do" SUBTYPE="confirmed" TARGET="action127"
+   TITLE="/setSellerService.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerService"
+  NAME="action127" PATH="/setSellerService" SHAPE="32,9345,0,0"
+  TITLE="addServiceForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerService.do" TARGET="action125"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerEditService"
+  NAME="action128" PATH="/showSellerEditService" SHAPE="32,9681,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerEditService.jsp"
+   TARGET="page100" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page100"
+  PATH="/WEB-INF/jsp/seller/showSellerEditService.jsp"
+  SHAPE="240,9698,0,0" SUBTYPE="jsp" TITLE="showSellerEditService.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerEditService.do" SUBTYPE="confirmed"
+   TARGET="action129" TITLE="/setSellerEditService.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerEditService"
+  NAME="action129" PATH="/setSellerEditService" SHAPE="48,9121,0,0"
+  TITLE="editServiceForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerService.do" TARGET="action125"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerChangeCurrency"
+  NAME="action130" PATH="/showSellerChangeCurrency" SHAPE="32,10017,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerChangeCurrency.jsp"
+   TARGET="page101" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page101"
+  PATH="/WEB-INF/jsp/seller/showSellerChangeCurrency.jsp"
+  SHAPE="240,10034,0,0" SUBTYPE="jsp"
+  TITLE="showSellerChangeCurrency.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerChangeCurrency.do" SUBTYPE="confirmed"
+   TARGET="action131" TITLE="/setSellerChangeCurrency.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerChangeCurrency"
+  NAME="action131" PATH="/setSellerChangeCurrency" SHAPE="64,9121,0,0"
+  TITLE="changeCurrencyForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerService.do" TARGET="action125"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerParameter"
+  NAME="action132" PATH="/showSellerParameter" SHAPE="32,10353,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerParameter.jsp"
+   TARGET="page102" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page102"
+  PATH="/WEB-INF/jsp/seller/showSellerParameter.jsp"
+  SHAPE="240,10370,0,0" SUBTYPE="jsp" TITLE="showSellerParameter.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerParameter.do" SUBTYPE="confirmed" TARGET="action133"
+   TITLE="/setSellerParameter.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerParameter"
+  NAME="action133" PATH="/setSellerParameter" SHAPE="32,4577,0,0"
+  TITLE="sellerParameterForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"
+   TARGET="page74" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showCheckUserName"
+  NAME="action134" PATH="/showCheckUserName" SHAPE="32,10353,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showCheckUserName.jsp"
+   TARGET="page103" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page103"
+  PATH="/WEB-INF/jsp/common/showCheckUserName.jsp" SHAPE="240,10370,0,0"
+  SUBTYPE="jsp" TITLE="showCheckUserName.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page105"
+  PATH="/WEB-INF/jsp/admin/showAdminEnterPassword.jsp"
+  SHAPE="448,241,0,0" SUBTYPE="jsp" TITLE="showAdminEnterPassword.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/adminLogin.do" SUBTYPE="confirmed" TARGET="action135"
+   TITLE="/adminLogin.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#adminLogin"
+  NAME="action135" PATH="/adminLogin" SHAPE="656,241,0,0"
+  TITLE="adminLoginForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminStart.do" TARGET="action136"
+   TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/showIndex.do" TARGET="action1" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showAdminStart"
+  NAME="action136" PATH="/showAdminStart" SHAPE="864,241,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/admin/showAdminStart.jsp"
+   TARGET="page104" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page104"
+  PATH="/WEB-INF/jsp/admin/showAdminStart.jsp" SHAPE="1072,241,0,0"
+  SUBTYPE="jsp" TITLE="showAdminStart.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showAdminCensorBuyer"
+  NAME="action137" PATH="/showAdminCensorBuyer" SHAPE="32,10721,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/admin/showAdminCensorBuyer.jsp"
+   TARGET="page106" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page106"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorBuyer.jsp"
+  SHAPE="240,10738,0,0" SUBTYPE="jsp" TITLE="showAdminCensorBuyer.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorBuyerDetail" NAME="action138"
+  PATH="/showAdminCensorBuyerDetail" SHAPE="32,11057,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorBuyerDetail.jsp"
+   TARGET="page107" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page107"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorBuyerDetail.jsp"
+  SHAPE="240,11074,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorBuyerDetail.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setAdminCensorBuyer.do" SUBTYPE="confirmed" TARGET="action139"
+   TITLE="/setAdminCensorBuyer.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorSellerDetail" NAME="action140"
+  PATH="/showAdminCensorSellerDetail" SHAPE="32,11057,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorSellerDetail.jsp"
+   TARGET="page108" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setAdminCensorBuyer"
+  NAME="action139" PATH="/setAdminCensorBuyer" SHAPE="448,11074,0,0"
+  TITLE="adminCensorBuyerForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminCensorBuyer.do" TARGET="action137"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page108"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorSellerDetail.jsp"
+  SHAPE="448,11169,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorSellerDetail.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setAdminCensorSeller.do" SUBTYPE="confirmed"
+   TARGET="action141" TITLE="/setAdminCensorSeller.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setAdminCensorSeller"
+  NAME="action141" PATH="/setAdminCensorSeller" SHAPE="32,11505,0,0"
+  TITLE="adminCensorSellerForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminCensorSeller.do" TARGET="action142"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showAdminCensorSeller"
+  NAME="action142" PATH="/showAdminCensorSeller" SHAPE="240,11633,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/admin/showAdminCensorSeller.jsp"
+   TARGET="page109" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page109"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorSeller.jsp"
+  SHAPE="448,11633,0,0" SUBTYPE="jsp" TITLE="showAdminCensorSeller.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showFaq" NAME="action143"
+  PATH="/showFaq" SHAPE="32,11953,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showFaq.jsp"
+   TARGET="page110" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page110"
+  PATH="/WEB-INF/jsp/common/showFaq.jsp" SHAPE="240,11970,0,0"
+  SUBTYPE="jsp" TITLE="showFaq.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showAmandrisMessage"
+  NAME="action144" PATH="/showAmandrisMessage" SHAPE="32,12289,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showAmandrisMessage.jsp"
+   TARGET="page111" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page111"
+  PATH="/WEB-INF/jsp/common/showAmandrisMessage.jsp"
+  SHAPE="240,12450,0,0" SUBTYPE="jsp" TITLE="showAmandrisMessage.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setAmandrisMessage.do" SUBTYPE="confirmed" TARGET="action145"
+   TITLE="/setAmandrisMessage.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setAmandrisMessage"
+  NAME="action145" PATH="/setAmandrisMessage" SHAPE="32,12545,0,0"
+  TITLE="amandrisMessageForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showAmandrisMessageSent.jsp"
+   TARGET="page113" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page113"
+  PATH="/WEB-INF/jsp/common/showAmandrisMessageSent.jsp"
+  SHAPE="448,12545,0,0" SUBTYPE="jsp"
+  TITLE="showAmandrisMessageSent.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showWhatIsAmandris"
+  NAME="action146" PATH="/showWhatIsAmandris" SHAPE="32,12993,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showWhatIsAmandris.jsp"
+   TARGET="page112" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page112"
+  PATH="/WEB-INF/jsp/common/showWhatIsAmandris.jsp"
+  SHAPE="240,13010,0,0" SUBTYPE="jsp" TITLE="showWhatIsAmandris.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showBuyerSellerAvailabilitySearch" NAME="action147"
+  PATH="/showBuyerSellerAvailabilitySearch" SHAPE="32,13473,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerSellerAvailabilitySearch.jsp"
+   TARGET="page114" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page114"
+  PATH="/WEB-INF/jsp/buyer/showBuyerSellerAvailabilitySearch.jsp"
+  SHAPE="240,13490,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerSellerAvailabilitySearch.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/showBuyerSellerAvailabilityCollection.do" SUBTYPE="confirmed"
+   TARGET="action148" TITLE="/showBuyerSellerAvailabilityCollection.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showBuyerSellerAvailabilityCollection" NAME="action148"
+  PATH="/showBuyerSellerAvailabilityCollection" SHAPE="48,3393,0,0"
+  TITLE="buyerSellerAvailabilitySearchForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerSellerAvailabilityCollection.jsp"
+   TARGET="page115" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page115"
+  PATH="/WEB-INF/jsp/buyer/showBuyerSellerAvailabilityCollection.jsp"
+  SHAPE="256,3505,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerSellerAvailabilityCollection.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showAllMainSeller"
+  NAME="action149" PATH="/showAllMainSeller" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showAllMainSeller.jsp"
+   TARGET="page116" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page116"
+  PATH="/WEB-INF/jsp/common/showAllMainSeller.jsp" SHAPE="240,13602,0,0"
+  SUBTYPE="jsp" TITLE="showAllMainSeller.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerRecommend"
+  NAME="action150" PATH="/showSellerRecommend" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerRecommend.jsp"
+   TARGET="page117" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerRecommend"
+  NAME="action151" PATH="/showBuyerRecommend" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/buyer/showBuyerRecommend.jsp"
+   TARGET="page119" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page119"
+  PATH="/WEB-INF/jsp/buyer/showBuyerRecommend.jsp" SHAPE="240,13809,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerRecommend.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerRecommend.do" SUBTYPE="confirmed" TARGET="action152"
+   TITLE="/setBuyerRecommend.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerRecommend"
+  NAME="action152" PATH="/setBuyerRecommend" SHAPE="448,13921,0,0"
+  TITLE="recommendForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/buyer/showBuyerRecommendationSent.jsp"
+   TARGET="page118" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page117"
+  PATH="/WEB-INF/jsp/seller/showSellerRecommend.jsp"
+  SHAPE="448,13809,0,0" SUBTYPE="jsp" TITLE="showSellerRecommend.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerRecommend.do" SUBTYPE="confirmed" TARGET="action153"
+   TITLE="/setSellerRecommend.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page118"
+  PATH="/WEB-INF/jsp/buyer/showBuyerRecommendationSent.jsp"
+  SHAPE="656,13921,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerRecommendationSent.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerRecommend"
+  NAME="action153" PATH="/setSellerRecommend" SHAPE="32,13585,0,0"
+  TITLE="recommendForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerRecommendationSent.jsp"
+   TARGET="page120" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page120"
+  PATH="/WEB-INF/jsp/seller/showSellerRecommendationSent.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp"
+  TITLE="showSellerRecommendationSent.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerAlbum"
+  NAME="action154" PATH="/showSellerAlbum" SHAPE="240,13601,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/seller/showSellerAlbum.jsp"
+   TARGET="page121" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page121"
+  PATH="/WEB-INF/jsp/seller/showSellerAlbum.jsp" SHAPE="448,13586,0,0"
+  SUBTYPE="jsp" TITLE="showSellerAlbum.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerAlbumElement.do" SUBTYPE="confirmed"
+   TARGET="action155" TITLE="/setSellerAlbumElement.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerAlbumElement"
+  NAME="action155" PATH="/setSellerAlbumElement" SHAPE="32,13585,0,0"
+  TITLE="pictureForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerAlbum.do" TARGET="action154"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showSellerSeeAlbumPicture" NAME="action156"
+  PATH="/showSellerSeeAlbumPicture" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/seller/showSellerSeeAlbumPicture.jsp"
+   TARGET="page123" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page123"
+  PATH="/WEB-INF/jsp/seller/showSellerSeeAlbumPicture.jsp"
+  SHAPE="864,13585,0,0" SUBTYPE="jsp"
+  TITLE="showSellerSeeAlbumPicture.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#deleteSellerAlbumPicture"
+  NAME="action157" PATH="/deleteSellerAlbumPicture" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerAlbum.do" TARGET="action154"
+   TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showAlbum"
+  NAME="action158" PATH="/showAlbum" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showAlbum.jsp"
+   TARGET="page122" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page122"
+  PATH="/WEB-INF/jsp/common/showAlbum.jsp" SHAPE="240,13602,0,0"
+  SUBTYPE="jsp" TITLE="showAlbum.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSeeAlbumPicture"
+  NAME="action159" PATH="/showSeeAlbumPicture" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showSeeAlbumPicture.jsp"
+   TARGET="page124" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page124"
+  PATH="/WEB-INF/jsp/common/showSeeAlbumPicture.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp" TITLE="showSeeAlbumPicture.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showBuyerPasswordReset"
+  NAME="action160" PATH="/showBuyerPasswordReset" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showBuyerPasswordReset.jsp"
+   TARGET="page125" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page125"
+  PATH="/WEB-INF/jsp/common/showBuyerPasswordReset.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp" TITLE="showBuyerPasswordReset.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setBuyerPasswordResetSendEmail.do" SUBTYPE="confirmed"
+   TARGET="action161" TITLE="/setBuyerPasswordResetSendEmail.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setBuyerPasswordResetSendEmail" NAME="action161"
+  PATH="/setBuyerPasswordResetSendEmail" SHAPE="448,13714,0,0"
+  TITLE="passwordResetForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showPasswordResetEmailSent.jsp"
+   TARGET="page128" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1" PATH="/WEB-INF/jsp/common/showBuyerPasswordReset.jsp"
+   TARGET="page125" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setBuyerPasswordReset"
+  NAME="action162" PATH="/setBuyerPasswordReset" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showPasswordResetDone.jsp"
+   TARGET="page131" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerPasswordReset"
+  NAME="action163" PATH="/showSellerPasswordReset" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showSellerPasswordReset.jsp"
+   TARGET="page126" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page126"
+  PATH="/WEB-INF/jsp/common/showSellerPasswordReset.jsp"
+  SHAPE="256,13602,0,0" SUBTYPE="jsp"
+  TITLE="showSellerPasswordReset.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setSellerPasswordResetSendEmail.do" SUBTYPE="confirmed"
+   TARGET="action164" TITLE="/setSellerPasswordResetSendEmail.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setSellerPasswordResetSendEmail" NAME="action164"
+  PATH="/setSellerPasswordResetSendEmail" SHAPE="32,13585,0,0"
+  TITLE="passwordResetForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showPasswordResetEmailSent.jsp"
+   TARGET="page128" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1"
+   PATH="/WEB-INF/jsp/common/showSellerPasswordReset.jsp"
+   TARGET="page126" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setSellerPasswordReset"
+  NAME="action165" PATH="/setSellerPasswordReset" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showPasswordResetDone.jsp"
+   TARGET="page131" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page131"
+  PATH="/WEB-INF/jsp/common/showPasswordResetDone.jsp"
+  SHAPE="656,13809,0,0" SUBTYPE="jsp" TITLE="showPasswordResetDone.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page128"
+  PATH="/WEB-INF/jsp/common/showPasswordResetEmailSent.jsp"
+  SHAPE="1072,13714,0,0" SUBTYPE="jsp"
+  TITLE="showPasswordResetEmailSent.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showPictureRules"
+  NAME="action166" PATH="/showPictureRules" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showPictureRules.jsp"
+   TARGET="page127" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page127"
+  PATH="/WEB-INF/jsp/common/showPictureRules.jsp" SHAPE="240,13602,0,0"
+  SUBTYPE="jsp" TITLE="showPictureRules.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showPrivacyPolicy"
+  NAME="action167" PATH="/showPrivacyPolicy" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showPrivacyPolicy.jsp"
+   TARGET="page129" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page129"
+  PATH="/WEB-INF/jsp/common/showPrivacyPolicy.jsp" SHAPE="240,13602,0,0"
+  SUBTYPE="jsp" TITLE="showPrivacyPolicy.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showVoteRules"
+  NAME="action168" PATH="/showVoteRules" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showVoteRules.jsp"
+   TARGET="page130" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page130"
+  PATH="/WEB-INF/jsp/common/showVoteRules.jsp" SHAPE="240,13602,0,0"
+  SUBTYPE="jsp" TITLE="showVoteRules.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorVoteToBuyer" NAME="action169"
+  PATH="/showAdminCensorVoteToBuyer" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorVoteToBuyer.jsp"
+   TARGET="page132" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page132"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorVoteToBuyer.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorVoteToBuyer.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorVoteToSeller" NAME="action170"
+  PATH="/showAdminCensorVoteToSeller" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorVoteToSeller.jsp"
+   TARGET="page133" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page133"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorVoteToSeller.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorVoteToSeller.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorVoteToBuyerDetail" NAME="action171"
+  PATH="/showAdminCensorVoteToBuyerDetail" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorVoteToBuyerDetail.jsp"
+   TARGET="page134" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page134"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorVoteToBuyerDetail.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorVoteToBuyerDetail.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setAdminCensorVoteToBuyer.do" SUBTYPE="confirmed"
+   TARGET="action173" TITLE="/setAdminCensorVoteToBuyer.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorVoteToSellerDetail" NAME="action172"
+  PATH="/showAdminCensorVoteToSellerDetail" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorVoteToSellerDetail.jsp"
+   TARGET="page135" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page135"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorVoteToSellerDetail.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorVoteToSellerDetail.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/setAdminCensorVoteToSeller.do" SUBTYPE="confirmed"
+   TARGET="action174" TITLE="/setAdminCensorVoteToSeller.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setAdminCensorVoteToBuyer" NAME="action173"
+  PATH="/setAdminCensorVoteToBuyer" SHAPE="32,13585,0,0"
+  TITLE="adminCensorVoteForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminCensorVoteToBuyer.do"
+   TARGET="action169" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setAdminCensorVoteToSeller" NAME="action174"
+  PATH="/setAdminCensorVoteToSeller" SHAPE="32,13585,0,0"
+  TITLE="adminCensorVoteForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminCensorVoteToSeller.do"
+   TARGET="action170" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorBuyerPicture" NAME="action175"
+  PATH="/showAdminCensorBuyerPicture" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorBuyerPicture.jsp"
+   TARGET="page136" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page136"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorBuyerPicture.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorBuyerPicture.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorBuyerPictureDetail" NAME="action176"
+  PATH="/showAdminCensorBuyerPictureDetail" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorBuyerPictureDetail.jsp"
+   TARGET="page137" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page137"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorBuyerPictureDetail.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorBuyerPictureDetail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setAdminCensorBuyerPicture" NAME="action177"
+  PATH="/setAdminCensorBuyerPicture" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminCensorBuyerPicture.do"
+   TARGET="action175" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setAdminCensorSellerPicture" NAME="action178"
+  PATH="/setAdminCensorSellerPicture" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminCensorSellerPicture.do"
+   TARGET="action179" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorSellerPicture" NAME="action179"
+  PATH="/showAdminCensorSellerPicture" SHAPE="240,13601,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorSellerPicture.jsp"
+   TARGET="page138" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page138"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorSellerPicture.jsp"
+  SHAPE="656,13601,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorSellerPicture.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorSellerPictureDetail" NAME="action180"
+  PATH="/showAdminCensorSellerPictureDetail" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorSellerPictureDetail.jsp"
+   TARGET="page139" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page139"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorSellerPictureDetail.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorSellerPictureDetail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showNeedToRegister"
+  NAME="action181" PATH="/showNeedToRegister" SHAPE="32,13585,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showNeedToRegister.jsp"
+   TARGET="page140" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page140"
+  PATH="/WEB-INF/jsp/common/showNeedToRegister.jsp"
+  SHAPE="240,13602,0,0" SUBTYPE="jsp" TITLE="showNeedToRegister.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page141"
+  PATH="/WEB-INF/jsp/common/showError5.jsp" SHAPE="240,13602,0,0"
+  SUBTYPE="jsp" TITLE="showError5.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page142"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPaymentPaypal.jsp"
+  SHAPE="240,5729,0,0" SUBTYPE="jsp" TITLE="showBuyerPaymentPaypal.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setPaypalPaymentConfirmation" NAME="action182"
+  PATH="/setPaypalPaymentConfirmation" SHAPE="32,13617,0,0" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showPaypalPaymentConfirmation" NAME="action183"
+  PATH="/showPaypalPaymentConfirmation" SHAPE="32,13617,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showPaypalPaymentConfirmation.jsp"
+   TARGET="page144" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page144"
+  PATH="/WEB-INF/jsp/common/showPaypalPaymentConfirmation.jsp"
+  SHAPE="240,13634,0,0" SUBTYPE="jsp"
+  TITLE="showPaypalPaymentConfirmation.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page143"
+  PATH="/WEB-INF/jsp/seller/showSellerPaymentPaypal.jsp"
+  SHAPE="240,11329,0,0" SUBTYPE="jsp"
+  TITLE="showSellerPaymentPaypal.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorAlbumElement" NAME="action184"
+  PATH="/showAdminCensorAlbumElement" SHAPE="240,13665,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorAlbumElement.jsp"
+   TARGET="page145" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page145"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorAlbumElement.jsp"
+  SHAPE="448,13650,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorAlbumElement.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminCensorAlbumElementDetail" NAME="action185"
+  PATH="/showAdminCensorAlbumElementDetail" SHAPE="32,13649,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminCensorAlbumElementDetail.jsp"
+   TARGET="page146" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page146"
+  PATH="/WEB-INF/jsp/admin/showAdminCensorAlbumElementDetail.jsp"
+  SHAPE="240,13666,0,0" SUBTYPE="jsp"
+  TITLE="showAdminCensorAlbumElementDetail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setAdminCensorAlbumElement" NAME="action186"
+  PATH="/setAdminCensorAlbumElement" SHAPE="32,13649,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminCensorAlbumElement.do"
+   TARGET="action184" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page147"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPaymentSms.jsp" SHAPE="448,5729,0,0"
+  SUBTYPE="jsp" TITLE="showBuyerPaymentSms.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setSmsPaymentConfirmation" NAME="action187"
+  PATH="/setSmsPaymentConfirmation" SHAPE="32,13681,0,0" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showAdminReceivedMessage"
+  NAME="action188" PATH="/showAdminReceivedMessage" SHAPE="32,13681,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminReceivedMessage.jsp"
+   TARGET="page148" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page148"
+  PATH="/WEB-INF/jsp/admin/showAdminReceivedMessage.jsp"
+  SHAPE="240,13698,0,0" SUBTYPE="jsp"
+  TITLE="showAdminReceivedMessage.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showAdminReceivedMessageDetail" NAME="action189"
+  PATH="/showAdminReceivedMessageDetail" SHAPE="32,13681,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/admin/showAdminReceivedMessageDetail.jsp"
+   TARGET="page149" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page149"
+  PATH="/WEB-INF/jsp/admin/showAdminReceivedMessageDetail.jsp"
+  SHAPE="240,13698,0,0" SUBTYPE="jsp"
+  TITLE="showAdminReceivedMessageDetail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#deleteAdminReceivedMessage" NAME="action190"
+  PATH="/deleteAdminReceivedMessage" SHAPE="32,13681,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showAdminReceivedMessage.do"
+   TARGET="action188" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page150"
+  PATH="/WEB-INF/jsp/buyer/showBuyerPaymentCreditCard.jsp"
+  SHAPE="240,5953,0,0" SUBTYPE="jsp"
+  TITLE="showBuyerPaymentCreditCard.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#setCreditCardData"
+  NAME="action191" PATH="/setCreditCardData" SHAPE="32,13649,0,0" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#setCreditCardPaymentConfirmation" NAME="action192"
+  PATH="/setCreditCardPaymentConfirmation" SHAPE="32,13649,0,0" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem"
+  ID="#showCreditCardPaymentConfirmation" NAME="action193"
+  PATH="/showCreditCardPaymentConfirmation" SHAPE="32,13649,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0"
+   PATH="/WEB-INF/jsp/common/showCreditCardPaymentConfirmation.jsp"
+   TARGET="page151" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="fail"
+   NAME="forward1"
+   PATH="/WEB-INF/jsp/common/showCreditCardPaymentFail.jsp"
+   TARGET="page152" TITLE="fail" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page151"
+  PATH="/WEB-INF/jsp/common/showCreditCardPaymentConfirmation.jsp"
+  SHAPE="240,13985,0,0" SUBTYPE="jsp"
+  TITLE="showCreditCardPaymentConfirmation.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page152"
+  PATH="/WEB-INF/jsp/common/showCreditCardPaymentFail.jsp"
+  SHAPE="240,14097,0,0" SUBTYPE="jsp"
+  TITLE="showCreditCardPaymentFail.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page153"
+  PATH="/WEB-INF/jsp/seller/showSellerPaymentSms.jsp"
+  SHAPE="656,11105,0,0" SUBTYPE="jsp" TITLE="showSellerPaymentSms.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page154"
+  PATH="/WEB-INF/jsp/seller/showSellerPaymentCreditCard.jsp"
+  SHAPE="240,11441,0,0" SUBTYPE="jsp"
+  TITLE="showSellerPaymentCreditCard.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showUserTerms"
+  NAME="action194" PATH="/showUserTerms" SHAPE="32,13713,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/WEB-INF/jsp/common/showUserTerms.jsp"
+   TARGET="page155" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page155"
+  PATH="/WEB-INF/jsp/common/showUserTerms.jsp" SHAPE="240,13730,0,0"
+  SUBTYPE="jsp" TITLE="showUserTerms.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#showSellerMailActivation"
+  NAME="action195" PATH="/showSellerMailActivation" SHAPE="32,13713,0,0" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/showSellerService.do?activation=1"
+   TARGET="action125" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+</PROCESS>

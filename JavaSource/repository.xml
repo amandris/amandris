@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+     
+<!DOCTYPE descriptor-repository PUBLIC
+       "-//Apache Software Foundation//DTD OJB Repository//EN"
+       "repository.dtd">
+
+
+<descriptor-repository version="1.0" isolation-level="read-uncommitted">
+
+ <!-- include all used database connections -->
+ <!-- en produccion es root Locutus13 -->
+ <jdbc-connection-descriptor
+   		jcd-alias="default"
+   		default-connection="true"
+   		platform="MySQL"
+   		jdbc-level="2.0"
+   		driver="com.mysql.jdbc.Driver"
+   		protocol="jdbc"
+   		subprotocol="mysql"
+   		dbalias="//localhost:3306/amandris?autoReconnect=true"
+   		username="root"
+   		password="qwerty"  
+                eager-release="false"
+   		batch-mode="false"
+                useAutoCommit="2"
+                ignoreAutoCommitExceptions="true"
+     >
+
+        <connection-pool
+            maxActive="50"
+	    whenExhaustedAction="0"
+	    maxWait="30"
+	    maxIdle="10"
+	    timeBetweenEvictionRunsMillis="10000"
+	    minEvictableIdleTimeMillis="10000"
+
+            validationQuery="" />
+
+        <sequence-manager className="org.apache.ojb.broker.util.sequence.SequenceManagerHighLowImpl">
+            <attribute attribute-name="grabSize" attribute-value="20"/>
+            <attribute attribute-name="autoNaming" attribute-value="true"/>
+            <attribute attribute-name="globalSequenceId" attribute-value="false"/>
+            <attribute attribute-name="globalSequenceStart" attribute-value="10000"/>
+        </sequence-manager>
+   </jdbc-connection-descriptor>
+
+
+    <!-- include ojb internal mappings here -->
+    <class-descriptor
+   	  class="org.apache.ojb.broker.util.sequence.HighLowSequence"
+   	  table="OJB_HL_SEQ"
+   >
+      <field-descriptor
+         name="tableName"
+         column="TABLENAME"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+      />
+      <field-descriptor
+         name="fieldName"
+         column="FIELDNAME"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+      />
+      <field-descriptor
+         name="maxKey"
+         column="MAX_KEY"
+         jdbc-type="INTEGER"
+      />
+      <field-descriptor
+         name="grabSize"
+         column="GRAB_SIZE"
+         jdbc-type="INTEGER"
+      />
+      <field-descriptor
+         name="version"
+         column="VERSION"
+         jdbc-type="INTEGER"
+         locking="true"
+      />
+   </class-descriptor>
+
+
+<!-- The OJB Lock Table -->
+   <class-descriptor
+   	  class="org.apache.ojb.odmg.locking.LockEntry"
+   	  table="OJB_LOCKENTRY"
+   >
+      <field-descriptor
+         name="oidString"
+         column="OID_"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+      />
+      <field-descriptor
+         name="transactionId"
+         column="TX_ID"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+      />
+      <field-descriptor
+         name="timestamp"
+         column="TIMESTAMP_"
+         jdbc-type="BIGINT"
+      />
+      <field-descriptor
+         name="isolationLevel"
+         column="ISOLATIONLEVEL"
+         jdbc-type="INTEGER"
+      />
+      <field-descriptor
+         name="lockType"
+         column="LOCKTYPE"
+         jdbc-type="INTEGER"
+      />
+   </class-descriptor>
+
+
+<!-- THIS IS THE OJB NAMED ROOTS TABLE, DO NOT EDIT-->
+   <class-descriptor
+   	  class="org.apache.ojb.odmg.NamedRootsEntry"
+   	  table="OJB_NRM"
+   >
+      <field-descriptor
+         name="name"
+         column="NAME"
+         jdbc-type="VARCHAR"
+         primarykey="true"
+      />
+      <field-descriptor
+         name="oid"
+         column="OID_"
+         jdbc-type="LONGVARBINARY"
+      />
+   </class-descriptor>
+
+<!-- THIS IS THE OJB DLIST IMPLEMENTATION, DO NOT EDIT-->
+   <class-descriptor
+   	  class="org.apache.ojb.odmg.collections.DListImpl"
+   	  table="OJB_DLIST"
+   >
+      <field-descriptor
+         name="id"
+         column="ID"
+         jdbc-type="INTEGER"
+         primarykey="true"
+         autoincrement="true"
+      />
+      <field-descriptor
+         name="size"
+         column="SIZE_"
+         jdbc-type="INTEGER"
+      />
+      <collection-descriptor
+         name="elements"
+         element-class-ref="org.apache.ojb.odmg.collections.DListEntry"
+      >
+         <inverse-foreignkey field-ref="dlistId"/>
+      </collection-descriptor>
+   </class-descriptor>
+
+<!-- THIS IS THE OJB DLIST ENTRY IMPLEMENTATION, DO NOT EDIT-->
+   <class-descriptor
+      class="org.apache.ojb.odmg.collections.DListEntry"
+      table="OJB_DLIST_ENTRIES"
+   >
+      <field-descriptor
+         name="id"
+         column="ID"
+         jdbc-type="INTEGER"
+         primarykey="true"
+         autoincrement="true"
+      />
+      <field-descriptor
+         name="dlistId"
+         column="DLIST_ID"
+         jdbc-type="INTEGER"
+      />
+      <field-descriptor
+         name="position"
+         column="POSITION_"
+         jdbc-type="INTEGER"
+      />
+      <field-descriptor
+         name="oid"
+         column="OID_"
+         jdbc-type="LONGVARBINARY"
+         conversion="org.apache.ojb.broker.accesslayer.conversions.Object2ByteArrFieldConversion"
+      />
+   </class-descriptor>
+
+   <!-- THIS IS THE OJB DBAG IMPLEMENTATION, DO NOT EDIT-->
+   <class-descriptor
+   	  class="org.apache.ojb.odmg.collections.DBagImpl"
+   	  table="OJB_DLIST"
+   >
+      <field-descriptor
+         name="id"
+         column="ID"
+         jdbc-type="INTEGER"
+         primarykey="true"
+         autoincrement="true"
+      />
+      <field-descriptor
+         name="size"
+         column="SIZE_"
+         jdbc-type="INTEGER"
+      />
+      <collection-descriptor
+         name="elements"
+         element-class-ref="org.apache.ojb.odmg.collections.DListEntry"
+      >
+         <inverse-foreignkey field-ref="dlistId"/>
+      </collection-descriptor>
+   </class-descriptor>
+
+<!-- THIS IS THE OJB DSET IMPLEMENTATION, DO NOT EDIT-->
+   <class-descriptor
+   	  class="org.apache.ojb.odmg.collections.DSetImpl"
+   	  table="OJB_DSET"
+   >
+      <field-descriptor
+         name="id"
+         column="ID"
+         jdbc-type="INTEGER"
+         primarykey="true"
+         autoincrement="true"
+      />
+      <field-descriptor
+         name="size"
+         column="SIZE_"
+         jdbc-type="INTEGER"
+      />
+      <collection-descriptor
+         name="elements"
+         element-class-ref="org.apache.ojb.odmg.collections.DSetEntry"
+      >
+         <inverse-foreignkey field-ref="dlistId"/>
+      </collection-descriptor>
+   </class-descriptor>
+
+<!-- THIS IS THE OJB DSET ENTRY IMPLEMENTATION, DO NOT EDIT-->
+   <class-descriptor
+   	  class="org.apache.ojb.odmg.collections.DSetEntry"
+   	  table="OJB_DSET_ENTRIES"
+   >
+      <field-descriptor
+         name="id"
+         column="ID"
+         jdbc-type="INTEGER"
+         primarykey="true"
+         autoincrement="true"
+      />
+      <field-descriptor
+         name="dlistId"
+         column="DLIST_ID"
+         jdbc-type="INTEGER"
+      />
+      <field-descriptor
+         name="position"
+         column="POSITION_"
+         jdbc-type="INTEGER"
+      />
+      <field-descriptor
+         name="oid"
+         column="OID_"
+         jdbc-type="LONGVARBINARY"
+         conversion="org.apache.ojb.broker.accesslayer.conversions.Object2ByteArrFieldConversion"
+      />
+   </class-descriptor>
+
+<!-- THIS IS THE OJB DMAP IMPLEMENTATION, DO NOT EDIT-->
+   <class-descriptor
+   	  class="org.apache.ojb.odmg.collections.DMapImpl"
+   	  table="OJB_DMAP"
+   >
+      <field-descriptor
+         name="id"
+         column="ID"
+         jdbc-type="INTEGER"
+         primarykey="true"
+         autoincrement="true"
+      />
+      <field-descriptor
+         name="size"
+         column="SIZE_"
+         jdbc-type="INTEGER"
+      />
+      <collection-descriptor
+         name="entries"
+         element-class-ref="org.apache.ojb.odmg.collections.DMapEntry"
+         collection-class="org.apache.ojb.broker.util.collections.ManageableHashSet"
+      >
+         <inverse-foreignkey field-ref="dmapId"/>
+      </collection-descriptor>
+   </class-descriptor>
+
+<!-- THIS IS THE OJB DMAP ENTRY IMPLEMENTATION, DO NOT EDIT-->
+   <class-descriptor
+   	  class="org.apache.ojb.odmg.collections.DMapEntry"
+   	  table="OJB_DMAP_ENTRIES"
+   >
+      <field-descriptor
+         name="id"
+         column="ID"
+         jdbc-type="INTEGER"
+         primarykey="true"
+         autoincrement="true"
+      />
+      <field-descriptor
+         name="dmapId"
+         column="DMAP_ID"
+         jdbc-type="INTEGER"
+      />
+      <field-descriptor
+         name="keyOID"
+         column="KEY_OID"
+         jdbc-type="LONGVARBINARY"
+         conversion="org.apache.ojb.broker.accesslayer.conversions.Object2ByteArrFieldConversion"
+      />
+      <field-descriptor
+         name="valueOID"
+         column="VALUE_OID"
+         jdbc-type="LONGVARBINARY"
+         conversion="org.apache.ojb.broker.accesslayer.conversions.Object2ByteArrFieldConversion"
+      />
+   </class-descriptor>
+
+   <!-- include user defined mappings here -->
+   <class-descriptor class="com.amandris.clients.service.vo.AlbumElement" table="albumelement">
+	<field-descriptor name="id" 			column="id" 			jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId" 		column="sellerId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="mediaTypeConst"	column="mediaTypeConst"	jdbc-type="INTEGER"/>
+	<field-descriptor name="code" 			column="code" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="text" 			column="text" 			jdbc-type="VARCHAR"/>
+	<field-descriptor name="views" 			column="views" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="votes" 			column="votes" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="active" 		column="active" 		jdbc-type="INTEGER"/>
+    <reference-descriptor name="seller" 	class-ref="com.amandris.clients.service.vo.Seller" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+
+<class-descriptor class="com.amandris.clients.service.vo.AmandrisMessage" table="amandrismessage">
+	<field-descriptor name="id" 			column="id" 			jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="userId" 		column="userId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="userType" 		column="userType" 		jdbc-type="INTEGER"/>		
+	<field-descriptor name="date" 			column="date"	 		jdbc-type="TIMESTAMP"			conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="subject" 		column="subject" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="text" 			column="text" 			jdbc-type="VARCHAR"/>
+	<field-descriptor name="email" 			column="email" 			jdbc-type="VARCHAR"/>	
+	<field-descriptor name="isNew" 			column="isNew" 			jdbc-type="INTEGER"/>
+</class-descriptor>
+
+
+<class-descriptor class="com.amandris.clients.service.vo.Buyer" table="buyer">
+	<field-descriptor name="id" 							column="id" 							jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sexConst" 						column="sexConst" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="stateId" 						column="stateId" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="countryId" 						column="countryId" 						jdbc-type="INTEGER"/>	
+	<field-descriptor name="login" 							column="login" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="password" 						column="password" 						jdbc-type="VARCHAR"/>
+	<field-descriptor name="active" 						column="active" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="textActive" 					column="textActive" 					jdbc-type="INTEGER"/>	
+	<field-descriptor name="credits" 						column="credits" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="name" 							column="name" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="surname" 						column="surname" 						jdbc-type="VARCHAR"/>
+	<field-descriptor name="email" 							column="email" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="birthdate" 						column="birthdate" 						jdbc-type="DATE"			conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlDateFieldConversion"/>
+	<field-descriptor name="city" 							column="city" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="address1" 						column="address1" 						jdbc-type="VARCHAR"/>
+	<field-descriptor name="address2" 						column="address2" 						jdbc-type="VARCHAR"/>
+	<field-descriptor name="postalCode" 					column="postalCode" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="sendBulletin" 					column="sendBulletin" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="sendNews" 						column="sendNews" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="isPublic" 						column="isPublic" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="activationCode" 				column="activationCode" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="views" 							column="views" 							jdbc-type="INTEGER"/>
+	<field-descriptor name="intro" 							column="intro" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="text" 							column="text" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="preferredSexConst" 				column="preferredSexConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredAgeLow" 				column="preferredAgeLow" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredAgeHigh" 				column="preferredAgeHigh" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredPhysiqueConst"		 	column="preferredPhysiqueConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredSmokerConst" 			column="preferredSmokerConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredSkinColorConst" 		column="preferredSkinColorConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredHairColorConst" 		column="preferredHairColorConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredHairLengthConst" 		column="preferredHairLengthConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredBreastSizeConst" 		column="preferredBreastSizeConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredPennisSizeConst" 		column="preferredPennisSizeConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredEducationLevelConst" 	column="preferredEducationLevelConst" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredHeightConst" 			column="preferredHeightConst" 			jdbc-type="INTEGER"/>      
+	<field-descriptor name="preferredEyeColorConst" 		column="preferredEyeColorConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredOrientationConst" 		column="preferredOrientationConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredLanguageConst" 		column="preferredLanguageConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredText" 					column="preferredText" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="preferredOriginConst"	 		column="preferredOriginConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="heightConst" 					column="heightConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="physiqueConst" 					column="physiqueConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="originConst" 					column="originConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="smokerConst" 					column="smokerConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="language1Const" 				column="language1Const" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="language2Const" 				column="language2Const" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="language3Const" 				column="language3Const" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="orientationConst" 				column="orientationConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="educationLevelConst" 			column="educationLevelConst" 			jdbc-type="INTEGER"/>      
+	<field-descriptor name="skinColorConst" 				column="skinColorConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="eyeColorConst" 					column="eyeColorConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="hairColorConst" 				column="hairColorConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="hairLengthConst" 				column="hairLengthConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="breastSizeConst" 				column="breastSizeConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="pennisSizeConst" 				column="pennisSizeConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="paypalAccount" 					column="paypalAccount" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="phoneNumberSMS" 				column="phoneNumberSMS" 				jdbc-type="VARCHAR"/>    
+	<field-descriptor name="phoneNumberCall" 				column="phoneNumberCall" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="skypeAccount" 					column="skypeAccount" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="picture1" 						column="picture1" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="picture2" 						column="picture2"	 					jdbc-type="INTEGER"/>
+	<field-descriptor name="picture3"	 					column="picture3" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="picture4" 						column="picture4" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="picture5" 						column="picture5"						jdbc-type="INTEGER"/>
+	<field-descriptor name="picture1Waiting" 				column="picture1Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture2Waiting" 				column="picture2Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture3Waiting"				column="picture3Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture4Waiting" 				column="picture4Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture5Waiting" 				column="picture5Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="mainPicture" 					column="mainPicture"					jdbc-type="INTEGER"/>
+	<field-descriptor name="mainPictureCode" 				column="mainPictureCode"				jdbc-type="INTEGER"/>
+	<field-descriptor name="lastLogin" 						column="lastLogin"	 					jdbc-type="TIMESTAMP"			conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="isOnLine" 						column="isOnLine" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="hasPicture" 					column="hasPicture" 					jdbc-type="INTEGER"/>	
+	<field-descriptor name="contactsSent" 					column="contactsSent" 					jdbc-type="INTEGER"/>       
+	<field-descriptor name="contactsAccepted" 				column="contactsAccepted" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="contactsRejected" 				column="contactsRejected" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="contactsNotReplied"	 			column="contactsNotReplied" 			jdbc-type="INTEGER"/>       
+	<field-descriptor name="datesCanceled" 					column="datesCanceled" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="positiveVotes" 					column="positiveVotes" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="negativeVotes" 					column="negativeVotes" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="preferencesSaved" 				column="preferencesSaved" 				jdbc-type="INTEGER"/>  
+	<field-descriptor name="picturesSaved" 					column="picturesSaved" 					jdbc-type="INTEGER"/>  
+	<reference-descriptor name="state" 						class-ref="com.amandris.clients.service.vo.State"			auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="stateId" /></reference-descriptor>      
+	<reference-descriptor name="country" 					class-ref="com.amandris.clients.service.vo.Country"			auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="countryId"/></reference-descriptor>      
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.BuyerHistoricCredit" table="buyerhistoriccredit">
+	<field-descriptor name="id" 				column="id" 				jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="buyerId" 			column="buyerId" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="creditActionConst" 	column="creditActionConst" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="credits" 			column="credits" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="result" 			column="result" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 				column="date" 				jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<reference-descriptor name="buyer"			class-ref="com.amandris.clients.service.vo.Buyer" 			auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+</class-descriptor>
+   
+<class-descriptor class="com.amandris.clients.service.vo.BuyerHistoricLogin" table="buyerhistoriclogin">
+	<field-descriptor name="id" 		column="id" 		jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="buyerId" 	column="buyerId" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 		column="date" 		jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="isLogin" 	column="isLogin" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="ipAddress" 	column="ipAddress" 	jdbc-type="VARCHAR"/>
+	<reference-descriptor name="buyer"	class-ref="com.amandris.clients.service.vo.Buyer" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.BuyerMessage" table="buyermessage">
+	<field-descriptor name="id" 		column="id" 		jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="buyerId"	column="buyerId" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="sender" 	column="sender" 	jdbc-type="VARCHAR"/>
+	<field-descriptor name="active"		column="active" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="subject" 	column="subject"	jdbc-type="VARCHAR"/>	
+	<field-descriptor name="text" 		column="text" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="isHtml" 	column="isHtml" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="isNew" 		column="isNew" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 		column="date" 		jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<reference-descriptor name="buyer"	class-ref="com.amandris.clients.service.vo.Buyer" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.BuyerRecomendation" table="buyerrecomendation">
+	<field-descriptor name="id" 			column="id" 		jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="buyerId" 		column="buyerId" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="email" 			column="email" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="date" 			column="date" 		jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="used" 			column="used" 	jdbc-type="INTEGER"/>	
+	<reference-descriptor name="buyer"	class-ref="com.amandris.clients.service.vo.Buyer" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.BuyerSavedSearch" table="buyersavedsearch">
+	<field-descriptor name="id" 					column="id" 					jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="buyerId" 				column="buyerId" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="name" 					column="name" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="mySexConst" 			column="mySexConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="sexConst" 				column="sexConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="stateId" 				column="stateId" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="countryId" 				column="countryId" 				jdbc-type="INTEGER"/>	
+	<field-descriptor name="ageLow" 				column="ageLow" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="ageHigh" 				column="ageHigh" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="serviceConst" 			column="serviceConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="servicePricesHigh" 		column="servicePricesHigh" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="physiqueConst" 			column="physiqueConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="smokerConst" 			column="smokerConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="skinColorConst" 		column="skinColorConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="hairColorConst" 		column="hairColorConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="hairLengthConst" 		column="hairLengthConst" 		jdbc-type="INTEGER"/>	
+	<field-descriptor name="breastSizeConst" 		column="breastSizeConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="pennisSizeConst" 		column="pennisSizeConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="educationLevelConst" 	column="educationLevelConst" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="heightConst" 			column="heightConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="eyeColorConst" 			column="eyeColorConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="orientationConst" 		column="orientationConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="languageConst" 			column="languageConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="originConst" 			column="originConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="hasAlbum" 				column="hasAlbum" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="hasFreeContact" 		column="hasFreeContact" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="isOnLine" 				column="isOnLine" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="orderedBy" 				column="orderedBy" 				jdbc-type="VARCHAR"/>	
+	<field-descriptor name="itemsPerPage" 			column="itemsPerPage" 			jdbc-type="INTEGER"/>
+	<reference-descriptor name="buyer"		class-ref="com.amandris.clients.service.vo.Buyer" 	auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+	<reference-descriptor name="state"		class-ref="com.amandris.clients.service.vo.State" 	auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="stateId"/></reference-descriptor>
+	<reference-descriptor name="country"	class-ref="com.amandris.clients.service.vo.Country" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="countryId"/></reference-descriptor>	
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.Calendar" table="calendar">
+	<field-descriptor name="id" 				column="id" 				jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId" 			column="sellerId" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 				column="date" 				jdbc-type="TIMESTAMP"			 conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="hourStatusConst" 	column="hourStatusConst" 	jdbc-type="INTEGER"/>
+	<reference-descriptor name="seller"		class-ref="com.amandris.clients.service.vo.Seller" 		auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.Contact" table="contact">
+	<field-descriptor name="id" 					column="id" 					jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="buyerId" 				column="buyerId" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="sellerId" 				column="sellerId" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="serviceTypeConst" 		column="serviceTypeConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="sellerActive" 			column="sellerActive" 			jdbc-type="INTEGER"/>	
+	<field-descriptor name="buyerActive" 			column="buyerActive" 			jdbc-type="INTEGER"/>		
+	<field-descriptor name="price" 					column="price" 					jdbc-type="DOUBLE"/>
+	<field-descriptor name="currencyConst" 			column="currencyConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="contactDate" 			column="contactDate" 			jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="dateDate" 				column="dateDate" 				jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="messageStatusConst"		column="messageStatusConst"		jdbc-type="INTEGER"/>
+	<field-descriptor name="paymentStatusConst"	 	column="paymentStatusConst"	 	jdbc-type="INTEGER"/>
+	<field-descriptor name="buyerMadePayment"	 	column="buyerMadePayment"	 	jdbc-type="INTEGER"/>
+	<field-descriptor name="dateStatusConst" 		column="dateStatusConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="voteStatusConst" 		column="voteStatusConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="sellerVoteStatusConst" 	column="sellerVoteStatusConst" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="vote" 					column="vote" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="sellerVote" 			column="sellerVote" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="messageAnswer" 			column="messageAnswer" 			jdbc-type="VARCHAR"/>
+	<field-descriptor name="cancelDateText" 		column="cancelDateText" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="city" 					column="city" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="address1" 				column="address1" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="address2" 				column="address2" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="postalCode" 			column="postalCode" 			jdbc-type="VARCHAR"/>
+	<field-descriptor name="length" 				column="length" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="state" 					column="state" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="country" 				column="country" 				jdbc-type="VARCHAR"/>
+	<reference-descriptor name="buyer"				class-ref="com.amandris.clients.service.vo.Buyer" 			auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+	<reference-descriptor name="seller"				class-ref="com.amandris.clients.service.vo.Seller" 			auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.ContactMessage" table="contactmessage">
+	<field-descriptor name="id" 			column="id" 			jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="contactId" 		column="contactId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="text" 			column="text" 			jdbc-type="VARCHAR"/>
+	<field-descriptor name="date" 			column="date" 			jdbc-type="TIMESTAMP"			 conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="sentFromBuyer" 	column="sentFromBuyer"	jdbc-type="INTEGER"/>
+	<field-descriptor name="isNew" 			column="isNew" 			jdbc-type="INTEGER"/>
+	<reference-descriptor name="contact" class-ref="com.amandris.clients.service.vo.Contact" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="contactId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.Country" table="country">
+	<field-descriptor name="id" 	column="id" 	jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="text" 	column="text" 	jdbc-type="VARCHAR"/>
+	 <collection-descriptor
+         name="states"
+         element-class-ref="com.amandris.clients.service.vo.State"
+      >
+       <inverse-foreignkey field-ref="countryId"/>
+      </collection-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.Invitation" table="invitation">
+	<field-descriptor name="id" 				column="id" 				jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="buyerId" 			column="buyerId" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="sellerId" 			column="sellerId" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="buyerVisible" 		column="buyerVisible"		jdbc-type="INTEGER"/>	
+	<field-descriptor name="sellerVisible" 		column="sellerVisible"		jdbc-type="INTEGER"/>	
+	<field-descriptor name="text" 				column="text" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="isFreeContact" 		column="isFreeContact" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="freeContactUsed"	column="freeContactUsed" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 				column="date" 				jdbc-type="TIMESTAMP"			 conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>      
+	<field-descriptor name="expirationDate"	 column="expirationDate" jdbc-type="TIMESTAMP"			 conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>      
+	<reference-descriptor name="buyer" 	class-ref="com.amandris.clients.service.vo.Buyer" 	auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+	<reference-descriptor name="seller" class-ref="com.amandris.clients.service.vo.Seller" 	auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.Seller" table="seller">
+	<field-descriptor name="id" 							column="id" 							jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sexConst" 						column="sexConst" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="stateId" 						column="stateId"	 					jdbc-type="INTEGER"/>
+	<field-descriptor name="countryId" 						column="countryId"	 					jdbc-type="INTEGER"/>	
+	<field-descriptor name="login" 							column="login" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="password" 						column="password" 						jdbc-type="VARCHAR"/>
+	<field-descriptor name="active" 						column="active" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="textActive" 					column="textActive" 					jdbc-type="INTEGER"/>		
+	<field-descriptor name="credits" 						column="credits" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="name" 							column="name" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="surname" 						column="surname"	 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="email" 							column="email" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="birthdate" 						column="birthdate" 						jdbc-type="DATE"			conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlDateFieldConversion"/>
+	<field-descriptor name="address1" 						column="address1" 						jdbc-type="VARCHAR"/>
+	<field-descriptor name="address2" 						column="address2" 						jdbc-type="VARCHAR"/>
+	<field-descriptor name="city" 							column="city" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="hasMeetingPlace" 				column="hasMeetingPlace"				jdbc-type="INTEGER"/>
+	<field-descriptor name="postalCode"		 				column="postalCode" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="meetingCountry" 				column="meetingCountry" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="meetingState" 					column="meetingState" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="meetingAddress1"				column="meetingAddress1" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="meetingAddress2"				column="meetingAddress2" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="meetingCity" 					column="meetingCity" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="meetingPostalCode" 				column="meetingPostalCode" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="googleMapsUrl" 					column="googleMapsUrl" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="sendNews" 						column="sendNews" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="defaultCurrency" 				column="defaultCurrency" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="calendarPattern" 				column="calendarPattern" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="calendarPatternStartHour" 		column="calendarPatternStartHour" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="calendarPatternEndHour" 		column="calendarPatternEndHour" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="calendarPatternStartDay" 		column="calendarPatternStartDay" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="calendarPatternEndDay" 			column="calendarPatternEndDay" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="activationCode" 				column="activationCode" 				jdbc-type="VARCHAR"/>	
+	<field-descriptor name="views" 							column="views" 							jdbc-type="INTEGER"/>
+	<field-descriptor name="intro" 							column="intro" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="text" 							column="text" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="preferredSexConst"	 			column="preferredSexConst"	 			jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredAgeLow" 				column="preferredAgeLow" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredAgeHigh" 				column="preferredAgeHigh" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredPhysiqueConst" 		column="preferredPhysiqueConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredSmokerConst" 			column="preferredSmokerConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredSkinColorConst" 		column="preferredSkinColorConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredHairColorConst" 		column="preferredHairColorConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredHairLengthConst" 		column="preferredHairLengthConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredBreastSizeConst" 		column="preferredBreastSizeConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredPennisSizeConst" 		column="preferredPennisSizeConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredEducationLevelConst" 	column="preferredEducationLevelConst" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredHeightConst" 			column="preferredHeightConst" 			jdbc-type="INTEGER"/>      
+	<field-descriptor name="preferredEyeColorConst" 		column="preferredEyeColorConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredOrientationConst" 		column="preferredOrientationConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredLanguageConst" 		column="preferredLanguageConst" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="preferredText" 					column="preferredText" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="preferredOriginConst" 			column="preferredOriginConst" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="heightConst" 					column="heightConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="physiqueConst" 					column="physiqueConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="originConst" 					column="originConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="smokerConst" 					column="smokerConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="language1Const" 				column="language1Const" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="language2Const" 				column="language2Const" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="language3Const" 				column="language3Const" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="orientationConst" 				column="orientationConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="educationLevelConst" 			column="educationLevelConst" 			jdbc-type="INTEGER"/>      
+	<field-descriptor name="skinColorConst" 				column="skinColorConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="eyeColorConst" 					column="eyeColorConst" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="hairColorConst" 				column="hairColorConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="hairLengthConst" 				column="hairLengthConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="breastSizeConst" 				column="breastSizeConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="pennisSizeConst" 				column="pennisSizeConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="oralSex" 						column="oralSex" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="analSex" 						column="analSex" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="bdsm" 							column="bdsm" 							jdbc-type="INTEGER"/>
+	<field-descriptor name="inSellerHouse" 					column="inSellerHouse" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="inBuyerHouse" 					column="inBuyerHouse" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="inHotel" 						column="inHotel" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="inCar" 							column="inCar" 							jdbc-type="INTEGER"/>
+	<field-descriptor name="buyerPaysDisplacement" 			column="buyerPaysDisplacement"		 	jdbc-type="INTEGER"/>
+	<field-descriptor name="displacementPrize" 				column="displacementPrize"			 	jdbc-type="DOUBLE"/>
+	<field-descriptor name="paypalAccount" 					column="paypalAccount" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="phoneNumberSMS" 				column="phoneNumberSMS" 				jdbc-type="VARCHAR"/>    
+	<field-descriptor name="phoneNumberCall" 				column="phoneNumberCall" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="url" 							column="url" 							jdbc-type="VARCHAR"/>
+	<field-descriptor name="skypeAccount" 					column="skypeAccount" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="messengerAccount" 				column="messengerAccount" 				jdbc-type="VARCHAR"/>
+	<field-descriptor name="bankAccount" 					column="bankAccount" 					jdbc-type="VARCHAR"/>
+	<field-descriptor name="paymentBeforeDate" 				column="paymentBeforeDate" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="allowSms" 						column="allowSms" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="allowPhoneCall"	 				column="allowPhoneCall" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="allowUrl"	 					column="allowUrl" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="allowSkype" 					column="allowSkype" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="allowMessenger" 				column="allowMessenger" 				jdbc-type="INTEGER"/>	
+	<field-descriptor name="allowEmail" 					column="allowEmail" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="allowPaypalPayment" 			column="allowPaypalPayment" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="allowBankPayment" 				column="allowBankPayment" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture1" 						column="picture1" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="picture2" 						column="picture2"	 					jdbc-type="INTEGER"/>
+	<field-descriptor name="picture3"	 					column="picture3" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="picture4" 						column="picture4" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="picture5" 						column="picture5"						jdbc-type="INTEGER"/>
+	<field-descriptor name="picture1Waiting"				column="picture1Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture2Waiting"				column="picture2Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture3Waiting"				column="picture3Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture4Waiting"				column="picture4Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="picture5Waiting"				column="picture5Waiting"				jdbc-type="INTEGER"/>
+	<field-descriptor name="mainPicture" 					column="mainPicture"					jdbc-type="INTEGER"/>	
+	<field-descriptor name="mainPictureCode" 				column="mainPictureCode"				jdbc-type="INTEGER"/>	
+	<field-descriptor name="hasAlbum" 						column="hasAlbum" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="hasPicture" 					column="hasPicture" 					jdbc-type="INTEGER"/>		
+	<field-descriptor name="lastLogin" 						column="lastLogin" 						jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="isOnLine" 						column="isOnLine" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="isCalendarGenerated" 			column="isCalendarGenerated"			jdbc-type="INTEGER"/>	
+	<field-descriptor name="contactsReceived"	 			column="contactsReceived" 				jdbc-type="INTEGER"/>       
+	<field-descriptor name="contactsAccepted" 				column="contactsAccepted" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="contactsRejected" 				column="contactsRejected" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="contactsNotReplied" 			column="contactsNotReplied" 			jdbc-type="INTEGER"/>       
+	<field-descriptor name="datesCanceled" 					column="datesCanceled" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="positiveVotes" 					column="positiveVotes" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="negativeVotes" 					column="negativeVotes" 					jdbc-type="INTEGER"/> 
+	<field-descriptor name="freeContactsUntil" 				column="freeContactsUntil" 				jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="firstPlaceInSearchUntil"		column="firstPlaceInSearchUntil"		jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="servicesSaved" 					column="servicesSaved" 					jdbc-type="INTEGER"/> 
+	<field-descriptor name="parametersSaved" 				column="parametersSaved" 				jdbc-type="INTEGER"/> 
+	<field-descriptor name="preferencesSaved" 				column="preferencesSaved" 				jdbc-type="INTEGER"/> 
+	<field-descriptor name="picturesSaved" 					column="picturesSaved" 					jdbc-type="INTEGER"/>
+	<field-descriptor name="isEscort" 						column="isEscort" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="subscriptionUntil" 				column="subscriptionUntil" 				jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="promoCode" 						column="promoCode" 						jdbc-type="VARCHAR"/>	
+	<reference-descriptor name="state" 						class-ref="com.amandris.clients.service.vo.State" 			auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="stateId"/></reference-descriptor>      
+	<reference-descriptor name="country" 					class-ref="com.amandris.clients.service.vo.Country" 		auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="countryId"/></reference-descriptor>      	
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.SellerHistoricCredit" table="sellerhistoriccredit">
+	<field-descriptor name="id" 				column="id" 				jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId" 			column="sellerId" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="creditActionConst"	column="creditActionConst" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="credits" 			column="credits" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="result" 			column="result" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 				column="date" 				jdbc-type="TIMESTAMP"			 conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<reference-descriptor name="seller"			class-ref="com.amandris.clients.service.vo.Seller" 			auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+   
+<class-descriptor class="com.amandris.clients.service.vo.SellerHistoricLogin" table="sellerhistoriclogin">
+	<field-descriptor name="id" 		column="id" 		jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId"	column="sellerId"	jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 		column="date" 		jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="isLogin" 	column="isLogin" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="ipAddress" 	column="ipAddress" 	jdbc-type="VARCHAR"/>
+	<reference-descriptor name="seller"	class-ref="com.amandris.clients.service.vo.Seller" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.SellerMessage" table="sellermessage">
+	<field-descriptor name="id" 		column="id" 		jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId"	column="sellerId"	jdbc-type="INTEGER"/>
+	<field-descriptor name="sender" 	column="sender" 	jdbc-type="VARCHAR"/>
+	<field-descriptor name="active"		column="active" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="subject" 	column="subject"	jdbc-type="VARCHAR"/>	
+	<field-descriptor name="text" 		column="text" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="isHtml" 	column="isHtml" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="isNew" 		column="isNew" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 		column="date" 		jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<reference-descriptor name="seller"	class-ref="com.amandris.clients.service.vo.Seller" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.SellerPromotion" table="sellerpromotion">
+	<field-descriptor name="id" 				column="id" 			jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId" 			column="sellerId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="promotionConst" 	column="promotionConst"	jdbc-type="INTEGER"/>
+	<field-descriptor name="startDate" 			column="startDate" 		jdbc-type="TIMESTAMP"			 conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="endDate" 			column="endDate" 		jdbc-type="TIMESTAMP"			 conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<reference-descriptor name="seller"			class-ref="com.amandris.clients.service.vo.Seller" 		auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+
+<class-descriptor class="com.amandris.clients.service.vo.SellerRecomendation" table="sellerrecomendation">
+	<field-descriptor name="id" 		column="id" 		jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId" 	column="sellerId"	jdbc-type="INTEGER"/>
+	<field-descriptor name="email" 		column="email" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="date" 		column="date" 		jdbc-type="TIMESTAMP"		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<field-descriptor name="used" 		column="used" 		jdbc-type="INTEGER"/>		
+	<reference-descriptor name="seller"	class-ref="com.amandris.clients.service.vo.Seller" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.SellerService" table="sellerservice">
+	<field-descriptor name="id" 							column="id" 							jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId" 						column="sellerId" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="serviceTypeConst" 				column="serviceTypeConst" 				jdbc-type="INTEGER"/>
+	<field-descriptor name="sexConst" 						column="sexConst" 						jdbc-type="INTEGER"/>
+	<field-descriptor name="serviceFirstHourPrice" 			column="serviceFirstHourPrice" 			jdbc-type="DOUBLE"/>
+	<field-descriptor name="serviceAdditionalHoursPrice"	column="serviceAdditionalHoursPrice" 	jdbc-type="DOUBLE"/>
+	<field-descriptor name="currencyConst" 					column="currencyConst" 					jdbc-type="INTEGER"/>	
+	<field-descriptor name="toAsk" 							column="toAsk" 							jdbc-type="INTEGER"/>
+	<reference-descriptor name="seller"			class-ref="com.amandris.clients.service.vo.Seller" 		auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.State" table="state">
+	<field-descriptor name="id" 		column="id" 		jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="text" 		column="text" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="countryId"	column="countryId" 	jdbc-type="INTEGER"/>
+	<reference-descriptor name="country" class-ref="com.amandris.clients.service.vo.Country" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="countryId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.VoteToBuyer" table="votetobuyer">
+	<field-descriptor name="id" 			column="id" 			jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="sellerId"		column="sellerId"		jdbc-type="INTEGER"/>
+	<field-descriptor name="buyerId" 		column="buyerId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="contactId" 		column="contactId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="active" 		column="active" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="vote" 			column="vote" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="comment" 		column="comment" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="reply" 			column="reply" 			jdbc-type="VARCHAR"/>
+	<field-descriptor name="replyActive" 	column="replyActive" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 			column="date" 			jdbc-type="TIMESTAMP" 		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<reference-descriptor name="seller"		class-ref="com.amandris.clients.service.vo.Seller" 	auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+	<reference-descriptor name="buyer"		class-ref="com.amandris.clients.service.vo.Buyer" 	auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+	<reference-descriptor name="contact"	class-ref="com.amandris.clients.service.vo.Contact" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="contactId"/></reference-descriptor>
+</class-descriptor>
+
+<class-descriptor class="com.amandris.clients.service.vo.VoteToSeller" table="votetoseller">
+	<field-descriptor name="id" 			column="id" 			jdbc-type="INTEGER" 	primarykey="true" autoincrement="true"/>
+	<field-descriptor name="buyerId" 		column="buyerId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="sellerId" 		column="sellerId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="contactId" 		column="contactId" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="active" 		column="active" 		jdbc-type="INTEGER"/>
+	<field-descriptor name="vote" 			column="vote" 			jdbc-type="INTEGER"/>
+	<field-descriptor name="comment" 		column="comment" 		jdbc-type="VARCHAR"/>
+	<field-descriptor name="reply" 			column="reply" 			jdbc-type="VARCHAR"/>
+	<field-descriptor name="replyActive" 	column="replyActive" 	jdbc-type="INTEGER"/>
+	<field-descriptor name="date" 			column="date" 			jdbc-type="TIMESTAMP" 		conversion="org.apache.ojb.broker.accesslayer.conversions.JavaDate2SqlTimestampFieldConversion"/>
+	<reference-descriptor name="buyer"		class-ref="com.amandris.clients.service.vo.Buyer" 	auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="buyerId"/></reference-descriptor>
+	<reference-descriptor name="seller"		class-ref="com.amandris.clients.service.vo.Seller" 	auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="sellerId"/></reference-descriptor>
+	<reference-descriptor name="contact"	class-ref="com.amandris.clients.service.vo.Contact" auto-delete="false" auto-update="false" refresh="true"><foreignkey field-ref="contactId"/></reference-descriptor>
+</class-descriptor>
+
+
+</descriptor-repository>

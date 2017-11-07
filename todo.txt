@@ -1,0 +1,9 @@
+-Registro simplificado
+-Que se pueda logar aunque no este activo
+-Cookie de logado
+-Mejorar tag de pais provincia
+-Base de datos en tiempo real
+-Jobs (borrar calendario viejo, generar el nuevo, borrar promociones)
+-Generar calendario con Thread
+-Eliminar preferencias
+-Simplificar pedir cita

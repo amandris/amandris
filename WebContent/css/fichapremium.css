@@ -1,0 +1,258 @@
+/* Primero los cambios sobre la estructura general sobre todo de imagenes y colores de fondo */
+body {
+	background: #2a0217 url("../img/bg_pie_ficha.png") repeat-x fixed bottom left;
+	_background: #2a0217 url("../img/bg_body_bottom_ficha.gif") repeat-x fixed bottom left; }
+
+div#bodyheader {
+	background: #2a0217 url("../img/bg_body_top_ficha.gif") repeat-x top left;
+}
+#bg_pink {
+	background: #d5499a url("../img/top_bg_pink.jpg") no-repeat top left;
+	margin:0 3px;
+	padding:50px 7px 0 7px;
+	overflow:hidden;
+}
+.lightPink {
+ 	color:#f4cce3;
+}
+.darkGreen {
+	color:#227611;
+}
+#bg_pink h2 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
+	margin:0 0 16px 26px;
+}
+.white_box_body {
+	 padding:10px 26px;
+	 overflow:hidden;
+}
+.white_box_top {
+ padding:0 0 0 20px;
+}
+div#container div#content #bg_pink .white_box .white_box_body{
+	background: #fff url("../img/bg_body_box100_ficha.gif") repeat-y top left;
+}
+div#container div#content #bg_pink .white_box .white_box_top{
+	background: #fff url("../img/bg_top_box100_ficha.gif") no-repeat top left;
+	height:34px;
+}
+div#container div#content #bg_pink .white_box .white_box_bottom{
+	background: #fff url("../img/bg_bottom_box100_ficha.gif") no-repeat top left;
+	height:24px;
+}
+div#container div#content #bg_pink .col_izda {
+	width:340px;
+}
+div#container div#content #bg_pink .col_izda .white_box .white_box_body{
+	background: #fff url("../img/bg_body_boxizq_ficha.gif") repeat-y top left;
+}
+div#container div#content #bg_pink .col_izda .white_box .white_box_top{
+	background: #fff url("../img/bg_top_boxizq_ficha.gif") no-repeat top left;
+	height:34px;
+}
+div#container div#content #bg_pink .col_izda .white_box .white_box_bottom{
+	background: #fff url("../img/bg_bottom_boxizq_ficha.gif") no-repeat top left;
+	height:24px;
+}
+div#container div#content #bg_pink .col_dcha {
+	width:362px;
+}
+div#container div#content #bg_pink .col_dcha .white_box .white_box_body{
+	background: #fff url("../img/bg_body_boxdch_ficha.gif") repeat-y top left;
+}
+div#container div#content #bg_pink .col_dcha .white_box .white_box_top{
+	background: #fff url("../img/bg_top_boxdch_ficha.gif") no-repeat top left;
+	height:34px;
+}
+div#container div#content #bg_pink .col_dcha .white_box .white_box_bottom{
+	background: #fff url("../img/bg_bottom_boxdch_ficha.gif") no-repeat top left;
+	height:24px;
+}
+#bottom_bg_pink {
+	background: #FFF url("../img/bottom_bg_pink.jpg") no-repeat top left;
+	height:55px;
+	overflow:hidden;
+	margin:0 3px;
+}
+.transparent_box{
+ padding:21px 0 20px 20px;
+}
+
+.thumbs_list {
+	overflow:hidden;
+	height:1%;
+}
+.thumbs_list li{
+	float:left;
+	display:block;
+	height:71px;
+	width:54px;
+	padding:9px 12px 13px 10px;
+	background: transparent url("../img/bg_thumb.gif") no-repeat top left;
+	margin-right:2px;
+}
+
+.thumbs_list li a {
+	display:block;
+	height:71px;
+	width:54px;
+	overflow:hidden;
+} 
+
+dl {
+	overflow:hidden;
+	width:100%;
+	height:1%;
+	padding:20px 0;
+}
+dt, dd {
+	float:left;
+	display:block;
+}
+dt {
+	width:40%;
+}
+dd {
+	clear:right;
+	width:55%;
+}
+table {
+	width:100%;
+}
+#box_foto {
+	position:relative;
+}
+#box_foto #zoom{
+	position:absolute;
+	top:402px;
+	left:274px;
+}
+#box_contacto dl {
+	margin:0;
+	padding:0;
+}
+#box_contacto dt {
+	margin:0 10px 0 0;
+}
+#box_contacto dd {
+	font-size:16px;
+	font-weight:bold;
+	padding:6px 0 0 0;
+	width:245px;
+	height:24px;
+}
+#box_perfil {
+	margin-bottom:20px;
+}
+#box_perfil dl {
+	padding:0 0 26px 0;
+}
+#box_perfil dt {
+	margin:0 10px 0 0;
+	font-size:14px;
+	font-weight:bold;
+	width:60px;
+}
+#box_perfil dd {
+	font-size:14px;
+}
+#box_descripcion h4 {
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:20px;
+}
+#box_descripcion p {
+	font-size:12px;
+	margin-bottom:20px;
+}
+#box_descripcion dl {
+	padding:0 0 26px 0;
+}
+#box_descripcion dt {
+	margin:0 10px 0 0;
+	font-size:12px;
+	font-weight:bold;
+}
+#box_descripcion dd {
+	font-size:12px;
+}
+#box_precios table {
+	
+}
+#box_precios th, #box_precios td {
+	border:2px solid #FFF;
+}
+#box_precios th {
+	background:#FF0099 url(../img/bg_th.gif) repeat-x;
+	color:#FFF;
+	height:32px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:14px;
+	font-weight:bold;
+}
+#box_precios td {
+	text-align:center;
+	vertical-align:middle;
+	padding:8px 12px;
+	font-size:12px;
+	background:#fbadda;
+}
+#box_precios td.vheader {
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+	font-size:13px;
+	background:#e988c0;
+	width:90px;
+}
+
+/*TITULOS*/
+h3#tit_fotos {
+	width: 48px;
+	height: 23px;
+	background: transparent url(../img/titulos/tit_fotos.gif) no-repeat top left;
+	}
+h3#tit_contacto {
+	width: 76px;
+	height: 23px;
+	background: transparent url(../img/titulos/tit_contacto.gif) no-repeat top left;
+	}
+h3#tit_perfil {
+	width: 48px;
+	height: 26px;
+	background: transparent url(../img/titulos/tit_perfil.gif) no-repeat top left;
+	}
+	h3#tit_descripcion {
+	width: 94px;
+	height: 26px;
+	background: transparent url(../img/titulos/tit_descripcion.gif) no-repeat top left;
+	}
+h3#tit_precios {
+	width: 62px;
+	height: 23px;
+	background: transparent url(../img/titulos/tit_precios.gif) no-repeat top left;
+	}
+	
+	a#bt_pedircita {
+	width: 121px;
+	height: 38px;
+	background: transparent url(../img/botones/btn_pedircita.gif) no-repeat top left;
+	display:block;
+	}
+	#label_telf {
+	width: 30px;
+	height: 30px;
+	background: transparent url(../img/iconos/telf.gif) no-repeat top left;
+	}
+	#label_mail {
+	width: 30px;
+	height: 30px;
+	background: transparent url(../img/iconos/mail.gif) no-repeat top left;
+	}
+	#label_url {
+	width: 30px;
+	height: 30px;
+	background: transparent url(../img/iconos/url.gif) no-repeat top left;
+	}

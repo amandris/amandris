@@ -1,0 +1,86 @@
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri='/WEB-INF/struts-tiles.tld' prefix='tiles' %>
+
+<html:html locale="true">
+	<head>
+		<title><bean:message key="common.amandris"/></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<link rel="stylesheet" href="css/amandris.css" type="text/css">
+		<script language="javascript" src="javascript/javaScriptCode.js" type="text/javascript"></script>
+	</head>
+	<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
+			<tr>
+				<td>
+					<table align="center" cellpadding="0" cellspacing="0" border="0" >
+						<tr>
+							<td>
+								<tiles:get name='logoTile'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table cellpadding="0" cellspacing="2" border="0" >
+									<tr>
+										<td>
+											<logic:present name="sellerSession">
+												<tiles:get name='sellerMenuTile'/>
+											</logic:present>
+											<logic:present name="buyerSession">
+												<tiles:get name='buyerMenuTile'/>
+											</logic:present>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>		
+						<tr><td height="3"></td></tr>
+						<tr>
+							<td>
+								<table cellpadding="0" cellspacing="2" border="0" align="center">
+									<tr>
+										<td align="center">
+											<tiles:get name="body"/>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>	
+						<logic:notPresent name="buyerSession">
+							<logic:notPresent name="sellerSession">
+								<tr><td height="5"></td></tr>
+								<tr>
+									<td align="center">
+										<table width="700" cellpadding="0" cellspacing="0" border="0" >
+											<tiles:get name='footer1Tile'/>
+										</table>						
+									</td>
+								</tr>
+							</logic:notPresent>
+						</logic:notPresent>
+						<tr><td height="5"></td></tr>
+						<tr>
+							<td align="center">
+								<tiles:get name='footer2Tile'/>								
+							</td>
+						</tr>
+						<tr><td height="5"></td></tr>
+						<tr>
+							<td align="center">
+								<tiles:get name='footer3Tile'/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<script src="https://ssl.google-analytics.com/urchin.js" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+		_uacct = "UA-2846764-1";
+		urchinTracker();
+		</script>
+	</body>
+</html:html>

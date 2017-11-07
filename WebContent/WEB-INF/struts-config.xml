@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ <data-sources/>
+ <form-beans>
+  <form-bean name="buyerLoginForm" type="com.amandris.clients.web.form.LoginForm"/>
+  <form-bean name="sellerLoginForm" type="com.amandris.clients.web.form.LoginForm"/>
+  <form-bean name="adminLoginForm" type="com.amandris.clients.web.form.LoginForm"/>
+  <form-bean name="buyerSellerSearchForm" type="com.amandris.clients.web.form.BuyerSellerSearchForm"/>
+  <form-bean name="buyerSellerAvailabilitySearchForm" type="com.amandris.clients.web.form.BuyerSellerAvailabilitySearchForm"/>
+  <form-bean name="sellerBuyerSearchForm" type="com.amandris.clients.web.form.SellerBuyerSearchForm"/>
+  <form-bean name="searchByLoginForm" type="com.amandris.clients.web.form.SearchByLoginForm"/>
+  <form-bean name="startContactForm" type="com.amandris.clients.web.form.StartContactForm"/>
+  <form-bean name="contactMessageForm" type="com.amandris.clients.web.form.ContactMessageForm"/>
+  <form-bean name="voteForm" type="com.amandris.clients.web.form.VoteForm"/>
+  <form-bean name="replyVoteForm" type="com.amandris.clients.web.form.ReplyVoteForm"/>
+  <form-bean name="cancelDateForm" type="com.amandris.clients.web.form.CancelDateForm"/>
+  <form-bean name="newBuyerForm" type="com.amandris.clients.web.form.NewBuyerForm"/>
+  <form-bean name="newSellerForm" type="com.amandris.clients.web.form.NewSellerForm"/>
+  <form-bean name="buyerAccountForm" type="com.amandris.clients.web.form.BuyerAccountForm"/>
+  <form-bean name="sellerAccountForm" type="com.amandris.clients.web.form.SellerAccountForm"/>
+  <form-bean name="buyerPasswordForm" type="com.amandris.clients.web.form.BuyerPasswordForm"/>
+  <form-bean name="sellerPasswordForm" type="com.amandris.clients.web.form.SellerPasswordForm"/>
+  <form-bean name="buyerProfileForm" type="com.amandris.clients.web.form.BuyerProfileForm"/>
+  <form-bean name="sellerProfileForm" type="com.amandris.clients.web.form.SellerProfileForm"/>
+  <form-bean name="buyerPreferencesForm" type="com.amandris.clients.web.form.BuyerPreferencesForm"/>
+  <form-bean name="sellerPreferencesForm" type="com.amandris.clients.web.form.SellerPreferencesForm"/>
+  <form-bean name="sellerReplyContactForm" type="com.amandris.clients.web.form.SellerReplyContactForm"/>
+  <form-bean name="pictureForm" type="com.amandris.clients.web.form.PictureForm"/>
+  <form-bean name="buyCreditsForm" type="com.amandris.clients.web.form.BuyCreditsForm"/>
+  <form-bean name="payForm" type="com.amandris.clients.web.form.PayForm"/>
+  <form-bean name="calendarForm" type="com.amandris.clients.web.form.CalendarForm"/>
+  <form-bean name="addServiceForm" type="com.amandris.clients.web.form.AddServiceForm"/>
+  <form-bean name="editServiceForm" type="com.amandris.clients.web.form.EditServiceForm"/>
+  <form-bean name="changeCurrencyForm" type="com.amandris.clients.web.form.ChangeCurrencyForm"/>
+  <form-bean name="sellerParameterForm" type="com.amandris.clients.web.form.SellerParameterForm"/>
+  <form-bean name="amandrisMessageForm" type="com.amandris.clients.web.form.AmandrisMessageForm"/>
+  <form-bean name="recommendForm" type="com.amandris.clients.web.form.RecommendForm"/>
+  <form-bean name="passwordResetForm" type="com.amandris.clients.web.form.PasswordResetForm"/>
+  <form-bean name="adminCensorBuyerForm" type="com.amandris.clients.web.form.AdminCensorBuyerForm"/>
+  <form-bean name="adminCensorSellerForm" type="com.amandris.clients.web.form.AdminCensorSellerForm"/>
+  <form-bean name="adminCensorVoteForm" type="com.amandris.clients.web.form.AdminCensorVoteForm"/>
+  <form-bean name="adminSendMessageForm" type="com.amandris.clients.web.form.AdminSendMessageForm"/>
+  <form-bean name="adminEditBuyerForm" type="com.amandris.clients.web.form.AdminEditBuyerForm"/>
+  <form-bean name="adminEditSellerForm" type="com.amandris.clients.web.form.AdminEditSellerForm"/>
+ </form-beans>
+ <global-exceptions>
+  <exception key="error.read" path="/WEB-INF/jsp/common/showError.jsp"
+   scope="request" type="com.amandris.clients.util.exception.DataAccessErrorException"/>
+  <exception key="error.translate"
+   path="/WEB-INF/jsp/common/showError.jsp" scope="request" type="com.amandris.clients.util.exception.TranslateValueErrorException"/>
+  <exception key="error.update" path="/WEB-INF/jsp/common/showError.jsp"
+   scope="request" type="com.amandris.clients.util.exception.DataUpdateErrorException"/>
+  <exception key="error.delete" path="/WEB-INF/jsp/common/showError.jsp"
+   scope="request" type="com.amandris.clients.util.exception.DataDeleteErrorException"/>
+ </global-exceptions>
+ <global-forwards>
+  <forward name="session" path="/WEB-INF/jsp/common/showSessionFail.jsp"/>
+  <forward name="fail" path="/WEB-INF/jsp/common/showError.jsp"/>
+ </global-forwards>
+ <action-mappings>
+  <action path="/showIndex" scope="session"
+   type="com.amandris.clients.web.action.common.ShowIndexAction" validate="false">
+   <forward name="success" path="/index.jsp"/>
+  </action>
+  <action path="/showLoginBuyer" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showLoginBuyer.jsp"/>
+  </action>
+  <action path="/showLoginSeller" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showLoginSeller.jsp"/>
+  </action>
+  <action path="/showFaq" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showFaq.jsp"/>
+  </action>
+  <action path="/showNeedToRegister" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showNeedToRegister.jsp"/>
+  </action>
+  <action path="/showWhatIsAmandris" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showWhatIsAmandris.jsp"/>
+  </action>
+  <action path="/showPictureRules" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showPictureRules.jsp"/>
+  </action>
+  <action path="/showVoteRules" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showVoteRules.jsp"/>
+  </action>
+  <action path="/showPrivacyPolicy" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showPrivacyPolicy.jsp"/>
+  </action>
+  <action path="/showUserTerms" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showUserTerms.jsp"/>
+  </action>
+  <action path="/showCheckUserName" scope="session"
+   type="com.amandris.clients.web.action.common.ShowCheckUserNameAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showCheckUserName.jsp"/>
+  </action>
+  <action path="/showNewBuyerOne" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowNewBuyerOneAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showNewBuyerOne.jsp"/>
+  </action>
+  <action path="/showNewSellerPrevious" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showNewSellerPrevious.jsp"/>
+  </action>
+  <action path="/showSellerTypeTable" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerTypeTable.jsp"/>
+  </action>
+  <action path="/showNewSellerOne" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowNewSellerOneAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showNewSellerOne.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showNewBuyerOne.jsp"
+   name="newBuyerForm" path="/showNewBuyerTwo" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowNewBuyerTwoAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showNewBuyerTwo.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/buyer/showNewBuyerOne.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showNewSellerOne.jsp"
+   name="newSellerForm" path="/showNewSellerTwo" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowNewSellerTwoAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showNewSellerTwo.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/seller/showNewSellerOne.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showNewBuyerTwo.jsp"
+   name="newBuyerForm" path="/showNewBuyerThree" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowNewBuyerThreeAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showNewBuyerThree.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/buyer/showNewBuyerTwo.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showNewSellerTwo.jsp"
+   name="newSellerForm" path="/showNewSellerThree" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowNewSellerThreeAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showNewSellerThree.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/seller/showNewSellerTwo.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showNewBuyerThree.jsp"
+   name="newBuyerForm" path="/setNewBuyer" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetNewBuyerAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showNewBuyerSaved.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/buyer/showNewBuyerThree.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showNewSellerThree.jsp"
+   name="newSellerForm" path="/setNewSeller" scope="session"
+   type="com.amandris.clients.web.action.seller.SetNewSellerAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showNewSellerSaved.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/seller/showNewSellerThree.jsp"/>
+  </action>
+  <action path="/setActivateBuyer" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetActivateBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showNewBuyerActivated.jsp"/>
+  </action>
+  <action path="/setActivateSeller" scope="session"
+   type="com.amandris.clients.web.action.seller.SetActivateSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showNewSellerActivated.jsp"/>
+  </action>
+  <action path="/showSellerMailActivation" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerMailActivationAction" validate="false">
+   <forward name="success" path="/showSellerService.do?activation=1"/>
+  </action>
+  <action path="/showBuyerStart" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerStartAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerStart.jsp"/>
+  </action>
+  <action path="/showSellerStart" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerStartAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerStart.jsp"/>
+  </action>
+  <!-- 
+  <action path="/showBuyerRecommend" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerRecommendAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerRecommend.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerRecommend.jsp"
+   name="recommendForm" path="/setBuyerRecommend" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerRecommendAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerRecommendationSent.jsp"/>
+  </action>
+  <action path="/showSellerRecommend" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerRecommendAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerRecommend.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerRecommend.jsp"
+   name="recommendForm" path="/setSellerRecommend" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerRecommendAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerRecommendationSent.jsp"/>
+  </action>
+   -->
+  <action path="/showBuyerContact" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerContactAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerContact.jsp"/>
+  </action>
+  <action path="/showSellerContact" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerContactAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerContact.jsp"/>
+  </action>
+  <action path="/showBuyerContactDetail" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerContactDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerContactDetail.jsp"/>
+  </action>
+  <action path="/showSellerContactDetail" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerContactDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerContactDetail.jsp"/>
+  </action>
+  <action path="/showSellerReplyContact" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerReplyContactAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerReplyContact.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerReplyContact.jsp"
+   name="sellerReplyContactForm" path="/setSellerReplyContact"
+   scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerReplyContactAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerReplyContactDone.jsp"/>
+  </action>
+  <action path="/deleteBuyerContact" scope="session"
+   type="com.amandris.clients.web.action.buyer.DeleteBuyerContactAction" validate="false">
+   <forward name="success" path="/showBuyerContact.do"/>
+  </action>
+  <action path="/deleteSellerContact" scope="session"
+   type="com.amandris.clients.web.action.seller.DeleteSellerContactAction" validate="false">
+   <forward name="success" path="/showSellerContact.do"/>
+  </action>
+  <action path="/showBuyerSellerContactWays" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerSellerContactWaysAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSellerContactWays.jsp"/>
+  </action>
+  <action path="/showBuyerVote" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerVote.jsp"/>
+  </action>
+  <action path="/showSellerPromotion" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerPromotionAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerPromotion.jsp"/>
+  </action>
+  <action path="/showSellerAddPromotion" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerAddPromotionAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerAddPromotion.jsp"/>
+  </action>
+  <action path="/showSellerAddPromotionConfirm" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerAddPromotionConfirmAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerAddPromotionConfirm.jsp"/>
+  </action>
+  <action path="/setSellerPromotion" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerPromotionAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerPromotionSet.jsp"/>
+  </action>
+  <action path="/showSellerVote" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerVote.jsp"/>
+  </action>
+  <action path="/showBuyerGivenVote" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerGivenVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerGivenVote.jsp"/>
+  </action>
+  <action path="/showSellerGivenVote" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerGivenVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerGivenVote.jsp"/>
+  </action>
+  <action path="/showBuyerVoteSeller" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerVoteSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerVoteSeller.jsp"/>
+  </action>
+  <action path="/showSellerVoteBuyer" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerVoteBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerVoteBuyer.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerVoteBuyer.jsp"
+   name="voteForm" path="/setSellerVoteBuyer" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerVoteBuyerAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerVoteBuyerDone.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerVoteSeller.jsp"
+   name="voteForm" path="/setBuyerVoteSeller" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerVoteSellerAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerVoteSellerDone.jsp"/>
+  </action>
+  <action path="/showBuyerReplyVote" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerReplyVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerReplyVote.jsp"/>
+  </action>
+  <action path="/showSellerReplyVote" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerReplyVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerReplyVote.jsp"/>
+  </action>
+  <action path="/showOtherSellerVote" scope="session"
+   type="com.amandris.clients.web.action.common.ShowOtherSellerVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showOtherSellerVote.jsp"/>
+  </action>
+  <action path="/showOtherSellerGivenVote" scope="session"
+   type="com.amandris.clients.web.action.common.ShowOtherSellerGivenVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showOtherSellerGivenVote.jsp"/>
+  </action>
+  <action path="/showOtherBuyerVote" scope="session"
+   type="com.amandris.clients.web.action.common.ShowOtherBuyerVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showOtherBuyerVote.jsp"/>
+  </action>
+  <action path="/showOtherBuyerGivenVote" scope="session"
+   type="com.amandris.clients.web.action.common.ShowOtherBuyerGivenVoteAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showOtherBuyerGivenVote.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerReplyVote.jsp"
+   name="replyVoteForm" path="/setBuyerReplyVote" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerReplyVoteAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerReplyVoteDone.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerReplyVote.jsp"
+   name="replyVoteForm" path="/setSellerReplyVote" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerReplyVoteAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerReplyVoteDone.jsp"/>
+  </action>
+  <action path="/showBuyerMessage" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerMessageAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerMessage.jsp"/>
+  </action>
+  <action path="/showSellerMessage" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerMessageAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerMessage.jsp"/>
+  </action>
+  <action path="/showBuyerMessageDetail" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerMessageDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerMessageDetail.jsp"/>
+  </action>
+  <action path="/showSellerMessageDetail" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerMessageDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerMessageDetail.jsp"/>
+  </action>
+  <action path="/deleteBuyerMessage" scope="session"
+   type="com.amandris.clients.web.action.buyer.DeleteBuyerMessageAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerMessage.jsp"/>
+  </action>
+  <action path="/deleteSellerMessage" scope="session"
+   type="com.amandris.clients.web.action.seller.DeleteSellerMessageAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerMessage.jsp"/>
+  </action>
+  <action path="/markBuyerMessageAsNew" scope="session"
+   type="com.amandris.clients.web.action.buyer.MarkBuyerMessageAsNewAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerMessage.jsp"/>
+  </action>
+  <action path="/markSellerMessageAsNew" scope="session"
+   type="com.amandris.clients.web.action.seller.MarkSellerMessageAsNewAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerMessage.jsp"/>
+  </action>
+  <action path="/showBuyerInvitation" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerInvitationAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerInvitation.jsp"/>
+  </action>
+  <action path="/showSellerInvitation" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerInvitationAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerInvitation.jsp"/>
+  </action>
+  <action path="/deleteBuyerInvitation" scope="session"
+   type="com.amandris.clients.web.action.buyer.DeleteBuyerInvitationAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerInvitation.jsp"/>
+  </action>
+  <action path="/deleteSellerInvitation" scope="session"
+   type="com.amandris.clients.web.action.seller.DeleteSellerInvitationAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerInvitation.jsp"/>
+  </action>
+  <action path="/showBuyerSellerSearch" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerSellerSearchAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSellerSearch.jsp"/>
+  </action>
+  <action path="/showBuyerSellerAvailabilitySearch" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerSellerAvailabilitySearchAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSellerAvailabilitySearch.jsp"/>
+  </action>
+  <action path="/showSellerBuyerSearch" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerBuyerSearchAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerBuyerSearch.jsp"/>
+  </action>
+  <action path="/deleteSavedSearch" scope="session"
+   type="com.amandris.clients.web.action.buyer.DeleteSavedSearchAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSellerSearch.jsp"/>
+  </action>
+  <action path="/loadSavedSearch" scope="session"
+   type="com.amandris.clients.web.action.buyer.LoadSavedSearchAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSellerSearch.jsp"/>
+  </action>
+  <action path="/showSeller" scope="session"
+   type="com.amandris.clients.web.action.common.ShowSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showSeller.jsp"/>
+   <forward name="escort" path="/WEB-INF/jsp/escort/showEscort.jsp"/>
+  </action>
+  <action path="/showBuyer" scope="session"
+   type="com.amandris.clients.web.action.common.ShowBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showBuyer.jsp"/>
+  </action>
+  <action path="/showBuyerCompatibility" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerCompatibilityAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerCompatibility.jsp"/>
+  </action>
+  <action path="/showSellerCompatibility" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerCompatibilityAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerCompatibility.jsp"/>
+  </action>
+  <action name="buyerSellerSearchForm" path="/showBuyerSellerCollection"
+   scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerSellerCollectionAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSellerCollection.jsp"/>
+  </action>
+  <action
+   input="/WEB-INF/jsp/buyer/showBuyerSellerAvailabilitySearch.jsp"
+   name="buyerSellerAvailabilitySearchForm"
+   path="/showBuyerSellerAvailabilityCollection" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerSellerAvailabilityCollectionAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSellerAvailabilityCollection.jsp"/>
+  </action>
+  <action name="sellerBuyerSearchForm" path="/showSellerBuyerCollection"
+   scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerBuyerCollectionAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerBuyerCollection.jsp"/>
+  </action>
+  <action name="searchByLoginForm" path="/buyerSellerSearchByLogin"
+   scope="session"
+   type="com.amandris.clients.web.action.buyer.BuyerSellerSearchByLoginAction" validate="false">
+   <forward name="success" path="/showBuyerSellerCollection.do"/>
+  </action>
+  <action name="searchByLoginForm" path="/sellerBuyerSearchByLogin"
+   scope="session"
+   type="com.amandris.clients.web.action.seller.SellerBuyerSearchByLoginAction" validate="false">
+   <forward name="success" path="/showSellerBuyerCollection.do"/>
+  </action>
+  <action path="/showBuyerStartContact" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerStartContactAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerStartContact.jsp"/>
+  </action>
+  <action path="/showSellerStartInvitation" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerStartInvitationAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerStartInvitation.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerStartContact.jsp"
+   name="startContactForm" path="/showBuyerConfirmContact"
+   scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerConfirmContactAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerConfirmContact.jsp"/>
+  </action>
+  <action path="/setBuyerContact" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerContactAction" validate="false">
+   <forward name="success" path="/showBuyerContact.do"/>
+  </action>
+  <action path="/setSellerInvitation" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerInvitationAction" validate="false">
+   <forward name="success" path="/showSellerInvitation.do"/>
+  </action>
+  <action path="/showBuyerSendContactMessage" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerSendContactMessageAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSendContactMessage.jsp"/>
+  </action>
+  <action path="/showSellerSendContactMessage" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerSendContactMessageAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerSendContactMessage.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerSendContactMessage.jsp"
+   name="contactMessageForm" path="/setBuyerSendContactMessage"
+   scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerSendContactMessageAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerContactMessageSent.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerSendContactMessage.jsp"
+   name="contactMessageForm" path="/setSellerSendContactMessage"
+   scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerSendContactMessageAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerContactMessageSent.jsp"/>
+  </action>
+  <action path="/showBuyerCancelDate" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerCancelDateAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerCancelDate.jsp"/>
+  </action>
+  <action path="/showSellerCancelDate" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerCancelDateAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerCancelDate.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerCancelDate.jsp"
+   name="cancelDateForm" path="/setBuyerCancelDate" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerCancelDateAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerCancelDateCancelled.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerCancelDate.jsp"
+   name="cancelDateForm" path="/setSellerCancelDate" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerCancelDateAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerCancelDateCancelled.jsp"/>
+  </action>
+  <action path="/showBuyerPay" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerPayAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerPay.jsp"/>
+  </action>
+  <action path="/showSellerMarkAsPay" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerMarkAsPayAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerMarkAsPay.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerPay.jsp" name="payForm"
+   path="/setBuyerPay" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerPayAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerPayDone.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerMarkAsPay.jsp"
+   name="payForm" path="/setSellerMarkAsPay" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerMarkAsPayAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerMarkAsPayDone.jsp"/>
+  </action>
+  <action path="/showBuyerAccount" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerAccountAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerAccount.jsp"/>
+  </action>
+  <action path="/showSellerCalendar" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerCalendarAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerCalendar.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerCalendar.jsp"
+   name="calendarForm" path="/setSellerCalendar" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerCalendarAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerCalendarCreated.jsp"/>
+  </action>
+  <action path="/showSellerEditCalendar" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerEditCalendarAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerEditCalendar.jsp"/>
+  </action>
+  <action path="/setSellerEditCalendar" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerEditCalendarAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerEditCalendar.jsp"/>
+  </action>
+  <action path="/showSellerService" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerServiceAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerService.jsp"/>
+  </action>
+  <action path="/showSellerAddService" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerAddServiceAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerAddService.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerAddService.jsp"
+   name="addServiceForm" path="/setSellerService" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerServiceAction" validate="true">
+   <forward name="success" path="/showSellerService.do"/>
+  </action>
+  <action path="/showSellerEditService" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerEditServiceAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerEditService.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerEditService.jsp"
+   name="editServiceForm" path="/setSellerEditService" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerEditServiceAction" validate="true">
+   <forward name="success" path="/showSellerService.do"/>
+  </action>
+  <action path="/showSellerChangeCurrency" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerChangeCurrencyAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerChangeCurrency.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerChangeCurrency.jsp"
+   name="changeCurrencyForm" path="/setSellerChangeCurrency"
+   scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerChangeCurrencyAction" validate="false">
+   <forward name="success" path="/showSellerService.do"/>
+  </action>
+  <action path="/showSellerParameter" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerParameterAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerParameter.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerParameter.jsp"
+   name="sellerParameterForm" path="/setSellerParameter" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerParameterAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"/>
+  </action>
+  <action path="/showSellerAccount" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerAccountAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerAccount.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerAccount.jsp"
+   name="buyerAccountForm" path="/setBuyerAccount" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerAccountAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/buyer/showBuyerAccount.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerAccount.jsp"
+   name="sellerAccountForm" path="/setSellerAccount" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerAccountAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/seller/showSellerAccount.jsp"/>
+  </action>
+  <action path="/showBuyerPassword" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerPasswordAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerPassword.jsp"/>
+  </action>
+  <action path="/showSellerPassword" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerPasswordAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerPassword.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerPassword.jsp"
+   name="buyerPasswordForm" path="/setBuyerPassword" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerPasswordAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp"/>
+   <forward name="presentPassword" path="/WEB-INF/jsp/buyer/showBuyerPassword.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerPassword.jsp"
+   name="sellerPasswordForm" path="/setSellerPassword" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerPasswordAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"/>
+   <forward name="presentPassword" path="/WEB-INF/jsp/seller/showSellerPassword.jsp"/>
+  </action>
+  <action path="/showBuyerProfile" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerProfileAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerProfile.jsp"/>
+  </action>
+  <action path="/showSellerProfile" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerProfileAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerProfile.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerProfile.jsp"
+   name="buyerProfileForm" path="/setBuyerProfile" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerProfileAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerProfile.jsp"
+   name="sellerProfileForm" path="/setSellerProfile" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerProfileAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"/>
+  </action>
+  <action path="/showBuyerPreferences" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerPreferencesAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerPreferences.jsp"/>
+  </action>
+  <action path="/showSellerPreferences" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerPreferencesAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerPreferences.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerPreferences.jsp"
+   name="buyerPreferencesForm" path="/setBuyerPreferences"
+   scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerPreferencesAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerDataSaved.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerPreferences.jsp"
+   name="sellerPreferencesForm" path="/setSellerPreferences"
+   scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerPreferencesAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerDataSaved.jsp"/>
+  </action>
+  <action path="/showBuyerPictures" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerPicturesAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerPictures.jsp"/>
+  </action>
+  <action path="/showSellerAlbum" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerAlbumAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerAlbum.jsp"/>
+  </action>
+  <action path="/showAlbum" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAlbumAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showAlbum.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerAlbum.jsp"
+   name="pictureForm" path="/setSellerAlbumElement" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerAlbumElementAction" validate="true">
+   <forward name="success" path="/showSellerAlbum.do"/>
+  </action>
+  <action path="/showSellerSeeAlbumPicture" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerSeeAlbumPictureAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerSeeAlbumPicture.jsp"/>
+  </action>
+  <action path="/showSeeAlbumPicture" scope="session"
+   type="com.amandris.clients.web.action.common.ShowSeeAlbumPictureAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showSeeAlbumPicture.jsp"/>
+  </action>
+  <action path="/deleteSellerAlbumPicture" scope="session"
+   type="com.amandris.clients.web.action.seller.DeleteSellerAlbumPictureAction" validate="false">
+   <forward name="success" path="/showSellerAlbum.do"/>
+  </action>
+  <action path="/showSellerPictures" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerPicturesAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerPictures.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showBuyerPictures.jsp"
+   name="pictureForm" path="/setBuyerPicture" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerPictureAction" validate="true">
+   <forward name="success" path="/showBuyerPictures.do"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerPictures.jsp"
+   name="pictureForm" path="/setSellerPicture" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerPictureAction" validate="true">
+   <forward name="success" path="/showSellerPictures.do"/>
+  </action>
+  <action path="/deleteBuyerPicture" scope="session"
+   type="com.amandris.clients.web.action.buyer.DeleteBuyerPictureAction" validate="false">
+   <forward name="success" path="/showBuyerPictures.do"/>
+  </action>
+  <action path="/deleteSellerPicture" scope="session"
+   type="com.amandris.clients.web.action.seller.DeleteSellerPictureAction" validate="false">
+   <forward name="success" path="/showSellerPictures.do"/>
+  </action>
+  <action path="/setBuyerMarkAsMainPicture" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerMarkAsMainPictureAction" validate="false">
+   <forward name="success" path="/showBuyerPictures.do"/>
+  </action>
+  <action path="/setSellerMarkAsMainPicture" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerMarkAsMainPictureAction" validate="false">
+   <forward name="success" path="/showSellerPictures.do"/>
+  </action>
+  <action path="/showBuyerSeePicture" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerSeePictureAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerSeePicture.jsp"/>
+  </action>
+  <action path="/showSellerSeePicture" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerSeePictureAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerSeePicture.jsp"/>
+  </action>
+  <!-- 
+  <action path="/showBuyerBuyCredits" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerBuyCreditsAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerBuyCredits.jsp"/>
+  </action>
+  <action path="/showSellerBuyCredits" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerBuyCreditsAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerBuyCredits.jsp"/>
+  </action>
+  <action path="/showBuyerPayment" scope="session"
+   type="com.amandris.clients.web.action.buyer.ShowBuyerPaymentAction" validate="false">
+   <forward name="paypal" path="/WEB-INF/jsp/buyer/showBuyerPaymentPaypal.jsp"/>
+   <forward name="sms" path="/WEB-INF/jsp/buyer/showBuyerPaymentSms.jsp"/>
+   <forward name="creditCard" path="/WEB-INF/jsp/buyer/showBuyerPaymentCreditCard.jsp"/>
+  </action>
+  <action path="/showSellerPayment" scope="session"
+   type="com.amandris.clients.web.action.seller.ShowSellerPaymentAction" validate="false">
+   <forward name="paypal" path="/WEB-INF/jsp/seller/showSellerPaymentPaypal.jsp"/>
+   <forward name="sms" path="/WEB-INF/jsp/seller/showSellerPaymentSms.jsp"/>
+   <forward name="creditCard" path="/WEB-INF/jsp/seller/showSellerPaymentCreditCard.jsp"/>
+  </action>
+   -->
+  <action path="/showAllMainSeller" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAllMainSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showAllMainSeller.jsp"/>
+  </action>
+  <!-- 
+  <action input="/WEB-INF/jsp/buyer/showBuyerPaymentDebug.jsp"
+   name="buyCreditsForm" path="/setBuyerPaymentDebug" scope="session"
+   type="com.amandris.clients.web.action.buyer.SetBuyerPaymentDebugAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/buyer/showBuyerPaymentDone.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showSellerPaymentDebug.jsp"
+   name="buyCreditsForm" path="/setSellerPaymentDebug" scope="session"
+   type="com.amandris.clients.web.action.seller.SetSellerPaymentDebugAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/seller/showSellerPaymentDone.jsp"/>
+  </action>
+   -->
+  <action path="/showSellerProfilePictures" scope="session"
+   type="com.amandris.clients.web.action.common.ShowSellerProfilePicturesAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showSellerProfilePictures.jsp"/>
+  </action>
+  <action path="/showBuyerProfilePictures" scope="session"
+   type="com.amandris.clients.web.action.common.ShowBuyerProfilePicturesAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showBuyerProfilePictures.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/buyer/showLoginBuyer.jsp" name="buyerLoginForm" path="/buyerLogin" scope="session"
+   type="com.amandris.clients.web.action.buyer.BuyerLoginAction" validate="true">
+   <forward name="success" path="/showBuyerStart.do"/>
+   <forward name="fail" path="/WEB-INF/jsp/buyer/showLoginBuyer.jsp"/>
+   <forward name="admin" path="/WEB-INF/jsp/admin/showAdminEnterPassword.jsp"/>
+   <forward name="escort" path="/WEB-INF/jsp/escort/showEscortPayFee.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/seller/showLoginSeller.jsp" name="sellerLoginForm" path="/sellerLogin" scope="session"
+   type="com.amandris.clients.web.action.seller.SellerLoginAction" validate="true">
+   <forward name="success" path="/showSellerStart.do"/>
+   <forward name="fail" path="/WEB-INF/jsp/seller/showLoginSeller.jsp"/>
+  </action>
+  <action path="/buyerLogoff" scope="session"
+   type="com.amandris.clients.web.action.buyer.BuyerLogoffAction" validate="false">
+   <forward name="success" path="/showIndex.do"/>
+  </action>
+  <action path="/sellerLogoff" scope="session"
+   type="com.amandris.clients.web.action.seller.SellerLogoffAction" validate="false">
+   <forward name="success" path="/showIndex.do"/>
+  </action>
+  <action path="/showBuyerPasswordReset" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showBuyerPasswordReset.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/common/showBuyerPasswordReset.jsp"
+   name="passwordResetForm" path="/setBuyerPasswordResetSendEmail"
+   scope="session"
+   type="com.amandris.clients.web.action.common.SetBuyerPasswordResetSendEmailAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/common/showPasswordResetEmailSent.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/common/showBuyerPasswordReset.jsp"/>
+  </action>
+  <action path="/setBuyerPasswordReset" scope="session"
+   type="com.amandris.clients.web.action.common.SetBuyerPasswordResetAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showPasswordResetDone.jsp"/>
+  </action>
+  <action path="/showSellerPasswordReset" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showSellerPasswordReset.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/common/showSellerPasswordReset.jsp"
+   name="passwordResetForm" path="/setSellerPasswordResetSendEmail"
+   scope="session"
+   type="com.amandris.clients.web.action.common.SetSellerPasswordResetSendEmailAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/common/showPasswordResetEmailSent.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/common/showSellerPasswordReset.jsp"/>
+  </action>
+  <action path="/setSellerPasswordReset" scope="session"
+   type="com.amandris.clients.web.action.common.SetSellerPasswordResetAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showPasswordResetDone.jsp"/>
+  </action>
+  <action path="/showAmandrisMessage" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAmandrisMessageAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showAmandrisMessage.jsp"/>
+  </action>
+  <action input="/WEB-INF/jsp/common/showAmandrisMessage.jsp"
+   name="amandrisMessageForm" path="/setAmandrisMessage" scope="session"
+   type="com.amandris.clients.web.action.common.SetAmandrisMessageAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/common/showAmandrisMessageSent.jsp"/>
+  </action>
+  <action path="/showOxado" scope="session"
+   type="com.amandris.clients.web.action.common.ShowOxadoAction" validate="false">
+  </action> 
+ <action path="/showOxado2" scope="session"
+   type="com.amandris.clients.web.action.common.ShowOxado2Action" validate="false">
+  </action> 
+  <!-- 
+  <action path="/showPaypalPaymentConfirmation" scope="session"
+   type="com.amandris.clients.web.action.common.ShowPaypalPaymentConfirmationAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showPaypalPaymentConfirmation.jsp"/>
+   <forward name="escort" path="/WEB-INF/jsp/escort/showPaymentConfirmation.jsp"/>
+  </action>
+  <action path="/showCreditCardPaymentConfirmation" scope="session"
+   type="com.amandris.clients.web.action.common.ShowCreditCardPaymentConfirmationAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/common/showCreditCardPaymentConfirmation.jsp"/>
+   <forward name="escort" path="/WEB-INF/jsp/escort/showPaymentConfirmation.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/common/showCreditCardPaymentFail.jsp"/>
+  </action>
+  <action path="/setPaypalPaymentConfirmation" scope="session"
+   type="com.amandris.clients.web.action.common.SetPaypalPaymentConfirmationAction" validate="false"/>
+  <action path="/setSmsPaymentConfirmation" scope="session"
+   type="com.amandris.clients.web.action.common.SetSmsPaymentConfirmationAction" validate="false"/>
+  <action path="/setCreditCardData" scope="session"
+   type="com.amandris.clients.web.action.common.SetCreditCardDataAction" validate="false"/>
+  <action path="/setCreditCardPaymentConfirmation" scope="session"
+   type="com.amandris.clients.web.action.common.SetCreditCardPaymentConfirmationAction" validate="false"/>
+ -->
+  <!-- ********************************************* 
+ ESCORT ACTIONS 
+ ********************************************* --> 
+   <!-- 
+   <action path="/showEscortPriceList" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/escort/showEscortPriceList.jsp"/>
+  </action>
+   -->
+  <action path="/showEscortExample" scope="session"
+   type="com.amandris.clients.web.action.common.ShowAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/escort/showEscortExample.jsp"/>
+  </action>
+  
+  <action path="/showNewEscortOne" scope="session"
+   type="com.amandris.clients.web.action.escort.ShowNewEscortOneAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/escort/showNewEscortOne.jsp"/>
+  </action>
+  
+  <action input="/WEB-INF/jsp/escort/showNewEscortOne.jsp"
+   name="newSellerForm" path="/showNewEscortTwo" scope="session"
+   type="com.amandris.clients.web.action.escort.ShowNewEscortTwoAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/escort/showNewEscortTwo.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/escort/showNewEscortOne.jsp"/>
+  </action>
+  
+  <action input="/WEB-INF/jsp/escort/showNewEscortTwo.jsp"
+   name="newSellerForm" path="/showNewEscortThree" scope="session"
+   type="com.amandris.clients.web.action.escort.ShowNewEscortThreeAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/escort/showNewEscortThree.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/escort/showNewEscortTwo.jsp"/>
+  </action>
+  
+  <action input="/WEB-INF/jsp/escort/showNewEscortThree.jsp"
+   name="newSellerForm" path="/setNewEscort" scope="session"
+   type="com.amandris.clients.web.action.escort.SetNewEscortAction" validate="true">
+   <forward name="success" path="/WEB-INF/jsp/escort/showNewEscortSaved.jsp"/>
+   <forward name="fail" path="/WEB-INF/jsp/escort/showNewEscortThree.jsp"/>
+  </action>
+   
+   <!-- 
+  <action path="/showEscortPaySubscription" scope="session"
+   type="com.amandris.clients.web.action.escort.ShowEscortPaySubscriptionAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/escort/showEscortPaySubscription.jsp"/>
+  </action>
+  
+   <action path="/showEscortPayFee" scope="session"
+   type="com.amandris.clients.web.action.escort.ShowEscortPayFeeAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/escort/showEscortPayFee.jsp"/>
+  </action>
+  
+  <action path="/showEscortPayment" scope="session"
+   type="com.amandris.clients.web.action.escort.ShowEscortPaymentAction" validate="false">
+   <forward name="paypal" path="/WEB-INF/jsp/escort/showEscortPaymentPaypal.jsp"/>
+   <forward name="bankTransfer" path="/WEB-INF/jsp/escort/showEscortPaymentBankTransfer.jsp"/>
+   <forward name="creditCard" path="/WEB-INF/jsp/escort/showEscortPaymentCreditCard.jsp"/>
+  </action>
+   -->
+  
+   
+  <!-- ********************************************* 
+ ADMIN ACTIONS 
+ ********************************************* -->
+  <action name="adminLoginForm" path="/adminLogin" scope="session"
+   type="com.amandris.clients.web.action.admin.AdminLoginAction" validate="false">
+   <forward name="success" path="/showAdminStart.do"/>
+   <forward name="fail" path="/showIndex.do"/>
+  </action>
+  <action path="/showAdminStart" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminStartAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminStart.jsp"/>
+  </action>
+  <action path="/showAdminCensorBuyer" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorBuyer.jsp"/>
+  </action>
+  <action path="/showAdminCensorSeller" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorSeller.jsp"/>
+  </action>
+  <action path="/showAdminCensorVoteToBuyer" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorVoteToBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorVoteToBuyer.jsp"/>
+  </action>
+  <action path="/showAdminCensorVoteToSeller" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorVoteToSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorVoteToSeller.jsp"/>
+  </action>
+  <action path="/showAdminCensorBuyerDetail" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorBuyerDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorBuyerDetail.jsp"/>
+  </action>
+  <action path="/showAdminCensorSellerDetail" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorSellerDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorSellerDetail.jsp"/>
+  </action>
+  <action path="/showAdminCensorVoteToBuyerDetail" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorVoteToBuyerDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorVoteToBuyerDetail.jsp"/>
+  </action>
+  <action path="/showAdminCensorVoteToSellerDetail" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorVoteToSellerDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorVoteToSellerDetail.jsp"/>
+  </action>
+  <action path="/showAdminCensorBuyerPicture" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorBuyerPictureAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorBuyerPicture.jsp"/>
+  </action>
+  <action path="/showAdminCensorBuyerPictureDetail" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorBuyerPictureDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorBuyerPictureDetail.jsp"/>
+  </action>
+  <action path="/showAdminCensorSellerPicture" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorSellerPictureAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorSellerPicture.jsp"/>
+  </action>
+  <action path="/showAdminCensorSellerPictureDetail" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorSellerPictureDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorSellerPictureDetail.jsp"/>
+  </action>
+  <action path="/showAdminSendMessageToBuyer" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminSendMessageToBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminSendMessageToBuyer.jsp"/>
+  </action>
+  <action path="/showAdminSendMessageToSeller" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminSendMessageToSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminSendMessageToSeller.jsp"/>
+  </action> 
+  <action path="/showAdminDeleteBuyer" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminDeleteBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminDeleteBuyer.jsp"/>
+  </action>   
+  <action path="/showAdminDeleteSeller" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminDeleteSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminDeleteSeller.jsp"/>
+  </action>  
+  <action path="/showAdminEditSeller" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminEditSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminEditSeller.jsp"/>
+  </action>  
+ <action path="/showAdminEditBuyer" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminEditBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminEditBuyer.jsp"/>
+  </action>  
+  <action path="/showAdminSeller" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminSellerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminSeller.jsp"/>
+  </action>  
+ <action path="/showAdminBuyer" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminBuyerAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminBuyer.jsp"/>
+  </action>    
+  <action name="adminEditBuyerForm" path="/setAdminBuyer" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminBuyerAction" validate="false">
+   <forward name="success" path="/showAdminStart.do"/>
+  </action>   
+ <action name="adminEditSellerForm" path="/setAdminSeller" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminSellerAction" validate="false">
+   <forward name="success" path="/showAdminStart.do"/>
+  </action>    
+  <action path="/setAdminDeleteBuyer" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminDeleteBuyerAction" validate="false">
+   <forward name="success" path="/showAdminStart.do"/>
+  </action>   
+   <action path="/setAdminDeleteSeller" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminDeleteSellerAction" validate="false">
+   <forward name="success" path="/showAdminStart.do"/>
+  </action>    
+  <action name="adminSendMessageForm" path="/setAdminSendMessageToBuyer"
+   scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminSendMessageToBuyerAction" validate="false">
+   <forward name="success" path="/showAdminStart.do"/>
+  </action> 
+  <action name="adminSendMessageForm" path="/setAdminSendMessageToSeller"
+   scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminSendMessageToSellerAction" validate="false">
+   <forward name="success" path="/showAdminStart.do"/>
+  </action>  
+  <action name="adminCensorBuyerForm" path="/setAdminCensorBuyer"
+   scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorBuyerAction" validate="false">
+   <forward name="success" path="/showAdminCensorBuyer.do"/>
+  </action>
+  <action name="adminCensorSellerForm" path="/setAdminCensorSeller"
+   scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorSellerAction" validate="false">
+   <forward name="success" path="/showAdminCensorSeller.do"/>
+  </action>
+  <action name="adminCensorVoteForm" path="/setAdminCensorVoteToBuyer"
+   scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorVoteToBuyerAction" validate="false">
+   <forward name="success" path="/showAdminCensorVoteToBuyer.do"/>
+  </action>
+  <action name="adminCensorVoteForm" path="/setAdminCensorVoteToSeller"
+   scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorVoteToSellerAction" validate="false">
+   <forward name="success" path="/showAdminCensorVoteToSeller.do"/>
+  </action>
+  <action path="/setAdminCensorBuyerPicture" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorBuyerPictureAction" validate="false">
+   <forward name="success" path="/showAdminCensorBuyerPicture.do"/>
+  </action>
+  <action path="/setAdminCensorDenyBuyerPicture" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorDenyBuyerPictureAction" validate="false">
+   <forward name="success" path="/showAdminCensorBuyerPicture.do"/>
+  </action>
+  <action path="/setAdminCensorSellerPicture" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorSellerPictureAction" validate="false">
+   <forward name="success" path="/showAdminCensorSellerPicture.do"/>
+  </action>
+  <action path="/setAdminCensorDenySellerPicture" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorDenySellerPictureAction" validate="false">
+   <forward name="success" path="/showAdminCensorSellerPicture.do"/>
+  </action> 
+  <action path="/showAdminCensorAlbumElement" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorAlbumElementAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorAlbumElement.jsp"/>
+  </action>
+  <action path="/showAdminCensorAlbumElementDetail" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminCensorAlbumElementDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminCensorAlbumElementDetail.jsp"/>
+  </action>
+  <action path="/setAdminCensorAlbumElement" scope="session"
+   type="com.amandris.clients.web.action.admin.SetAdminCensorAlbumElementAction" validate="false">
+   <forward name="success" path="/showAdminCensorAlbumElement.do"/>
+  </action>
+  <action path="/showAdminReceivedMessage" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminReceivedMessageAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminReceivedMessage.jsp"/>
+  </action>
+  <action path="/showAdminReceivedMessageDetail" scope="session"
+   type="com.amandris.clients.web.action.admin.ShowAdminReceivedMessageDetailAction" validate="false">
+   <forward name="success" path="/WEB-INF/jsp/admin/showAdminReceivedMessageDetail.jsp"/>
+  </action>
+  <action path="/deleteAdminReceivedMessage" scope="session"
+   type="com.amandris.clients.web.action.admin.DeleteAdminReceivedMessageAction" validate="false">
+   <forward name="success" path="/showAdminReceivedMessage.do"/>
+  </action>
+ </action-mappings>
+ <controller/>
+ <message-resources null="false" parameter="amandrisMessageResources"/>
+ <message-resources key="IMAGE_RESOURCE_KEY" null="false" parameter="amandrisImageResources"/>
+ <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+  <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+ </plug-in>
+</struts-config>
